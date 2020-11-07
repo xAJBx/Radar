@@ -2066,7 +2066,7 @@ var app = (function () {
     const { console: console_1 } = globals;
     const file$1 = "src/routes/login.svelte";
 
-    // (260:0) {:else}
+    // (286:0) {:else}
     function create_else_block$1(ctx) {
     	let section;
     	let h1;
@@ -2078,6 +2078,9 @@ var app = (function () {
     	let t2;
     	let t3;
     	let button;
+    	let t5;
+    	let instruments;
+    	let t6;
     	let mounted;
     	let dispose;
 
@@ -2092,13 +2095,17 @@ var app = (function () {
     			t3 = space();
     			button = element("button");
     			button.textContent = "API Key Generator";
-    			add_location(h1, file$1, 261, 4, 6868);
+    			t5 = space();
+    			instruments = element("instruments");
+    			t6 = text(/*instrument*/ ctx[12]);
+    			add_location(h1, file$1, 287, 4, 7584);
     			attr_dev(p, "class", "svelte-13s2z72");
-    			add_location(p, file$1, 262, 4, 6904);
+    			add_location(p, file$1, 288, 4, 7620);
     			attr_dev(button, "type", "button");
-    			add_location(button, file$1, 265, 4, 6947);
+    			add_location(button, file$1, 291, 4, 7663);
+    			add_location(instruments, file$1, 293, 4, 7754);
     			attr_dev(section, "class", "svelte-13s2z72");
-    			add_location(section, file$1, 260, 2, 6854);
+    			add_location(section, file$1, 286, 2, 7570);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, section, anchor);
@@ -2109,13 +2116,16 @@ var app = (function () {
     			append_dev(p, t2);
     			append_dev(section, t3);
     			append_dev(section, button);
+    			append_dev(section, t5);
+    			append_dev(section, instruments);
+    			append_dev(instruments, t6);
 
     			if (!mounted) {
     				dispose = listen_dev(
     					button,
     					"click",
     					function () {
-    						if (is_function(/*API_Key_Gen*/ ctx[15](/*result*/ ctx[2].token))) /*API_Key_Gen*/ ctx[15](/*result*/ ctx[2].token).apply(this, arguments);
+    						if (is_function(/*API_Key_Gen*/ ctx[16](/*result*/ ctx[2].token))) /*API_Key_Gen*/ ctx[16](/*result*/ ctx[2].token).apply(this, arguments);
     					},
     					false,
     					false,
@@ -2129,6 +2139,7 @@ var app = (function () {
     			ctx = new_ctx;
     			if (dirty & /*user*/ 8 && t0_value !== (t0_value = JSON.stringify(/*user*/ ctx[3]) + "")) set_data_dev(t0, t0_value);
     			if (dirty & /*profile*/ 16 && t2_value !== (t2_value = JSON.stringify(/*profile*/ ctx[4]) + "")) set_data_dev(t2, t2_value);
+    			if (dirty & /*instrument*/ 4096) set_data_dev(t6, /*instrument*/ ctx[12]);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(section);
@@ -2141,14 +2152,14 @@ var app = (function () {
     		block,
     		id: create_else_block$1.name,
     		type: "else",
-    		source: "(260:0) {:else}",
+    		source: "(286:0) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (232:18) 
+    // (258:18) 
     function create_if_block_1$1(ctx) {
     	let section;
     	let main;
@@ -2224,38 +2235,38 @@ var app = (function () {
     			img1 = element("img");
     			if (img0.src !== (img0_src_value = "/img/MyOPC_200x200.png")) attr_dev(img0, "src", img0_src_value);
     			attr_dev(img0, "alt", "MyOPC");
-    			add_location(img0, file$1, 234, 10, 5940);
-    			add_location(h1, file$1, 234, 6, 5936);
+    			add_location(img0, file$1, 260, 10, 6656);
+    			add_location(h1, file$1, 260, 6, 6652);
     			input0.required = true;
-    			add_location(input0, file$1, 238, 25, 6136);
-    			add_location(label0, file$1, 238, 8, 6119);
+    			add_location(input0, file$1, 264, 25, 6852);
+    			add_location(label0, file$1, 264, 8, 6835);
     			input1.required = true;
-    			add_location(input1, file$1, 239, 22, 6212);
-    			add_location(label1, file$1, 239, 8, 6198);
+    			add_location(input1, file$1, 265, 22, 6928);
+    			add_location(label1, file$1, 265, 8, 6914);
     			input2.required = true;
-    			add_location(input2, file$1, 240, 24, 6287);
-    			add_location(label2, file$1, 240, 8, 6271);
+    			add_location(input2, file$1, 266, 24, 7003);
+    			add_location(label2, file$1, 266, 8, 6987);
     			attr_dev(input3, "type", "password");
     			input3.required = true;
-    			add_location(input3, file$1, 243, 10, 6385);
-    			add_location(label3, file$1, 241, 8, 6348);
+    			add_location(input3, file$1, 269, 10, 7101);
+    			add_location(label3, file$1, 267, 8, 7064);
     			attr_dev(input4, "type", "password");
     			input4.required = true;
-    			add_location(input4, file$1, 247, 10, 6506);
-    			add_location(label4, file$1, 245, 8, 6470);
-    			add_location(button, file$1, 249, 29, 6620);
+    			add_location(input4, file$1, 273, 10, 7222);
+    			add_location(label4, file$1, 271, 8, 7186);
+    			add_location(button, file$1, 275, 29, 7336);
     			attr_dev(div, "class", "buttons");
-    			add_location(div, file$1, 249, 8, 6599);
+    			add_location(div, file$1, 275, 8, 7315);
     			if (img1.src !== (img1_src_value = "/img/small_BA_logo_75x75_Cropped.png")) attr_dev(img1, "src", img1_src_value);
     			attr_dev(img1, "alt", "BRIDGES AUTOMATION");
-    			add_location(img1, file$1, 252, 10, 6692);
+    			add_location(img1, file$1, 278, 10, 7408);
     			attr_dev(p, "class", "svelte-13s2z72");
-    			add_location(p, file$1, 250, 8, 6657);
-    			add_location(form, file$1, 236, 6, 6001);
+    			add_location(p, file$1, 276, 8, 7373);
+    			add_location(form, file$1, 262, 6, 6717);
     			attr_dev(main, "class", "svelte-13s2z72");
-    			add_location(main, file$1, 233, 4, 5923);
+    			add_location(main, file$1, 259, 4, 6639);
     			attr_dev(section, "class", "svelte-13s2z72");
-    			add_location(section, file$1, 232, 2, 5909);
+    			add_location(section, file$1, 258, 2, 6625);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, section, anchor);
@@ -2298,16 +2309,16 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(input0, "input", /*input0_input_handler_1*/ ctx[18]),
-    					listen_dev(input1, "input", /*input1_input_handler_1*/ ctx[19]),
-    					listen_dev(input2, "input", /*input2_input_handler*/ ctx[20]),
-    					listen_dev(input3, "input", /*input3_input_handler*/ ctx[21]),
-    					listen_dev(input4, "input", /*input4_input_handler*/ ctx[22]),
+    					listen_dev(input0, "input", /*input0_input_handler_1*/ ctx[19]),
+    					listen_dev(input1, "input", /*input1_input_handler_1*/ ctx[20]),
+    					listen_dev(input2, "input", /*input2_input_handler*/ ctx[21]),
+    					listen_dev(input3, "input", /*input3_input_handler*/ ctx[22]),
+    					listen_dev(input4, "input", /*input4_input_handler*/ ctx[23]),
     					listen_dev(
     						form,
     						"submit",
     						prevent_default(function () {
-    							if (is_function(/*register*/ ctx[14](/*reg_username*/ ctx[10], /*reg_email*/ ctx[7], /*reg_passwrd*/ ctx[8], /*reg_passwrd_confirm*/ ctx[9]))) /*register*/ ctx[14](/*reg_username*/ ctx[10], /*reg_email*/ ctx[7], /*reg_passwrd*/ ctx[8], /*reg_passwrd_confirm*/ ctx[9]).apply(this, arguments);
+    							if (is_function(/*register*/ ctx[15](/*reg_username*/ ctx[10], /*reg_email*/ ctx[7], /*reg_passwrd*/ ctx[8], /*reg_passwrd_confirm*/ ctx[9]))) /*register*/ ctx[15](/*reg_username*/ ctx[10], /*reg_email*/ ctx[7], /*reg_passwrd*/ ctx[8], /*reg_passwrd_confirm*/ ctx[9]).apply(this, arguments);
     						}),
     						false,
     						true,
@@ -2352,14 +2363,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$1.name,
     		type: "if",
-    		source: "(232:18) ",
+    		source: "(258:18) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (208:0) {#if login_visi && !sign_up}
+    // (234:0) {#if login_visi && !sign_up}
     function create_if_block$1(ctx) {
     	let section;
     	let main;
@@ -2416,30 +2427,30 @@ var app = (function () {
     			img1 = element("img");
     			if (img0.src !== (img0_src_value = "/img/MyOPC_200x200.png")) attr_dev(img0, "src", img0_src_value);
     			attr_dev(img0, "alt", "MyOPC");
-    			add_location(img0, file$1, 210, 10, 5233);
-    			add_location(h1, file$1, 210, 6, 5229);
+    			add_location(img0, file$1, 236, 10, 5949);
+    			add_location(h1, file$1, 236, 6, 5945);
     			input0.required = true;
-    			add_location(input0, file$1, 213, 25, 5379);
-    			add_location(label0, file$1, 213, 8, 5362);
+    			add_location(input0, file$1, 239, 25, 6095);
+    			add_location(label0, file$1, 239, 8, 6078);
     			attr_dev(input1, "type", "password");
     			input1.required = true;
-    			add_location(input1, file$1, 216, 10, 5474);
-    			add_location(label1, file$1, 214, 8, 5437);
-    			add_location(button0, file$1, 219, 10, 5588);
+    			add_location(input1, file$1, 242, 10, 6190);
+    			add_location(label1, file$1, 240, 8, 6153);
+    			add_location(button0, file$1, 245, 10, 6304);
     			attr_dev(button1, "type", "button");
-    			add_location(button1, file$1, 220, 10, 5621);
+    			add_location(button1, file$1, 246, 10, 6337);
     			attr_dev(div, "class", "buttons");
-    			add_location(div, file$1, 218, 8, 5556);
+    			add_location(div, file$1, 244, 8, 6272);
     			if (img1.src !== (img1_src_value = "/img/small_BA_logo_75x75_Cropped.png")) attr_dev(img1, "src", img1_src_value);
     			attr_dev(img1, "alt", "BRIDGES AUTOMATION");
-    			add_location(img1, file$1, 224, 10, 5736);
+    			add_location(img1, file$1, 250, 10, 6452);
     			attr_dev(p, "class", "svelte-13s2z72");
-    			add_location(p, file$1, 222, 8, 5701);
-    			add_location(form, file$1, 212, 6, 5294);
+    			add_location(p, file$1, 248, 8, 6417);
+    			add_location(form, file$1, 238, 6, 6010);
     			attr_dev(main, "class", "svelte-13s2z72");
-    			add_location(main, file$1, 209, 4, 5216);
+    			add_location(main, file$1, 235, 4, 5932);
     			attr_dev(section, "class", "svelte-13s2z72");
-    			add_location(section, file$1, 208, 2, 5202);
+    			add_location(section, file$1, 234, 2, 5918);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, section, anchor);
@@ -2469,14 +2480,14 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(input0, "input", /*input0_input_handler*/ ctx[16]),
-    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[17]),
-    					listen_dev(button1, "click", /*signup*/ ctx[13], false, false, false),
+    					listen_dev(input0, "input", /*input0_input_handler*/ ctx[17]),
+    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[18]),
+    					listen_dev(button1, "click", /*signup*/ ctx[14], false, false, false),
     					listen_dev(
     						form,
     						"submit",
     						prevent_default(function () {
-    							if (is_function(/*login*/ ctx[12](/*username*/ ctx[1], /*password*/ ctx[0]))) /*login*/ ctx[12](/*username*/ ctx[1], /*password*/ ctx[0]).apply(this, arguments);
+    							if (is_function(/*login*/ ctx[13](/*username*/ ctx[1], /*password*/ ctx[0]))) /*login*/ ctx[13](/*username*/ ctx[1], /*password*/ ctx[0]).apply(this, arguments);
     						}),
     						false,
     						true,
@@ -2509,7 +2520,7 @@ var app = (function () {
     		block,
     		id: create_if_block$1.name,
     		type: "if",
-    		source: "(208:0) {#if login_visi && !sign_up}",
+    		source: "(234:0) {#if login_visi && !sign_up}",
     		ctx
     	});
 
@@ -2587,6 +2598,7 @@ var app = (function () {
     	let reg_passwrd_confirm = "";
     	let reg_username = "";
     	let reg_company = "";
+    	let instrument = "";
 
     	//@desc:  hits Harbor to validate credintials.  with valid credintials sends token to get user. with user gets profile
     	function login(username, password) {
@@ -2715,6 +2727,31 @@ var app = (function () {
     		}).catch(error => console.log("error", error));
     	};
 
+    	setInterval(
+    		() => {
+    			if (result) {
+    				get_instrumentdata(result.token);
+    			}
+    		},
+    		5000
+    	);
+
+    	const get_instrumentdata = token => {
+    		var myHeaders = new Headers();
+    		myHeaders.append("Conte", "application/json");
+    		myHeaders.append("x-auth-token", token);
+
+    		var requestOptions = {
+    			method: "GET",
+    			headers: myHeaders,
+    			redirect: "follow"
+    		};
+
+    		fetch("https://cors-anywhere.herokuapp.com/" + "http://bridgesautomation.duckdns.org:5778/data/latestRecord/unit_id", requestOptions).then(response => response.json()).then(result => {
+    			$$invalidate(12, instrument = JSON.stringify(result));
+    		}).catch(error => console.log("error", error));
+    	};
+
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
@@ -2770,11 +2807,13 @@ var app = (function () {
     		reg_passwrd_confirm,
     		reg_username,
     		reg_company,
+    		instrument,
     		login,
     		signup,
     		profile_create,
     		register,
-    		API_Key_Gen
+    		API_Key_Gen,
+    		get_instrumentdata
     	});
 
     	$$self.$inject_state = $$props => {
@@ -2790,6 +2829,7 @@ var app = (function () {
     		if ("reg_passwrd_confirm" in $$props) $$invalidate(9, reg_passwrd_confirm = $$props.reg_passwrd_confirm);
     		if ("reg_username" in $$props) $$invalidate(10, reg_username = $$props.reg_username);
     		if ("reg_company" in $$props) $$invalidate(11, reg_company = $$props.reg_company);
+    		if ("instrument" in $$props) $$invalidate(12, instrument = $$props.instrument);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -2809,6 +2849,7 @@ var app = (function () {
     		reg_passwrd_confirm,
     		reg_username,
     		reg_company,
+    		instrument,
     		login,
     		signup,
     		register,

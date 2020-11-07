@@ -12,6 +12,7 @@
   let reg_passwrd_confirm = "";
   let reg_username = "";
   let reg_company = "";
+  let instrument = "";
 
   //@desc:  hits Harbor to validate credintials.  with valid credintials sends token to get user. with user gets profile
   function login(username, password) {
@@ -181,6 +182,31 @@
 		})
       .catch((error) => console.log("error", error));
   };
+
+  setInterval(() => {if(result){get_instrumentdata(result.token)}}, 5000);
+
+  const get_instrumentdata = (token) => {
+	var myHeaders = new Headers();
+    myHeaders.append("Conte", "application/json");
+    myHeaders.append("x-auth-token", token);
+
+    var requestOptions = {
+      method: "GET",
+      headers: myHeaders,
+      redirect: "follow",
+    };
+
+    fetch(
+      "https://cors-anywhere.herokuapp.com/" +
+        "http://bridgesautomation.duckdns.org:5778/data/latestRecord/unit_id",
+      requestOptions
+    )
+      .then((response) => response.json())
+      .then((result) => {
+		  instrument = JSON.stringify(result)
+		})
+      .catch((error) => console.log("error", error));
+  };
 </script>
 
 <style>
@@ -264,5 +290,9 @@
 
     
     <button type="button" on:click={API_Key_Gen(result.token)}>API Key Generator</button>
+
+    <instruments>
+      {instrument}
+    </instruments>
   </section>
 {/if}
