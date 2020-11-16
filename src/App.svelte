@@ -23,12 +23,13 @@
 </style>
 
 <Router {url}>
+  {#if 1 === 0}
   <nav>
     <ul>
       |
       <!-- svelte-ignore a11y-missing-attribute -->
       <li>
-        <Link to="/">Home</Link>
+        <Link to="/">Login</Link>
       </li>
       |
       <!-- svelte-ignore a11y-missing-attribute -->
@@ -38,10 +39,12 @@
       |
     </ul>
   </nav>
+  {/if}
   <div> 
-    <Route path="login" component={login} />
+    <Route path="/" component={login} />
     <Route path="/">
       <Home />
     </Route>
   </div>
 </Router>
+

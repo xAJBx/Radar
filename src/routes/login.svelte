@@ -1,5 +1,4 @@
 <script>
-  import { navigate } from "svelte-routing";
   let password = "";
   let username = "";
   let result = null;
@@ -13,6 +12,10 @@
   let reg_username = "";
   let reg_company = "";
   let instrument = "";
+  let instruments = [];
+  let instrument_value = [];
+  let instvals = [];
+  let instrument_display = [];
 
   //@desc:  hits Harbor to validate credintials.  with valid credintials sends token to get user. with user gets profile
   function login(username, password) {
@@ -54,7 +57,10 @@
           requestOptions
         )
           .then((response) => response.json())
-          .then((result) => (profile = result))
+          .then((result) => {
+            profile = result;
+            instruments = get_All_instrumentdata(profile);
+          })
           .catch((error) => console.log("error", error));
 
         //send token auth token to get user
@@ -161,8 +167,8 @@
   };
 
   const API_Key_Gen = (token) => {
-	var myHeaders = new Headers();
-    myHeaders.append("Conte", "application/json");
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
     myHeaders.append("x-auth-token", token);
 
     var requestOptions = {
@@ -178,35 +184,111 @@
     )
       .then((response) => response.json())
       .then((result) => {
-		  alert(JSON.stringify(result))
-		})
+        alert(JSON.stringify(result));
+      })
       .catch((error) => console.log("error", error));
   };
 
-  setInterval(() => {if(result){get_instrumentdata(result.token)}}, 5000);
+  // HERE ... need to get values updated on page
+  setInterval(() => {
+    try {
+      function get_data(unit_id_d) {
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+        myHeaders.append("x-auth-token", result.token);
 
-  const get_instrumentdata = (token) => {
-	var myHeaders = new Headers();
-    myHeaders.append("Conte", "application/json");
-    myHeaders.append("x-auth-token", token);
+        var requestOptions = {
+          method: "GET",
+          headers: myHeaders,
+          redirect: "follow",
+        };
 
-    var requestOptions = {
-      method: "GET",
-      headers: myHeaders,
-      redirect: "follow",
-    };
+        //working need to loop an pass unit_id
+        fetch(
+          "https://cors-anywhere.herokuapp.com/" +
+            `http://bridgesautomation.duckdns.org:5778/data/latestRecord/${unit_id_d}`,
+          requestOptions
+        )
+          .then((response) => response.json())
+          .then((result) => {
+            instrument = result;
+            
+            //console.log(instruments.includes(instrument[1][0].unit_id.trim())) // false
+            //console.log(instrument[1][0].unit_id); // 1, 2, unit_id
+            //console.log(instruments.includes("1"))
+            const fu =  instruments.includes(instrument[1][0].unit_id.trim())
+            //console.log("instrument: ", instrument[1][0].unit_id.trim())
+            //console.log('fu: ', fu)
+            //console.log('object: ', instrument[1][0])
+            //debugger;
+            if(fu){
+              let flag = false;
+              for(let i = 0; i < instrument_display.length; i++){
+                if(instrument_display[i].unit_id.trim() === instrument[1][0].unit_id.trim()){
+                  instrument_display[i] = instrument[1][0];
+                  flag = true;
+                }
+              }
+              if(!flag){
+                instrument_display.unshift(instrument[1][0]);
+                flag = false;
+              }
+              console.log(instrument_display);
+              //instrument_display.unshift(instruments[1][0]);
+              //console.log("inhere");
+              //console.log(instrument_display)
 
-    fetch(
-      "https://cors-anywhere.herokuapp.com/" +
-        "http://bridgesautomation.duckdns.org:5778/data/latestRecord/unit_id",
-      requestOptions
-    )
-      .then((response) => response.json())
-      .then((result) => {
-		  instrument = JSON.stringify(result)
-		})
-      .catch((error) => console.log("error", error));
+            }else{
+              
+
+            }
+            //console.log(instrument[1][0].unit_id);
+            //console.log(instrument_display);
+            //console.log(instruments)
+
+            //if(instrument_display.includes(instrument[1]))
+            
+            
+          })
+          .catch((error) => console.log("error", error));
+      }
+      //hereeeee
+      for(let i = 0; i < profile.instruments.length; i++){
+        //console.log(profile.instruments);
+        get_data(profile.instruments[i]);
+      }
+    } catch (err) {
+      console.error(err.message);
+    }
+    /*if (result) {
+      for (let i = 0; i < instruments.length; i++) {
+        //get_instrumentdata(result.token, instruments[i])
+        //.then((res) => instrument_value[i] = res.json());
+        //console.log(instruments[i]);
+
+        async function doit() {
+          console.log("doit");
+          instvals[i] = await get_instrumentdata;
+          return instvals;
+        }
+        let tada = doit();
+        console.log(tada);
+      }
+    }*/
+  }, 5000);
+
+  // instruments
+  //let value = (unit_id) => {
+  //    get_instrumentdata(result.token, unit_id);
+  //};
+
+  const get_All_instrumentdata = (profile) => {
+    return profile.instruments;
   };
+
+  
+
+  
 </script>
 
 <style>
@@ -288,11 +370,15 @@
     <h1>{JSON.stringify(user)}</h1>
     <p>{JSON.stringify(profile)}</p>
 
-    
     <button type="button" on:click={API_Key_Gen(result.token)}>API Key Generator</button>
 
-    <instruments>
-      {instrument}
-    </instruments>
+    <instrumentsss>
+      {#if result}
+        {#each instrument_display as obj}
+          <li>{JSON.stringify(obj)}</li>
+        {/each}
+      {/if}
+    </instrumentsss>
+    
   </section>
 {/if}
