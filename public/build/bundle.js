@@ -2107,7 +2107,7 @@ var app = (function () {
     	let t7;
     	let p2;
     	let t8;
-    	let t9_value = /*profile*/ ctx[4].company + "";
+    	let t9_value = (/*profile*/ ctx[4].company || "Loding....") + "";
     	let t9;
     	let t10;
     	let br1;
@@ -2150,7 +2150,7 @@ var app = (function () {
     			br2 = element("br");
     			t12 = space();
     			p11 = element("p1");
-    			p11.textContent = "Need an API key?  Click here ==>";
+    			p11.textContent = "Need an API key?  Click here ==";
     			button = element("button");
     			button.textContent = "API Key Generator";
     			t15 = space();
@@ -2162,21 +2162,21 @@ var app = (function () {
     			instrumentsss = element("instrumentsss");
     			if (if_block) if_block.c();
     			if (img.src !== (img_src_value = get_gravatar(/*user*/ ctx[3].email, 100))) attr_dev(img, "src", img_src_value);
-    			add_location(img, file$1, 387, 4, 14472);
-    			add_location(h1, file$1, 388, 4, 14520);
-    			add_location(p10, file$1, 389, 4, 14555);
-    			add_location(br0, file$1, 390, 4, 14588);
-    			add_location(p2, file$1, 391, 4, 14598);
-    			add_location(br1, file$1, 392, 4, 14638);
-    			add_location(br2, file$1, 393, 4, 14648);
-    			add_location(p11, file$1, 394, 4, 14658);
+    			add_location(img, file$1, 387, 4, 14459);
+    			add_location(h1, file$1, 388, 4, 14507);
+    			add_location(p10, file$1, 389, 4, 14542);
+    			add_location(br0, file$1, 390, 4, 14575);
+    			add_location(p2, file$1, 391, 4, 14585);
+    			add_location(br1, file$1, 392, 4, 14641);
+    			add_location(br2, file$1, 393, 4, 14651);
+    			add_location(p11, file$1, 394, 4, 14661);
     			attr_dev(button, "type", "button");
-    			add_location(button, file$1, 394, 45, 14699);
-    			add_location(br3, file$1, 397, 4, 14791);
-    			add_location(h3, file$1, 398, 4, 14801);
-    			add_location(instrumentsss, file$1, 399, 4, 14826);
+    			add_location(button, file$1, 394, 44, 14701);
+    			add_location(br3, file$1, 397, 4, 14793);
+    			add_location(h3, file$1, 398, 4, 14803);
+    			add_location(instrumentsss, file$1, 399, 4, 14828);
     			attr_dev(section, "class", "svelte-13s2z72");
-    			add_location(section, file$1, 386, 2, 14458);
+    			add_location(section, file$1, 386, 2, 14445);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, section, anchor);
@@ -2234,7 +2234,7 @@ var app = (function () {
 
     			if (dirty[0] & /*user*/ 8 && t1_value !== (t1_value = /*user*/ ctx[3].name + "")) set_data_dev(t1, t1_value);
     			if (dirty[0] & /*user*/ 8 && t5_value !== (t5_value = /*user*/ ctx[3].email + "")) set_data_dev(t5, t5_value);
-    			if (dirty[0] & /*profile*/ 16 && t9_value !== (t9_value = /*profile*/ ctx[4].company + "")) set_data_dev(t9, t9_value);
+    			if (dirty[0] & /*profile*/ 16 && t9_value !== (t9_value = (/*profile*/ ctx[4].company || "Loding....") + "")) set_data_dev(t9, t9_value);
 
     			if (/*result*/ ctx[2]) {
     				if (if_block) {
@@ -2344,38 +2344,38 @@ var app = (function () {
     			img1 = element("img");
     			if (img0.src !== (img0_src_value = "/img/MyOPC_200x200.png")) attr_dev(img0, "src", img0_src_value);
     			attr_dev(img0, "alt", "MyOPC");
-    			add_location(img0, file$1, 360, 10, 13544);
-    			add_location(h1, file$1, 360, 6, 13540);
+    			add_location(img0, file$1, 360, 10, 13530);
+    			add_location(h1, file$1, 360, 6, 13526);
     			input0.required = true;
-    			add_location(input0, file$1, 364, 25, 13740);
-    			add_location(label0, file$1, 364, 8, 13723);
+    			add_location(input0, file$1, 364, 25, 13726);
+    			add_location(label0, file$1, 364, 8, 13709);
     			input1.required = true;
-    			add_location(input1, file$1, 365, 22, 13816);
-    			add_location(label1, file$1, 365, 8, 13802);
+    			add_location(input1, file$1, 365, 22, 13802);
+    			add_location(label1, file$1, 365, 8, 13788);
     			input2.required = true;
-    			add_location(input2, file$1, 366, 24, 13891);
-    			add_location(label2, file$1, 366, 8, 13875);
+    			add_location(input2, file$1, 366, 24, 13877);
+    			add_location(label2, file$1, 366, 8, 13861);
     			attr_dev(input3, "type", "password");
     			input3.required = true;
-    			add_location(input3, file$1, 369, 10, 13989);
-    			add_location(label3, file$1, 367, 8, 13952);
+    			add_location(input3, file$1, 369, 10, 13975);
+    			add_location(label3, file$1, 367, 8, 13938);
     			attr_dev(input4, "type", "password");
     			input4.required = true;
-    			add_location(input4, file$1, 373, 10, 14110);
-    			add_location(label4, file$1, 371, 8, 14074);
-    			add_location(button, file$1, 375, 29, 14224);
+    			add_location(input4, file$1, 373, 10, 14096);
+    			add_location(label4, file$1, 371, 8, 14060);
+    			add_location(button, file$1, 375, 29, 14210);
     			attr_dev(div, "class", "buttons");
-    			add_location(div, file$1, 375, 8, 14203);
+    			add_location(div, file$1, 375, 8, 14189);
     			if (img1.src !== (img1_src_value = "/img/small_BA_logo_75x75_Cropped.png")) attr_dev(img1, "src", img1_src_value);
     			attr_dev(img1, "alt", "BRIDGES AUTOMATION");
-    			add_location(img1, file$1, 378, 10, 14296);
+    			add_location(img1, file$1, 378, 10, 14282);
     			attr_dev(p, "class", "svelte-13s2z72");
-    			add_location(p, file$1, 376, 8, 14261);
-    			add_location(form, file$1, 362, 6, 13605);
+    			add_location(p, file$1, 376, 8, 14247);
+    			add_location(form, file$1, 362, 6, 13591);
     			attr_dev(main, "class", "svelte-13s2z72");
-    			add_location(main, file$1, 359, 4, 13527);
+    			add_location(main, file$1, 359, 4, 13513);
     			attr_dev(section, "class", "svelte-13s2z72");
-    			add_location(section, file$1, 358, 2, 13513);
+    			add_location(section, file$1, 358, 2, 13499);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, section, anchor);
@@ -2536,30 +2536,30 @@ var app = (function () {
     			img1 = element("img");
     			if (img0.src !== (img0_src_value = "/img/MyOPC_200x200.png")) attr_dev(img0, "src", img0_src_value);
     			attr_dev(img0, "alt", "MyOPC");
-    			add_location(img0, file$1, 336, 10, 12837);
-    			add_location(h1, file$1, 336, 6, 12833);
+    			add_location(img0, file$1, 336, 10, 12823);
+    			add_location(h1, file$1, 336, 6, 12819);
     			input0.required = true;
-    			add_location(input0, file$1, 339, 25, 12983);
-    			add_location(label0, file$1, 339, 8, 12966);
+    			add_location(input0, file$1, 339, 25, 12969);
+    			add_location(label0, file$1, 339, 8, 12952);
     			attr_dev(input1, "type", "password");
     			input1.required = true;
-    			add_location(input1, file$1, 342, 10, 13078);
-    			add_location(label1, file$1, 340, 8, 13041);
-    			add_location(button0, file$1, 345, 10, 13192);
+    			add_location(input1, file$1, 342, 10, 13064);
+    			add_location(label1, file$1, 340, 8, 13027);
+    			add_location(button0, file$1, 345, 10, 13178);
     			attr_dev(button1, "type", "button");
-    			add_location(button1, file$1, 346, 10, 13225);
+    			add_location(button1, file$1, 346, 10, 13211);
     			attr_dev(div, "class", "buttons");
-    			add_location(div, file$1, 344, 8, 13160);
+    			add_location(div, file$1, 344, 8, 13146);
     			if (img1.src !== (img1_src_value = "/img/small_BA_logo_75x75_Cropped.png")) attr_dev(img1, "src", img1_src_value);
     			attr_dev(img1, "alt", "BRIDGES AUTOMATION");
-    			add_location(img1, file$1, 350, 10, 13340);
+    			add_location(img1, file$1, 350, 10, 13326);
     			attr_dev(p, "class", "svelte-13s2z72");
-    			add_location(p, file$1, 348, 8, 13305);
-    			add_location(form, file$1, 338, 6, 12898);
+    			add_location(p, file$1, 348, 8, 13291);
+    			add_location(form, file$1, 338, 6, 12884);
     			attr_dev(main, "class", "svelte-13s2z72");
-    			add_location(main, file$1, 335, 4, 12820);
+    			add_location(main, file$1, 335, 4, 12806);
     			attr_dev(section, "class", "svelte-13s2z72");
-    			add_location(section, file$1, 334, 2, 12806);
+    			add_location(section, file$1, 334, 2, 12792);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, section, anchor);
@@ -2724,7 +2724,7 @@ var app = (function () {
     			t2 = text(t2_value);
     			t3 = text(": ");
     			t4 = text(t4_value);
-    			add_location(li, file$1, 402, 10, 14913);
+    			add_location(li, file$1, 402, 10, 14915);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -3042,7 +3042,7 @@ var app = (function () {
     	let username = "";
     	let result = null;
     	let user = null;
-    	let profile = null;
+    	let profile = { "company": "Loading" };
     	let login_visi = true;
     	let sign_up = false;
     	let reg_email = "";
@@ -3060,9 +3060,8 @@ var app = (function () {
     	//@desc:  hits Harbor to validate credintials.  with valid credintials sends token to get user. with user gets profile
     	function login(username, password) {
     		// get auth token
-    		console.log(username, password);
-
     		var myHeaders = new Headers();
+
     		myHeaders.append("Content-Type", "application/json");
 
     		var raw = JSON.stringify({

@@ -3,7 +3,7 @@
   let username = "";
   let result = null;
   let user = null;
-  let profile = null;
+  let profile = {"company": "Loading"};
   let login_visi = true;
   let sign_up = false;
   let reg_email = "";
@@ -36,7 +36,7 @@ return 'http://www.gravatar.com/avatar/' + MD5(email) + '.jpg?s=' + size;
   //@desc:  hits Harbor to validate credintials.  with valid credintials sends token to get user. with user gets profile
   function login(username, password) {
     // get auth token
-    console.log(username, password);
+    
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
@@ -382,17 +382,17 @@ return 'http://www.gravatar.com/avatar/' + MD5(email) + '.jpg?s=' + size;
         </p>
       </form>
     </main>
-  </section>
+  </section> 
 {:else}
   <section>
     <img src={get_gravatar(user.email, 100)} />
     <h1>{user.name}'s Profile</h1>
     <p1>Email: {user.email}</p1>
     <br/>
-    <p2>Company: {profile.company}</p2>
+    <p2>Company: {profile.company || "Loding...."}</p2>
     <br/>
     <br/>
-    <p1>Need an API key?  Click here ==></p1><button type="button" on:click={API_Key_Gen(result.token)}>API Key Generator</button>
+    <p1>Need an API key?  Click here ==</p1><button type="button" on:click={API_Key_Gen(result.token)}>API Key Generator</button>
 
 
     <br/>
