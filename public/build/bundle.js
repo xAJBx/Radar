@@ -2087,7 +2087,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (384:0) {:else}
+    // (386:0) {:else}
     function create_else_block$1(ctx) {
     	let section;
     	let img;
@@ -2162,21 +2162,21 @@ var app = (function () {
     			instrumentsss = element("instrumentsss");
     			if (if_block) if_block.c();
     			if (img.src !== (img_src_value = get_gravatar(/*user*/ ctx[3].email, 100))) attr_dev(img, "src", img_src_value);
-    			add_location(img, file$1, 385, 4, 14413);
-    			add_location(h1, file$1, 386, 4, 14461);
-    			add_location(p10, file$1, 387, 4, 14496);
-    			add_location(br0, file$1, 388, 4, 14529);
-    			add_location(p2, file$1, 389, 4, 14539);
-    			add_location(br1, file$1, 390, 4, 14579);
-    			add_location(br2, file$1, 391, 4, 14589);
-    			add_location(p11, file$1, 392, 4, 14599);
+    			add_location(img, file$1, 387, 4, 14472);
+    			add_location(h1, file$1, 388, 4, 14520);
+    			add_location(p10, file$1, 389, 4, 14555);
+    			add_location(br0, file$1, 390, 4, 14588);
+    			add_location(p2, file$1, 391, 4, 14598);
+    			add_location(br1, file$1, 392, 4, 14638);
+    			add_location(br2, file$1, 393, 4, 14648);
+    			add_location(p11, file$1, 394, 4, 14658);
     			attr_dev(button, "type", "button");
-    			add_location(button, file$1, 392, 45, 14640);
-    			add_location(br3, file$1, 395, 4, 14732);
-    			add_location(h3, file$1, 396, 4, 14742);
-    			add_location(instrumentsss, file$1, 397, 4, 14767);
+    			add_location(button, file$1, 394, 45, 14699);
+    			add_location(br3, file$1, 397, 4, 14791);
+    			add_location(h3, file$1, 398, 4, 14801);
+    			add_location(instrumentsss, file$1, 399, 4, 14826);
     			attr_dev(section, "class", "svelte-13s2z72");
-    			add_location(section, file$1, 384, 2, 14399);
+    			add_location(section, file$1, 386, 2, 14458);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, section, anchor);
@@ -2261,14 +2261,14 @@ var app = (function () {
     		block,
     		id: create_else_block$1.name,
     		type: "else",
-    		source: "(384:0) {:else}",
+    		source: "(386:0) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (356:18) 
+    // (358:18) 
     function create_if_block_1$1(ctx) {
     	let section;
     	let main;
@@ -2344,38 +2344,38 @@ var app = (function () {
     			img1 = element("img");
     			if (img0.src !== (img0_src_value = "/img/MyOPC_200x200.png")) attr_dev(img0, "src", img0_src_value);
     			attr_dev(img0, "alt", "MyOPC");
-    			add_location(img0, file$1, 358, 10, 13485);
-    			add_location(h1, file$1, 358, 6, 13481);
+    			add_location(img0, file$1, 360, 10, 13544);
+    			add_location(h1, file$1, 360, 6, 13540);
     			input0.required = true;
-    			add_location(input0, file$1, 362, 25, 13681);
-    			add_location(label0, file$1, 362, 8, 13664);
+    			add_location(input0, file$1, 364, 25, 13740);
+    			add_location(label0, file$1, 364, 8, 13723);
     			input1.required = true;
-    			add_location(input1, file$1, 363, 22, 13757);
-    			add_location(label1, file$1, 363, 8, 13743);
+    			add_location(input1, file$1, 365, 22, 13816);
+    			add_location(label1, file$1, 365, 8, 13802);
     			input2.required = true;
-    			add_location(input2, file$1, 364, 24, 13832);
-    			add_location(label2, file$1, 364, 8, 13816);
+    			add_location(input2, file$1, 366, 24, 13891);
+    			add_location(label2, file$1, 366, 8, 13875);
     			attr_dev(input3, "type", "password");
     			input3.required = true;
-    			add_location(input3, file$1, 367, 10, 13930);
-    			add_location(label3, file$1, 365, 8, 13893);
+    			add_location(input3, file$1, 369, 10, 13989);
+    			add_location(label3, file$1, 367, 8, 13952);
     			attr_dev(input4, "type", "password");
     			input4.required = true;
-    			add_location(input4, file$1, 371, 10, 14051);
-    			add_location(label4, file$1, 369, 8, 14015);
-    			add_location(button, file$1, 373, 29, 14165);
+    			add_location(input4, file$1, 373, 10, 14110);
+    			add_location(label4, file$1, 371, 8, 14074);
+    			add_location(button, file$1, 375, 29, 14224);
     			attr_dev(div, "class", "buttons");
-    			add_location(div, file$1, 373, 8, 14144);
+    			add_location(div, file$1, 375, 8, 14203);
     			if (img1.src !== (img1_src_value = "/img/small_BA_logo_75x75_Cropped.png")) attr_dev(img1, "src", img1_src_value);
     			attr_dev(img1, "alt", "BRIDGES AUTOMATION");
-    			add_location(img1, file$1, 376, 10, 14237);
+    			add_location(img1, file$1, 378, 10, 14296);
     			attr_dev(p, "class", "svelte-13s2z72");
-    			add_location(p, file$1, 374, 8, 14202);
-    			add_location(form, file$1, 360, 6, 13546);
+    			add_location(p, file$1, 376, 8, 14261);
+    			add_location(form, file$1, 362, 6, 13605);
     			attr_dev(main, "class", "svelte-13s2z72");
-    			add_location(main, file$1, 357, 4, 13468);
+    			add_location(main, file$1, 359, 4, 13527);
     			attr_dev(section, "class", "svelte-13s2z72");
-    			add_location(section, file$1, 356, 2, 13454);
+    			add_location(section, file$1, 358, 2, 13513);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, section, anchor);
@@ -2472,14 +2472,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$1.name,
     		type: "if",
-    		source: "(356:18) ",
+    		source: "(358:18) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (332:0) {#if login_visi && !sign_up}
+    // (334:0) {#if login_visi && !sign_up}
     function create_if_block$1(ctx) {
     	let section;
     	let main;
@@ -2536,30 +2536,30 @@ var app = (function () {
     			img1 = element("img");
     			if (img0.src !== (img0_src_value = "/img/MyOPC_200x200.png")) attr_dev(img0, "src", img0_src_value);
     			attr_dev(img0, "alt", "MyOPC");
-    			add_location(img0, file$1, 334, 10, 12778);
-    			add_location(h1, file$1, 334, 6, 12774);
+    			add_location(img0, file$1, 336, 10, 12837);
+    			add_location(h1, file$1, 336, 6, 12833);
     			input0.required = true;
-    			add_location(input0, file$1, 337, 25, 12924);
-    			add_location(label0, file$1, 337, 8, 12907);
+    			add_location(input0, file$1, 339, 25, 12983);
+    			add_location(label0, file$1, 339, 8, 12966);
     			attr_dev(input1, "type", "password");
     			input1.required = true;
-    			add_location(input1, file$1, 340, 10, 13019);
-    			add_location(label1, file$1, 338, 8, 12982);
-    			add_location(button0, file$1, 343, 10, 13133);
+    			add_location(input1, file$1, 342, 10, 13078);
+    			add_location(label1, file$1, 340, 8, 13041);
+    			add_location(button0, file$1, 345, 10, 13192);
     			attr_dev(button1, "type", "button");
-    			add_location(button1, file$1, 344, 10, 13166);
+    			add_location(button1, file$1, 346, 10, 13225);
     			attr_dev(div, "class", "buttons");
-    			add_location(div, file$1, 342, 8, 13101);
+    			add_location(div, file$1, 344, 8, 13160);
     			if (img1.src !== (img1_src_value = "/img/small_BA_logo_75x75_Cropped.png")) attr_dev(img1, "src", img1_src_value);
     			attr_dev(img1, "alt", "BRIDGES AUTOMATION");
-    			add_location(img1, file$1, 348, 10, 13281);
+    			add_location(img1, file$1, 350, 10, 13340);
     			attr_dev(p, "class", "svelte-13s2z72");
-    			add_location(p, file$1, 346, 8, 13246);
-    			add_location(form, file$1, 336, 6, 12839);
+    			add_location(p, file$1, 348, 8, 13305);
+    			add_location(form, file$1, 338, 6, 12898);
     			attr_dev(main, "class", "svelte-13s2z72");
-    			add_location(main, file$1, 333, 4, 12761);
+    			add_location(main, file$1, 335, 4, 12820);
     			attr_dev(section, "class", "svelte-13s2z72");
-    			add_location(section, file$1, 332, 2, 12747);
+    			add_location(section, file$1, 334, 2, 12806);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, section, anchor);
@@ -2629,14 +2629,14 @@ var app = (function () {
     		block,
     		id: create_if_block$1.name,
     		type: "if",
-    		source: "(332:0) {#if login_visi && !sign_up}",
+    		source: "(334:0) {#if login_visi && !sign_up}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (399:6) {#if result}
+    // (401:6) {#if result}
     function create_if_block_2(ctx) {
     	let each_1_anchor;
     	let each_value = /*instrument_display*/ ctx[12];
@@ -2697,14 +2697,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(399:6) {#if result}",
+    		source: "(401:6) {#if result}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (400:8) {#each instrument_display as obj}
+    // (402:8) {#each instrument_display as obj}
     function create_each_block(ctx) {
     	let li;
     	let t0_value = /*obj*/ ctx[30].time_stamp + "";
@@ -2724,7 +2724,7 @@ var app = (function () {
     			t2 = text(t2_value);
     			t3 = text(": ");
     			t4 = text(t4_value);
-    			add_location(li, file$1, 400, 10, 14854);
+    			add_location(li, file$1, 402, 10, 14913);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -2748,7 +2748,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(400:8) {#each instrument_display as obj}",
+    		source: "(402:8) {#each instrument_display as obj}",
     		ctx
     	});
 
@@ -3060,8 +3060,9 @@ var app = (function () {
     	//@desc:  hits Harbor to validate credintials.  with valid credintials sends token to get user. with user gets profile
     	function login(username, password) {
     		// get auth token
-    		var myHeaders = new Headers();
+    		console.log(username, password);
 
+    		var myHeaders = new Headers();
     		myHeaders.append("Content-Type", "application/json");
 
     		var raw = JSON.stringify({
@@ -3076,7 +3077,11 @@ var app = (function () {
     			redirect: "follow"
     		};
 
-    		fetch("https://cors-anywhere.herokuapp.com/" + "http://bridgesautomation.duckdns.org:5778/auth", requestOptions).then(response => response.json()).then(res => {
+    		fetch(
+    			//"https://cors-anywhere.herokuapp.com/" +
+    			"http://bridgesautomation.duckdns.org:5778/auth",
+    			requestOptions
+    		).then(response => response.json()).then(res => {
     			$$invalidate(2, result = res);
 
     			//send token auth token to get profile
@@ -3090,7 +3095,11 @@ var app = (function () {
     				redirect: "follow"
     			};
 
-    			fetch("https://cors-anywhere.herokuapp.com/" + "bridgesautomation.duckdns.org:5778/profile/me", requestOptions).then(response => response.json()).then(result => {
+    			fetch(
+    				//"https://cors-anywhere.herokuapp.com/" +
+    				"http://bridgesautomation.duckdns.org:5778/profile/me",
+    				requestOptions
+    			).then(response => response.json()).then(result => {
     				$$invalidate(4, profile = result);
     				instruments = get_All_instrumentdata(profile);
     			}).catch(error => console.log("error", error));
@@ -3106,7 +3115,11 @@ var app = (function () {
     				redirect: "follow"
     			};
 
-    			fetch("https://cors-anywhere.herokuapp.com/" + "http://bridgesautomation.duckdns.org:5778/auth", requestOptions).then(response => response.json()).then(result => {
+    			fetch(
+    				//"https://cors-anywhere.herokuapp.com/" +
+    				"http://bridgesautomation.duckdns.org:5778/auth",
+    				requestOptions
+    			).then(response => response.json()).then(result => {
     				$$invalidate(3, user = result);
 
     				//navigate to users homepage
@@ -3136,7 +3149,11 @@ var app = (function () {
     			redirect: "follow"
     		};
 
-    		fetch("https://cors-anywhere.herokuapp.com/" + "http://bridgesautomation.duckdns.org:5778/profile", requestOptions).then(response => response.json()).then(result => {
+    		fetch(
+    			//"https://cors-anywhere.herokuapp.com/" +
+    			"http://bridgesautomation.duckdns.org:5778/profile",
+    			requestOptions
+    		).then(response => response.json()).then(result => {
     			console.log(JSON.stringify(result));
     			$$invalidate(6, sign_up = false);
     			login(reg_email, reg_passwrd);
@@ -3165,7 +3182,11 @@ var app = (function () {
     			redirect: "follow"
     		};
 
-    		fetch("https://cors-anywhere.herokuapp.com/" + "http://bridgesautomation.duckdns.org:5778/users", requestOptions).then(response => response.json()).then(result => {
+    		fetch(
+    			//"https://cors-anywhere.herokuapp.com/" +
+    			"http://bridgesautomation.duckdns.org:5778/users",
+    			requestOptions
+    		).then(response => response.json()).then(result => {
     			console.log(JSON.stringify(result));
     			profile_create(result.token, reg_company);
     		}).catch(error => console.log("error", error));
@@ -3182,7 +3203,11 @@ var app = (function () {
     			redirect: "follow"
     		};
 
-    		fetch("https://cors-anywhere.herokuapp.com/" + "http://bridgesautomation.duckdns.org:5778/profile/settings/genKey", requestOptions).then(response => response.json()).then(result => {
+    		fetch(
+    			//"https://cors-anywhere.herokuapp.com/" +
+    			"http://bridgesautomation.duckdns.org:5778/profile/settings/genKey",
+    			requestOptions
+    		).then(response => response.json()).then(result => {
     			alert(JSON.stringify(result));
     		}).catch(error => console.log("error", error));
     	};
@@ -3218,7 +3243,11 @@ var app = (function () {
     					};
 
     					//working need to loop an pass unit_id
-    					fetch("https://cors-anywhere.herokuapp.com/" + `http://bridgesautomation.duckdns.org:5778/data/latestRecord/${unit_id_d}`, requestOptions).then(response => response.json()).then(result => {
+    					fetch(
+    						//"https://cors-anywhere.herokuapp.com/" +
+    						`http://bridgesautomation.duckdns.org:5778/data/latestRecord/${unit_id_d}`,
+    						requestOptions
+    					).then(response => response.json()).then(result => {
     						instrument = result;
 
     						//console.log(instruments.includes(instrument[1][0].unit_id.trim())) // false

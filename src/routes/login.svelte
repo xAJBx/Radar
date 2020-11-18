@@ -36,6 +36,7 @@ return 'http://www.gravatar.com/avatar/' + MD5(email) + '.jpg?s=' + size;
   //@desc:  hits Harbor to validate credintials.  with valid credintials sends token to get user. with user gets profile
   function login(username, password) {
     // get auth token
+    console.log(username, password);
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
@@ -49,7 +50,7 @@ return 'http://www.gravatar.com/avatar/' + MD5(email) + '.jpg?s=' + size;
     };
 
     fetch(
-      "https://cors-anywhere.herokuapp.com/" +
+      //"https://cors-anywhere.herokuapp.com/" +
         "http://bridgesautomation.duckdns.org:5778/auth",
       requestOptions
     )
@@ -68,8 +69,8 @@ return 'http://www.gravatar.com/avatar/' + MD5(email) + '.jpg?s=' + size;
         };
 
         fetch(
-          "https://cors-anywhere.herokuapp.com/" +
-            "bridgesautomation.duckdns.org:5778/profile/me",
+          //"https://cors-anywhere.herokuapp.com/" +
+            "http://bridgesautomation.duckdns.org:5778/profile/me",
           requestOptions
         )
           .then((response) => response.json())
@@ -90,7 +91,7 @@ return 'http://www.gravatar.com/avatar/' + MD5(email) + '.jpg?s=' + size;
         };
 
         fetch(
-          "https://cors-anywhere.herokuapp.com/" +
+          //"https://cors-anywhere.herokuapp.com/" +
             "http://bridgesautomation.duckdns.org:5778/auth",
           requestOptions
         )
@@ -129,7 +130,7 @@ return 'http://www.gravatar.com/avatar/' + MD5(email) + '.jpg?s=' + size;
     };
 
     fetch(
-      "https://cors-anywhere.herokuapp.com/" +
+      //"https://cors-anywhere.herokuapp.com/" +
         "http://bridgesautomation.duckdns.org:5778/profile",
       requestOptions
     )
@@ -170,7 +171,7 @@ return 'http://www.gravatar.com/avatar/' + MD5(email) + '.jpg?s=' + size;
     };
 
     fetch(
-      "https://cors-anywhere.herokuapp.com/" +
+      //"https://cors-anywhere.herokuapp.com/" +
         "http://bridgesautomation.duckdns.org:5778/users",
       requestOptions
     )
@@ -194,7 +195,7 @@ return 'http://www.gravatar.com/avatar/' + MD5(email) + '.jpg?s=' + size;
     };
 
     fetch(
-      "https://cors-anywhere.herokuapp.com/" +
+      //"https://cors-anywhere.herokuapp.com/" +
         "http://bridgesautomation.duckdns.org:5778/profile/settings/genKey",
       requestOptions
     )
@@ -221,7 +222,7 @@ return 'http://www.gravatar.com/avatar/' + MD5(email) + '.jpg?s=' + size;
 
         //working need to loop an pass unit_id
         fetch(
-          "https://cors-anywhere.herokuapp.com/" +
+          //"https://cors-anywhere.herokuapp.com/" +
             `http://bridgesautomation.duckdns.org:5778/data/latestRecord/${unit_id_d}`,
           requestOptions
         )
@@ -303,6 +304,7 @@ return 'http://www.gravatar.com/avatar/' + MD5(email) + '.jpg?s=' + size;
   };
 
   
+
 
   
 </script>
