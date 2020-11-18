@@ -2087,19 +2087,40 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (368:0) {:else}
+    // (384:0) {:else}
     function create_else_block$1(ctx) {
     	let section;
-    	let h1;
-    	let t0_value = JSON.stringify(/*user*/ ctx[3]) + "";
+    	let img;
+    	let img_src_value;
     	let t0;
+    	let h1;
+    	let t1_value = /*user*/ ctx[3].name + "";
     	let t1;
-    	let p;
-    	let t2_value = JSON.stringify(/*profile*/ ctx[4]) + "";
     	let t2;
     	let t3;
-    	let button;
+    	let p10;
+    	let t4;
+    	let t5_value = /*user*/ ctx[3].email + "";
     	let t5;
+    	let t6;
+    	let br0;
+    	let t7;
+    	let p2;
+    	let t8;
+    	let t9_value = /*profile*/ ctx[4].company + "";
+    	let t9;
+    	let t10;
+    	let br1;
+    	let t11;
+    	let br2;
+    	let t12;
+    	let p11;
+    	let button;
+    	let t15;
+    	let br3;
+    	let t16;
+    	let h3;
+    	let t18;
     	let instrumentsss;
     	let mounted;
     	let dispose;
@@ -2108,36 +2129,84 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			section = element("section");
+    			img = element("img");
+    			t0 = space();
     			h1 = element("h1");
-    			t0 = text(t0_value);
-    			t1 = space();
-    			p = element("p");
-    			t2 = text(t2_value);
+    			t1 = text(t1_value);
+    			t2 = text("'s Profile");
     			t3 = space();
+    			p10 = element("p1");
+    			t4 = text("Email: ");
+    			t5 = text(t5_value);
+    			t6 = space();
+    			br0 = element("br");
+    			t7 = space();
+    			p2 = element("p2");
+    			t8 = text("Company: ");
+    			t9 = text(t9_value);
+    			t10 = space();
+    			br1 = element("br");
+    			t11 = space();
+    			br2 = element("br");
+    			t12 = space();
+    			p11 = element("p1");
+    			p11.textContent = "Need an API key?  Click here ==>";
     			button = element("button");
     			button.textContent = "API Key Generator";
-    			t5 = space();
+    			t15 = space();
+    			br3 = element("br");
+    			t16 = space();
+    			h3 = element("h3");
+    			h3.textContent = "Instruments";
+    			t18 = space();
     			instrumentsss = element("instrumentsss");
     			if (if_block) if_block.c();
-    			add_location(h1, file$1, 369, 4, 10220);
-    			attr_dev(p, "class", "svelte-13s2z72");
-    			add_location(p, file$1, 370, 4, 10256);
+    			if (img.src !== (img_src_value = get_gravatar(/*user*/ ctx[3].email, 100))) attr_dev(img, "src", img_src_value);
+    			add_location(img, file$1, 385, 4, 14413);
+    			add_location(h1, file$1, 386, 4, 14461);
+    			add_location(p10, file$1, 387, 4, 14496);
+    			add_location(br0, file$1, 388, 4, 14529);
+    			add_location(p2, file$1, 389, 4, 14539);
+    			add_location(br1, file$1, 390, 4, 14579);
+    			add_location(br2, file$1, 391, 4, 14589);
+    			add_location(p11, file$1, 392, 4, 14599);
     			attr_dev(button, "type", "button");
-    			add_location(button, file$1, 372, 4, 10294);
-    			add_location(instrumentsss, file$1, 374, 4, 10385);
+    			add_location(button, file$1, 392, 45, 14640);
+    			add_location(br3, file$1, 395, 4, 14732);
+    			add_location(h3, file$1, 396, 4, 14742);
+    			add_location(instrumentsss, file$1, 397, 4, 14767);
     			attr_dev(section, "class", "svelte-13s2z72");
-    			add_location(section, file$1, 368, 2, 10206);
+    			add_location(section, file$1, 384, 2, 14399);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, section, anchor);
+    			append_dev(section, img);
+    			append_dev(section, t0);
     			append_dev(section, h1);
-    			append_dev(h1, t0);
-    			append_dev(section, t1);
-    			append_dev(section, p);
-    			append_dev(p, t2);
+    			append_dev(h1, t1);
+    			append_dev(h1, t2);
     			append_dev(section, t3);
+    			append_dev(section, p10);
+    			append_dev(p10, t4);
+    			append_dev(p10, t5);
+    			append_dev(section, t6);
+    			append_dev(section, br0);
+    			append_dev(section, t7);
+    			append_dev(section, p2);
+    			append_dev(p2, t8);
+    			append_dev(p2, t9);
+    			append_dev(section, t10);
+    			append_dev(section, br1);
+    			append_dev(section, t11);
+    			append_dev(section, br2);
+    			append_dev(section, t12);
+    			append_dev(section, p11);
     			append_dev(section, button);
-    			append_dev(section, t5);
+    			append_dev(section, t15);
+    			append_dev(section, br3);
+    			append_dev(section, t16);
+    			append_dev(section, h3);
+    			append_dev(section, t18);
     			append_dev(section, instrumentsss);
     			if (if_block) if_block.m(instrumentsss, null);
 
@@ -2158,8 +2227,14 @@ var app = (function () {
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if (dirty[0] & /*user*/ 8 && t0_value !== (t0_value = JSON.stringify(/*user*/ ctx[3]) + "")) set_data_dev(t0, t0_value);
-    			if (dirty[0] & /*profile*/ 16 && t2_value !== (t2_value = JSON.stringify(/*profile*/ ctx[4]) + "")) set_data_dev(t2, t2_value);
+
+    			if (dirty[0] & /*user*/ 8 && img.src !== (img_src_value = get_gravatar(/*user*/ ctx[3].email, 100))) {
+    				attr_dev(img, "src", img_src_value);
+    			}
+
+    			if (dirty[0] & /*user*/ 8 && t1_value !== (t1_value = /*user*/ ctx[3].name + "")) set_data_dev(t1, t1_value);
+    			if (dirty[0] & /*user*/ 8 && t5_value !== (t5_value = /*user*/ ctx[3].email + "")) set_data_dev(t5, t5_value);
+    			if (dirty[0] & /*profile*/ 16 && t9_value !== (t9_value = /*profile*/ ctx[4].company + "")) set_data_dev(t9, t9_value);
 
     			if (/*result*/ ctx[2]) {
     				if (if_block) {
@@ -2186,14 +2261,14 @@ var app = (function () {
     		block,
     		id: create_else_block$1.name,
     		type: "else",
-    		source: "(368:0) {:else}",
+    		source: "(384:0) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (340:18) 
+    // (356:18) 
     function create_if_block_1$1(ctx) {
     	let section;
     	let main;
@@ -2269,38 +2344,38 @@ var app = (function () {
     			img1 = element("img");
     			if (img0.src !== (img0_src_value = "/img/MyOPC_200x200.png")) attr_dev(img0, "src", img0_src_value);
     			attr_dev(img0, "alt", "MyOPC");
-    			add_location(img0, file$1, 342, 10, 9292);
-    			add_location(h1, file$1, 342, 6, 9288);
+    			add_location(img0, file$1, 358, 10, 13485);
+    			add_location(h1, file$1, 358, 6, 13481);
     			input0.required = true;
-    			add_location(input0, file$1, 346, 25, 9488);
-    			add_location(label0, file$1, 346, 8, 9471);
+    			add_location(input0, file$1, 362, 25, 13681);
+    			add_location(label0, file$1, 362, 8, 13664);
     			input1.required = true;
-    			add_location(input1, file$1, 347, 22, 9564);
-    			add_location(label1, file$1, 347, 8, 9550);
+    			add_location(input1, file$1, 363, 22, 13757);
+    			add_location(label1, file$1, 363, 8, 13743);
     			input2.required = true;
-    			add_location(input2, file$1, 348, 24, 9639);
-    			add_location(label2, file$1, 348, 8, 9623);
+    			add_location(input2, file$1, 364, 24, 13832);
+    			add_location(label2, file$1, 364, 8, 13816);
     			attr_dev(input3, "type", "password");
     			input3.required = true;
-    			add_location(input3, file$1, 351, 10, 9737);
-    			add_location(label3, file$1, 349, 8, 9700);
+    			add_location(input3, file$1, 367, 10, 13930);
+    			add_location(label3, file$1, 365, 8, 13893);
     			attr_dev(input4, "type", "password");
     			input4.required = true;
-    			add_location(input4, file$1, 355, 10, 9858);
-    			add_location(label4, file$1, 353, 8, 9822);
-    			add_location(button, file$1, 357, 29, 9972);
+    			add_location(input4, file$1, 371, 10, 14051);
+    			add_location(label4, file$1, 369, 8, 14015);
+    			add_location(button, file$1, 373, 29, 14165);
     			attr_dev(div, "class", "buttons");
-    			add_location(div, file$1, 357, 8, 9951);
+    			add_location(div, file$1, 373, 8, 14144);
     			if (img1.src !== (img1_src_value = "/img/small_BA_logo_75x75_Cropped.png")) attr_dev(img1, "src", img1_src_value);
     			attr_dev(img1, "alt", "BRIDGES AUTOMATION");
-    			add_location(img1, file$1, 360, 10, 10044);
+    			add_location(img1, file$1, 376, 10, 14237);
     			attr_dev(p, "class", "svelte-13s2z72");
-    			add_location(p, file$1, 358, 8, 10009);
-    			add_location(form, file$1, 344, 6, 9353);
+    			add_location(p, file$1, 374, 8, 14202);
+    			add_location(form, file$1, 360, 6, 13546);
     			attr_dev(main, "class", "svelte-13s2z72");
-    			add_location(main, file$1, 341, 4, 9275);
+    			add_location(main, file$1, 357, 4, 13468);
     			attr_dev(section, "class", "svelte-13s2z72");
-    			add_location(section, file$1, 340, 2, 9261);
+    			add_location(section, file$1, 356, 2, 13454);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, section, anchor);
@@ -2397,14 +2472,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$1.name,
     		type: "if",
-    		source: "(340:18) ",
+    		source: "(356:18) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (316:0) {#if login_visi && !sign_up}
+    // (332:0) {#if login_visi && !sign_up}
     function create_if_block$1(ctx) {
     	let section;
     	let main;
@@ -2461,30 +2536,30 @@ var app = (function () {
     			img1 = element("img");
     			if (img0.src !== (img0_src_value = "/img/MyOPC_200x200.png")) attr_dev(img0, "src", img0_src_value);
     			attr_dev(img0, "alt", "MyOPC");
-    			add_location(img0, file$1, 318, 10, 8585);
-    			add_location(h1, file$1, 318, 6, 8581);
+    			add_location(img0, file$1, 334, 10, 12778);
+    			add_location(h1, file$1, 334, 6, 12774);
     			input0.required = true;
-    			add_location(input0, file$1, 321, 25, 8731);
-    			add_location(label0, file$1, 321, 8, 8714);
+    			add_location(input0, file$1, 337, 25, 12924);
+    			add_location(label0, file$1, 337, 8, 12907);
     			attr_dev(input1, "type", "password");
     			input1.required = true;
-    			add_location(input1, file$1, 324, 10, 8826);
-    			add_location(label1, file$1, 322, 8, 8789);
-    			add_location(button0, file$1, 327, 10, 8940);
+    			add_location(input1, file$1, 340, 10, 13019);
+    			add_location(label1, file$1, 338, 8, 12982);
+    			add_location(button0, file$1, 343, 10, 13133);
     			attr_dev(button1, "type", "button");
-    			add_location(button1, file$1, 328, 10, 8973);
+    			add_location(button1, file$1, 344, 10, 13166);
     			attr_dev(div, "class", "buttons");
-    			add_location(div, file$1, 326, 8, 8908);
+    			add_location(div, file$1, 342, 8, 13101);
     			if (img1.src !== (img1_src_value = "/img/small_BA_logo_75x75_Cropped.png")) attr_dev(img1, "src", img1_src_value);
     			attr_dev(img1, "alt", "BRIDGES AUTOMATION");
-    			add_location(img1, file$1, 332, 10, 9088);
+    			add_location(img1, file$1, 348, 10, 13281);
     			attr_dev(p, "class", "svelte-13s2z72");
-    			add_location(p, file$1, 330, 8, 9053);
-    			add_location(form, file$1, 320, 6, 8646);
+    			add_location(p, file$1, 346, 8, 13246);
+    			add_location(form, file$1, 336, 6, 12839);
     			attr_dev(main, "class", "svelte-13s2z72");
-    			add_location(main, file$1, 317, 4, 8568);
+    			add_location(main, file$1, 333, 4, 12761);
     			attr_dev(section, "class", "svelte-13s2z72");
-    			add_location(section, file$1, 316, 2, 8554);
+    			add_location(section, file$1, 332, 2, 12747);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, section, anchor);
@@ -2554,14 +2629,14 @@ var app = (function () {
     		block,
     		id: create_if_block$1.name,
     		type: "if",
-    		source: "(316:0) {#if login_visi && !sign_up}",
+    		source: "(332:0) {#if login_visi && !sign_up}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (376:6) {#if result}
+    // (399:6) {#if result}
     function create_if_block_2(ctx) {
     	let each_1_anchor;
     	let each_value = /*instrument_display*/ ctx[12];
@@ -2622,31 +2697,47 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(376:6) {#if result}",
+    		source: "(399:6) {#if result}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (377:8) {#each instrument_display as obj}
+    // (400:8) {#each instrument_display as obj}
     function create_each_block(ctx) {
     	let li;
-    	let t_value = JSON.stringify(/*obj*/ ctx[30]) + "";
-    	let t;
+    	let t0_value = /*obj*/ ctx[30].time_stamp + "";
+    	let t0;
+    	let t1;
+    	let t2_value = /*obj*/ ctx[30].unit_id + "";
+    	let t2;
+    	let t3;
+    	let t4_value = /*obj*/ ctx[30].sensor_reading + "";
+    	let t4;
 
     	const block = {
     		c: function create() {
     			li = element("li");
-    			t = text(t_value);
-    			add_location(li, file$1, 377, 10, 10472);
+    			t0 = text(t0_value);
+    			t1 = text("---");
+    			t2 = text(t2_value);
+    			t3 = text(": ");
+    			t4 = text(t4_value);
+    			add_location(li, file$1, 400, 10, 14854);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
-    			append_dev(li, t);
+    			append_dev(li, t0);
+    			append_dev(li, t1);
+    			append_dev(li, t2);
+    			append_dev(li, t3);
+    			append_dev(li, t4);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty[0] & /*instrument_display*/ 4096 && t_value !== (t_value = JSON.stringify(/*obj*/ ctx[30]) + "")) set_data_dev(t, t_value);
+    			if (dirty[0] & /*instrument_display*/ 4096 && t0_value !== (t0_value = /*obj*/ ctx[30].time_stamp + "")) set_data_dev(t0, t0_value);
+    			if (dirty[0] & /*instrument_display*/ 4096 && t2_value !== (t2_value = /*obj*/ ctx[30].unit_id + "")) set_data_dev(t2, t2_value);
+    			if (dirty[0] & /*instrument_display*/ 4096 && t4_value !== (t4_value = /*obj*/ ctx[30].sensor_reading + "")) set_data_dev(t4, t4_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(li);
@@ -2657,7 +2748,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(377:8) {#each instrument_display as obj}",
+    		source: "(400:8) {#each instrument_display as obj}",
     		ctx
     	});
 
@@ -2720,6 +2811,230 @@ var app = (function () {
     	return block;
     }
 
+    function get_gravatar(email, size) {
+    	// MD5 (Message-Digest Algorithm) by WebToolkit
+    	// 
+    	var MD5 = function (s) {
+    		function L(k, d) {
+    			return k << d | k >>> 32 - d;
+    		}
+
+    		function K(G, k) {
+    			var I, d, F, H, x;
+    			F = G & 2147483648;
+    			H = k & 2147483648;
+    			I = G & 1073741824;
+    			d = k & 1073741824;
+    			x = (G & 1073741823) + (k & 1073741823);
+
+    			if (I & d) {
+    				return x ^ 2147483648 ^ F ^ H;
+    			}
+
+    			if (I | d) {
+    				if (x & 1073741824) {
+    					return x ^ 3221225472 ^ F ^ H;
+    				} else {
+    					return x ^ 1073741824 ^ F ^ H;
+    				}
+    			} else {
+    				return x ^ F ^ H;
+    			}
+    		}
+
+    		function r(d, F, k) {
+    			return d & F | ~d & k;
+    		}
+
+    		function q(d, F, k) {
+    			return d & k | F & ~k;
+    		}
+
+    		function p(d, F, k) {
+    			return d ^ F ^ k;
+    		}
+
+    		function n(d, F, k) {
+    			return F ^ (d | ~k);
+    		}
+
+    		function u(G, F, aa, Z, k, H, I) {
+    			G = K(G, K(K(r(F, aa, Z), k), I));
+    			return K(L(G, H), F);
+    		}
+
+    		function f(G, F, aa, Z, k, H, I) {
+    			G = K(G, K(K(q(F, aa, Z), k), I));
+    			return K(L(G, H), F);
+    		}
+
+    		function D(G, F, aa, Z, k, H, I) {
+    			G = K(G, K(K(p(F, aa, Z), k), I));
+    			return K(L(G, H), F);
+    		}
+
+    		function t(G, F, aa, Z, k, H, I) {
+    			G = K(G, K(K(n(F, aa, Z), k), I));
+    			return K(L(G, H), F);
+    		}
+
+    		function e(G) {
+    			var Z;
+    			var F = G.length;
+    			var x = F + 8;
+    			var k = (x - x % 64) / 64;
+    			var I = (k + 1) * 16;
+    			var aa = Array(I - 1);
+    			var d = 0;
+    			var H = 0;
+
+    			while (H < F) {
+    				Z = (H - H % 4) / 4;
+    				d = H % 4 * 8;
+    				aa[Z] = aa[Z] | G.charCodeAt(H) << d;
+    				H++;
+    			}
+
+    			Z = (H - H % 4) / 4;
+    			d = H % 4 * 8;
+    			aa[Z] = aa[Z] | 128 << d;
+    			aa[I - 2] = F << 3;
+    			aa[I - 1] = F >>> 29;
+    			return aa;
+    		}
+
+    		function B(x) {
+    			var k = "", F = "", G, d;
+
+    			for (d = 0; d <= 3; d++) {
+    				G = x >>> d * 8 & 255;
+    				F = "0" + G.toString(16);
+    				k = k + F.substr(F.length - 2, 2);
+    			}
+
+    			return k;
+    		}
+
+    		function J(k) {
+    			k = k.replace(/rn/g, "n");
+    			var d = "";
+
+    			for (var F = 0; F < k.length; F++) {
+    				var x = k.charCodeAt(F);
+
+    				if (x < 128) {
+    					d += String.fromCharCode(x);
+    				} else {
+    					if (x > 127 && x < 2048) {
+    						d += String.fromCharCode(x >> 6 | 192);
+    						d += String.fromCharCode(x & 63 | 128);
+    					} else {
+    						d += String.fromCharCode(x >> 12 | 224);
+    						d += String.fromCharCode(x >> 6 & 63 | 128);
+    						d += String.fromCharCode(x & 63 | 128);
+    					}
+    				}
+    			}
+
+    			return d;
+    		}
+
+    		var C = Array();
+    		var P, h, E, v, g, Y, X, W, V;
+    		var S = 7, Q = 12, N = 17, M = 22;
+    		var A = 5, z = 9, y = 14, w = 20;
+    		var o = 4, m = 11, l = 16, j = 23;
+    		var U = 6, T = 10, R = 15, O = 21;
+    		s = J(s);
+    		C = e(s);
+    		Y = 1732584193;
+    		X = 4023233417;
+    		W = 2562383102;
+    		V = 271733878;
+
+    		for (P = 0; P < C.length; P += 16) {
+    			h = Y;
+    			E = X;
+    			v = W;
+    			g = V;
+    			Y = u(Y, X, W, V, C[P + 0], S, 3614090360);
+    			V = u(V, Y, X, W, C[P + 1], Q, 3905402710);
+    			W = u(W, V, Y, X, C[P + 2], N, 606105819);
+    			X = u(X, W, V, Y, C[P + 3], M, 3250441966);
+    			Y = u(Y, X, W, V, C[P + 4], S, 4118548399);
+    			V = u(V, Y, X, W, C[P + 5], Q, 1200080426);
+    			W = u(W, V, Y, X, C[P + 6], N, 2821735955);
+    			X = u(X, W, V, Y, C[P + 7], M, 4249261313);
+    			Y = u(Y, X, W, V, C[P + 8], S, 1770035416);
+    			V = u(V, Y, X, W, C[P + 9], Q, 2336552879);
+    			W = u(W, V, Y, X, C[P + 10], N, 4294925233);
+    			X = u(X, W, V, Y, C[P + 11], M, 2304563134);
+    			Y = u(Y, X, W, V, C[P + 12], S, 1804603682);
+    			V = u(V, Y, X, W, C[P + 13], Q, 4254626195);
+    			W = u(W, V, Y, X, C[P + 14], N, 2792965006);
+    			X = u(X, W, V, Y, C[P + 15], M, 1236535329);
+    			Y = f(Y, X, W, V, C[P + 1], A, 4129170786);
+    			V = f(V, Y, X, W, C[P + 6], z, 3225465664);
+    			W = f(W, V, Y, X, C[P + 11], y, 643717713);
+    			X = f(X, W, V, Y, C[P + 0], w, 3921069994);
+    			Y = f(Y, X, W, V, C[P + 5], A, 3593408605);
+    			V = f(V, Y, X, W, C[P + 10], z, 38016083);
+    			W = f(W, V, Y, X, C[P + 15], y, 3634488961);
+    			X = f(X, W, V, Y, C[P + 4], w, 3889429448);
+    			Y = f(Y, X, W, V, C[P + 9], A, 568446438);
+    			V = f(V, Y, X, W, C[P + 14], z, 3275163606);
+    			W = f(W, V, Y, X, C[P + 3], y, 4107603335);
+    			X = f(X, W, V, Y, C[P + 8], w, 1163531501);
+    			Y = f(Y, X, W, V, C[P + 13], A, 2850285829);
+    			V = f(V, Y, X, W, C[P + 2], z, 4243563512);
+    			W = f(W, V, Y, X, C[P + 7], y, 1735328473);
+    			X = f(X, W, V, Y, C[P + 12], w, 2368359562);
+    			Y = D(Y, X, W, V, C[P + 5], o, 4294588738);
+    			V = D(V, Y, X, W, C[P + 8], m, 2272392833);
+    			W = D(W, V, Y, X, C[P + 11], l, 1839030562);
+    			X = D(X, W, V, Y, C[P + 14], j, 4259657740);
+    			Y = D(Y, X, W, V, C[P + 1], o, 2763975236);
+    			V = D(V, Y, X, W, C[P + 4], m, 1272893353);
+    			W = D(W, V, Y, X, C[P + 7], l, 4139469664);
+    			X = D(X, W, V, Y, C[P + 10], j, 3200236656);
+    			Y = D(Y, X, W, V, C[P + 13], o, 681279174);
+    			V = D(V, Y, X, W, C[P + 0], m, 3936430074);
+    			W = D(W, V, Y, X, C[P + 3], l, 3572445317);
+    			X = D(X, W, V, Y, C[P + 6], j, 76029189);
+    			Y = D(Y, X, W, V, C[P + 9], o, 3654602809);
+    			V = D(V, Y, X, W, C[P + 12], m, 3873151461);
+    			W = D(W, V, Y, X, C[P + 15], l, 530742520);
+    			X = D(X, W, V, Y, C[P + 2], j, 3299628645);
+    			Y = t(Y, X, W, V, C[P + 0], U, 4096336452);
+    			V = t(V, Y, X, W, C[P + 7], T, 1126891415);
+    			W = t(W, V, Y, X, C[P + 14], R, 2878612391);
+    			X = t(X, W, V, Y, C[P + 5], O, 4237533241);
+    			Y = t(Y, X, W, V, C[P + 12], U, 1700485571);
+    			V = t(V, Y, X, W, C[P + 3], T, 2399980690);
+    			W = t(W, V, Y, X, C[P + 10], R, 4293915773);
+    			X = t(X, W, V, Y, C[P + 1], O, 2240044497);
+    			Y = t(Y, X, W, V, C[P + 8], U, 1873313359);
+    			V = t(V, Y, X, W, C[P + 15], T, 4264355552);
+    			W = t(W, V, Y, X, C[P + 6], R, 2734768916);
+    			X = t(X, W, V, Y, C[P + 13], O, 1309151649);
+    			Y = t(Y, X, W, V, C[P + 4], U, 4149444226);
+    			V = t(V, Y, X, W, C[P + 11], T, 3174756917);
+    			W = t(W, V, Y, X, C[P + 2], R, 718787259);
+    			X = t(X, W, V, Y, C[P + 9], O, 3951481745);
+    			Y = K(Y, h);
+    			X = K(X, E);
+    			W = K(W, v);
+    			V = K(V, g);
+    		}
+
+    		var i = B(Y) + B(X) + B(W) + B(V);
+    		return i.toLowerCase();
+    	};
+
+    	var size = size || 80;
+    	return "http://www.gravatar.com/avatar/" + MD5(email) + ".jpg?s=" + size;
+    }
+
     function instance$3($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("Login", slots, []);
@@ -2741,6 +3056,7 @@ var app = (function () {
     	let instvals = [];
     	let instrument_display = [];
 
+    	///end gravatar
     	//@desc:  hits Harbor to validate credintials.  with valid credintials sends token to get user. with user gets profile
     	function login(username, password) {
     		// get auth token
@@ -3034,6 +3350,7 @@ var app = (function () {
     		instrument_value,
     		instvals,
     		instrument_display,
+    		get_gravatar,
     		login,
     		signup,
     		profile_create,
