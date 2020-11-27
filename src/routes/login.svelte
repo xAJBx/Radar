@@ -16,6 +16,9 @@
   let instrument_value = [];
   let instvals = [];
   let instrument_display = [];
+  let settings_page = false;
+  let instruments_page = false;
+  let collections_page = false;
 
   ///gravatar
   function get_gravatar(email, size) {
@@ -479,27 +482,11 @@
     } catch (err) {
       console.error(err.message);
     }
-    /*if (result) {
-      for (let i = 0; i < instruments.length; i++) {
-        //get_instrumentdata(result.token, instruments[i])
-        //.then((res) => instrument_value[i] = res.json());
-        //console.log(instruments[i]);
-
-        async function doit() {
-          console.log("doit");
-          instvals[i] = await get_instrumentdata;
-          return instvals;
-        }
-        let tada = doit();
-        console.log(tada);
-      }
-    }*/
   }, 5000);
 
-  // instruments
-  //let value = (unit_id) => {
-  //    get_instrumentdata(result.token, unit_id);
-  //};
+  const goToSettings = () => (settings_page = !settings_page);
+  const goToInstruments = () => (instruments_page = !instruments_page);
+  const goToCollections = () => (collections_page = !collections_page);
 
   const get_All_instrumentdata = (profile) => {
     return profile.instruments;
@@ -507,6 +494,40 @@
 </script>
 
 <style>
+  #dropdown {
+    padding: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    border: 1px solid rgb(169, 169, 169);
+    -moz-appearance: none;
+    -moz-box-shadow: 0 3px 0 #ccc, 0 -1px #2961c1 inset;
+    box-shadow: 0 3px 0 #ccc, 0 -1px purple inset;
+  }
+
+  #tiptop {
+    font-size: 24px;
+    color: white;
+    background-color: navy;
+    padding: 1%;
+    align-content: center;
+  }
+  li:hover {
+    background-color: lightslategrey;
+  }
+
+  menuButton:hover {
+    color: lightgrey;
+  }
+  menu {
+    padding: 0.1%;
+    background-color: lightgrey;
+  }
+  menu li {
+    display: inline;
+    display: inline-block;
+    padding: 10px;
+    background-color: lightgrey;
+  }
   main {
     text-align: center;
     padding: 1em;
@@ -525,6 +546,16 @@
 
   p {
     font-size: x-small;
+  }
+
+  mainBody {
+    width: 100%;
+    height: 100%;
+    background-color: lightgray;
+  }
+
+  menuButton {
+    color: lightslategrey;
   }
 </style>
 
@@ -581,52 +612,92 @@
     </main>
   </section>
 {:else}
-  <section>
-    <img src={get_gravatar(user.email, 100)} />
-    <h1>{user.name}'s Profile</h1>
-    <p1>Email: {user.email}</p1>
-    <br />
-    <p2>Company: {profile.company || 'Loding....'}</p2>
-    <br />
-    <br />
-    <p1>Need an API key? Click here ==</p1><button
-      type="button"
-      on:click={API_Key_Gen(result.token)}>API Key Generator</button>
+  <mainBody>
+    <div class="container">
+      <center>
+        <header class="header">
+          <h1 id="tiptop">
+            <center><img src={get_gravatar(user.email, 200)} /></center>
+            {user.name.toUpperCase()}'s Profile
+          </h1>
+        </header>
+      </center>
+    </div>
+    <center>
+      <menu>
+        <ul>
+          ||
+          <li>
+            <menuButton on:click={goToSettings}>Settings</menuButton>
+          </li>||
+          <li>
+            <menuButton on:click={goToInstruments}>Instruments</menuButton>
+          </li>||
+          <li>
+            <menuButton on:click={goToCollections}>Collections</menuButton>
+          </li>||
+        </ul>
+      </menu>
+    </center>
 
-    <br />
-    <h3>Instruments</h3>
-    <instrumentsss>
-      {#if result}
-        {#each instrument_display as obj}
-          <li>{obj.time_stamp}---{obj.unit_id}: {obj.sensor_reading}</li>
-        {/each}
-      {/if}
-    </instrumentsss>
-    <br />
-    <h3>{user.name}'s Hosted Collections</h3>
-    <collections>
-      {#if profile.collections}
-        {#each profile.collections as c}
-          <ul>
-            <li>{c.collection_name}</li>
-            <ul>
-              <li>Members</li>
-            {#each c.collection_people as ppl}
-              <ul>
-                  <li>{ppl}</li>  
+    {#if settings_page}
+      <settings_page>
+        <center>
+          <p1>Email: {user.email}</p1>
+          <br />
+          <p2>Company: {profile.company || 'Loding....'}</p2>
+          <br />
+          <br />
+          <p1>Need an API key? Click here ==</p1><button
+            type="button"
+            on:click={API_Key_Gen(result.token)}>API Key Generator</button>
+        </center>
+      </settings_page>
+    {/if}
+    {#if instruments_page}
+      <instruments_page>
+        <center>
+        <h3>Instruments</h3>
+        <instrumentsss>
+          {#if result}
+            {#each instrument_display as obj}
+              <li>{obj.time_stamp}---{obj.unit_id}: {obj.sensor_reading}</li>
+            {/each}
+          {/if}
+        </instrumentsss>
+      </center>
+      </instruments_page>
+    {/if}
+    {#if collections_page}
+      <collections_page>
+        <center>
+        <h3>{user.name}'s Hosted Collections</h3>
+        <collections>
+          {#if profile.collections}
+            {#each profile.collections as c}
+              <ul id="dropdown">
+                <li>{c.collection_name}</li>
+                <ul>
+                  <li>Members</li>
+                  {#each c.collection_people as ppl}
+                    <ul>
+                      <li>{ppl}</li>
+                    </ul>
+                  {/each}
+                  <li>Instuments</li>
+                  {#each c.collection_instruments as instrument}
+                    <ul>
+                      <li>{instrument}</li>
+                    </ul>
+                  {/each}
+                </ul>
               </ul>
             {/each}
-            <li>Instuments</li>
-            {#each c.collection_instruments as instrument}
-              <ul>
-                  <li>{instrument}</li>  
-              </ul>
-            {/each}
-          </ul>
-          </ul>
-        {/each}
-      {/if}
-      {JSON.stringify(profile.collections)}
-    </collections>
-  </section>
+          {/if}
+        </collections>
+      </center>
+      </collections_page>
+    {/if}
+    <section><br /> <br /></section>
+  </mainBody>
 {/if}

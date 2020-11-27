@@ -24,27 +24,26 @@
 
 <Router {url}>
   {#if 1 === 0}
-  <nav>
-    <ul>
-      |
-      <!-- svelte-ignore a11y-missing-attribute -->
-      <li>
-        <Link to="/">Login</Link>
-      </li>
-      |
-      <!-- svelte-ignore a11y-missing-attribute -->
-      <li>
-        <Link to="login">Login</Link>
-      </li>
-      |
-    </ul>
-  </nav>
+    <nav>
+      <ul>
+        |
+        <!-- svelte-ignore a11y-missing-attribute -->
+        <li>
+          <Link to="/">Login</Link>
+        </li>
+        |
+        <!-- svelte-ignore a11y-missing-attribute -->
+        <li>
+          <Link to="login">Login</Link>
+        </li>
+        |
+      </ul>
+    </nav>
   {/if}
-  <div> 
+  <div>
     <Route path="/" component={login} />
     <Route path="/">
       <Home />
     </Route>
   </div>
 </Router>
-
