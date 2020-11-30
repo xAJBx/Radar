@@ -19,6 +19,8 @@
   let settings_page = false;
   let instruments_page = false;
   let collections_page = false;
+  let collection_details = true;
+  let addNewCollectionForm = false;
 
   ///gravatar
   function get_gravatar(email, size) {
@@ -436,11 +438,11 @@
           .then((response) => response.json())
           .then((result) => {
             instrument = result;
-
-            //console.log(instruments.includes(instrument[1][0].unit_id.trim())) // false
-            //console.log(instrument[1][0].unit_id); // 1, 2, unit_id
-            //console.log(instruments.includes("1"))
-            const fu = instruments.includes(instrument[1][0].unit_id.trim());
+            //console.log(JSON.stringify(result))
+            console.log(JSON.stringify(result[2]))
+            const fu = instruments.includes(instrument[2][0].unit_id.trim());
+            console.log(fu);
+            
             //console.log("instrument: ", instrument[1][0].unit_id.trim())
             //console.log('fu: ', fu)
             //console.log('object: ', instrument[1][0])
@@ -448,16 +450,18 @@
             if (fu) {
               let flag = false;
               for (let i = 0; i < instrument_display.length; i++) {
+                //console.log(instrument_display)
                 if (
                   instrument_display[i].unit_id.trim() ===
-                  instrument[1][0].unit_id.trim()
+                  instrument[2][0].unit_id.trim()
                 ) {
-                  instrument_display[i] = instrument[1][0];
+                  instrument_display[i] = instrument[2][0];
                   flag = true;
                 }
               }
+              console.log('test')
               if (!flag) {
-                instrument_display.unshift(instrument[1][0]);
+                instrument_display.unshift(instrument[2][0]);
                 flag = false;
               }
               console.log(instrument_display);
@@ -477,7 +481,7 @@
       //hereeeee
       for (let i = 0; i < profile.instruments.length; i++) {
         //console.log(profile.instruments);
-        get_data(profile.instruments[i]);
+        get_data(" " + profile.instruments[i]);
       }
     } catch (err) {
       console.error(err.message);
@@ -487,7 +491,10 @@
   const goToSettings = () => (settings_page = !settings_page);
   const goToInstruments = () => (instruments_page = !instruments_page);
   const goToCollections = () => (collections_page = !collections_page);
-
+  const showCollectionDetails = () =>
+    (collection_details = !collection_details);
+  const addNewCollectionButton = () =>
+    (addNewCollectionForm = !addNewCollectionForm);
   const get_All_instrumentdata = (profile) => {
     return profile.instruments;
   };
@@ -657,45 +664,81 @@
     {#if instruments_page}
       <instruments_page>
         <center>
-        <h3>Instruments</h3>
-        <instrumentsss>
-          {#if result}
-            {#each instrument_display as obj}
-              <li>{obj.time_stamp}---{obj.unit_id}: {obj.sensor_reading}</li>
-            {/each}
-          {/if}
-        </instrumentsss>
-      </center>
+          <h3>Instruments</h3>
+          <instrumentsss>
+            {#if result}
+              {#each instrument_display as obj}
+                <li>{obj.time_stamp}---{obj.unit_id}: {obj.sensor_reading}</li>
+              {/each}
+            {/if}
+          </instrumentsss>
+        </center>
       </instruments_page>
     {/if}
     {#if collections_page}
       <collections_page>
         <center>
-        <h3>{user.name}'s Hosted Collections</h3>
-        <collections>
-          {#if profile.collections}
-            {#each profile.collections as c}
-              <ul id="dropdown">
-                <li>{c.collection_name}</li>
-                <ul>
-                  <li>Members</li>
-                  {#each c.collection_people as ppl}
-                    <ul>
-                      <li>{ppl}</li>
-                    </ul>
-                  {/each}
-                  <li>Instuments</li>
-                  {#each c.collection_instruments as instrument}
-                    <ul>
-                      <li>{instrument}</li>
-                    </ul>
-                  {/each}
-                </ul>
-              </ul>
-            {/each}
+          <h3>
+            {user.name}'s Hosted Collections <button on:click={addNewCollectionButton}>add</button>
+          </h3>
+          {#if addNewCollectionForm}
+            <form
+              on:submit|preventDefault={register(reg_username, reg_email, reg_passwrd, reg_passwrd_confirm)}>
+              <label>
+                Username
+                <input required bind:value={reg_username} />
+              </label>
+              <label> Email <input required bind:value={reg_email} /> </label>
+              <label>
+                Company
+                <input required bind:value={reg_company} />
+              </label>
+              <label>
+                Password
+                <input type="password" required bind:value={reg_passwrd} />
+              </label>
+              <label>
+                Confirm
+                <input
+                  type="password"
+                  required
+                  bind:value={reg_passwrd_confirm} />
+              </label>
+              <div class="buttons"><button>Login</button></div>
+              <p>
+                Powered by
+                <img
+                  src="/img/small_BA_logo_75x75_Cropped.png"
+                  alt="BRIDGES AUTOMATION" />
+              </p>
+            </form>
           {/if}
-        </collections>
-      </center>
+          <collections>
+            {#if profile.collections}
+              {#each profile.collections as c, j}
+                <ul id="dropdown">
+                  <li>{c.collection_name}</li>
+                  {#if collection_details}
+                    <ul>
+                      <li>Members</li>
+                      {#each c.collection_people as ppl, k}
+                        <ul>
+                          <li>{ppl}</li>
+                        </ul>
+                      {/each}
+                      <li>Instuments</li>
+                      {#each c.collection_instruments as instrument, l}
+                        <ul>
+                          <li>{instrument}</li>
+                        </ul>
+                      {/each}
+                    </ul>
+                  {/if}
+                </ul>
+              {/each}
+            {/if}
+          </collections>
+        </center>
       </collections_page>
     {/if}
     <section><br /> <br /></section>

@@ -2083,29 +2083,32 @@ var app = (function () {
 
     function get_each_context_1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[16] = list[i];
+    	child_ctx[18] = list[i];
+    	child_ctx[49] = i;
     	return child_ctx;
     }
 
     function get_each_context_2(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[41] = list[i];
+    	child_ctx[50] = list[i];
+    	child_ctx[52] = i;
     	return child_ctx;
     }
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[36] = list[i];
+    	child_ctx[45] = list[i];
+    	child_ctx[47] = i;
     	return child_ctx;
     }
 
     function get_each_context_3(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[44] = list[i];
+    	child_ctx[53] = list[i];
     	return child_ctx;
     }
 
-    // (614:0) {:else}
+    // (621:0) {:else}
     function create_else_block$1(ctx) {
     	let mainBody;
     	let div;
@@ -2146,8 +2149,8 @@ var app = (function () {
     	let br1;
     	let mounted;
     	let dispose;
-    	let if_block0 = /*settings_page*/ ctx[13] && create_if_block_6(ctx);
-    	let if_block1 = /*instruments_page*/ ctx[14] && create_if_block_4(ctx);
+    	let if_block0 = /*settings_page*/ ctx[13] && create_if_block_8(ctx);
+    	let if_block1 = /*instruments_page*/ ctx[14] && create_if_block_6(ctx);
     	let if_block2 = /*collections_page*/ ctx[15] && create_if_block_2(ctx);
 
     	const block = {
@@ -2194,38 +2197,38 @@ var app = (function () {
     			t18 = space();
     			br1 = element("br");
     			if (img.src !== (img_src_value = get_gravatar(/*user*/ ctx[3].email, 200))) attr_dev(img, "src", img_src_value);
-    			add_location(img, file$1, 619, 20, 18073);
-    			add_location(center0, file$1, 619, 12, 18065);
+    			add_location(img, file$1, 626, 20, 18337);
+    			add_location(center0, file$1, 626, 12, 18329);
     			attr_dev(h1, "id", "tiptop");
     			attr_dev(h1, "class", "svelte-160fwfv");
-    			add_location(h1, file$1, 618, 10, 18036);
+    			add_location(h1, file$1, 625, 10, 18300);
     			attr_dev(header, "class", "header");
-    			add_location(header, file$1, 617, 8, 18002);
-    			add_location(center1, file$1, 616, 6, 17985);
+    			add_location(header, file$1, 624, 8, 18266);
+    			add_location(center1, file$1, 623, 6, 18249);
     			attr_dev(div, "class", "container");
-    			add_location(div, file$1, 615, 4, 17955);
+    			add_location(div, file$1, 622, 4, 18219);
     			attr_dev(menuButton0, "class", "svelte-160fwfv");
-    			add_location(menuButton0, file$1, 630, 12, 18314);
+    			add_location(menuButton0, file$1, 637, 12, 18578);
     			attr_dev(li0, "class", "svelte-160fwfv");
-    			add_location(li0, file$1, 629, 10, 18297);
+    			add_location(li0, file$1, 636, 10, 18561);
     			attr_dev(menuButton1, "class", "svelte-160fwfv");
-    			add_location(menuButton1, file$1, 633, 12, 18417);
+    			add_location(menuButton1, file$1, 640, 12, 18681);
     			attr_dev(li1, "class", "svelte-160fwfv");
-    			add_location(li1, file$1, 632, 10, 18400);
+    			add_location(li1, file$1, 639, 10, 18664);
     			attr_dev(menuButton2, "class", "svelte-160fwfv");
-    			add_location(menuButton2, file$1, 636, 12, 18526);
+    			add_location(menuButton2, file$1, 643, 12, 18790);
     			attr_dev(li2, "class", "svelte-160fwfv");
-    			add_location(li2, file$1, 635, 10, 18509);
-    			add_location(ul, file$1, 627, 8, 18269);
+    			add_location(li2, file$1, 642, 10, 18773);
+    			add_location(ul, file$1, 634, 8, 18533);
     			attr_dev(menu, "class", "svelte-160fwfv");
-    			add_location(menu, file$1, 626, 6, 18254);
-    			add_location(center2, file$1, 625, 4, 18239);
-    			add_location(br0, file$1, 700, 13, 20371);
-    			add_location(br1, file$1, 700, 20, 20378);
+    			add_location(menu, file$1, 633, 6, 18518);
+    			add_location(center2, file$1, 632, 4, 18503);
+    			add_location(br0, file$1, 743, 13, 22035);
+    			add_location(br1, file$1, 743, 20, 22042);
     			attr_dev(section, "class", "svelte-160fwfv");
-    			add_location(section, file$1, 700, 4, 20362);
+    			add_location(section, file$1, 743, 4, 22026);
     			attr_dev(mainBody, "class", "svelte-160fwfv");
-    			add_location(mainBody, file$1, 614, 2, 17940);
+    			add_location(mainBody, file$1, 621, 2, 18204);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, mainBody, anchor);
@@ -2269,9 +2272,9 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(menuButton0, "click", /*goToSettings*/ ctx[21], false, false, false),
-    					listen_dev(menuButton1, "click", /*goToInstruments*/ ctx[22], false, false, false),
-    					listen_dev(menuButton2, "click", /*goToCollections*/ ctx[23], false, false, false)
+    					listen_dev(menuButton0, "click", /*goToSettings*/ ctx[23], false, false, false),
+    					listen_dev(menuButton1, "click", /*goToInstruments*/ ctx[24], false, false, false),
+    					listen_dev(menuButton2, "click", /*goToCollections*/ ctx[25], false, false, false)
     				];
 
     				mounted = true;
@@ -2288,7 +2291,7 @@ var app = (function () {
     				if (if_block0) {
     					if_block0.p(ctx, dirty);
     				} else {
-    					if_block0 = create_if_block_6(ctx);
+    					if_block0 = create_if_block_8(ctx);
     					if_block0.c();
     					if_block0.m(mainBody, t15);
     				}
@@ -2301,7 +2304,7 @@ var app = (function () {
     				if (if_block1) {
     					if_block1.p(ctx, dirty);
     				} else {
-    					if_block1 = create_if_block_4(ctx);
+    					if_block1 = create_if_block_6(ctx);
     					if_block1.c();
     					if_block1.m(mainBody, t16);
     				}
@@ -2337,14 +2340,14 @@ var app = (function () {
     		block,
     		id: create_else_block$1.name,
     		type: "else",
-    		source: "(614:0) {:else}",
+    		source: "(621:0) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (586:18) 
+    // (593:18) 
     function create_if_block_1$1(ctx) {
     	let section;
     	let main;
@@ -2420,38 +2423,38 @@ var app = (function () {
     			img1 = element("img");
     			if (img0.src !== (img0_src_value = "/img/MyOPC_200x200.png")) attr_dev(img0, "src", img0_src_value);
     			attr_dev(img0, "alt", "MyOPC");
-    			add_location(img0, file$1, 588, 10, 17026);
-    			add_location(h1, file$1, 588, 6, 17022);
+    			add_location(img0, file$1, 595, 10, 17290);
+    			add_location(h1, file$1, 595, 6, 17286);
     			input0.required = true;
-    			add_location(input0, file$1, 592, 25, 17222);
-    			add_location(label0, file$1, 592, 8, 17205);
+    			add_location(input0, file$1, 599, 25, 17486);
+    			add_location(label0, file$1, 599, 8, 17469);
     			input1.required = true;
-    			add_location(input1, file$1, 593, 22, 17298);
-    			add_location(label1, file$1, 593, 8, 17284);
+    			add_location(input1, file$1, 600, 22, 17562);
+    			add_location(label1, file$1, 600, 8, 17548);
     			input2.required = true;
-    			add_location(input2, file$1, 594, 24, 17373);
-    			add_location(label2, file$1, 594, 8, 17357);
+    			add_location(input2, file$1, 601, 24, 17637);
+    			add_location(label2, file$1, 601, 8, 17621);
     			attr_dev(input3, "type", "password");
     			input3.required = true;
-    			add_location(input3, file$1, 597, 10, 17471);
-    			add_location(label3, file$1, 595, 8, 17434);
+    			add_location(input3, file$1, 604, 10, 17735);
+    			add_location(label3, file$1, 602, 8, 17698);
     			attr_dev(input4, "type", "password");
     			input4.required = true;
-    			add_location(input4, file$1, 601, 10, 17592);
-    			add_location(label4, file$1, 599, 8, 17556);
-    			add_location(button, file$1, 603, 29, 17706);
+    			add_location(input4, file$1, 608, 10, 17856);
+    			add_location(label4, file$1, 606, 8, 17820);
+    			add_location(button, file$1, 610, 29, 17970);
     			attr_dev(div, "class", "buttons");
-    			add_location(div, file$1, 603, 8, 17685);
+    			add_location(div, file$1, 610, 8, 17949);
     			if (img1.src !== (img1_src_value = "/img/small_BA_logo_75x75_Cropped.png")) attr_dev(img1, "src", img1_src_value);
     			attr_dev(img1, "alt", "BRIDGES AUTOMATION");
-    			add_location(img1, file$1, 606, 10, 17778);
+    			add_location(img1, file$1, 613, 10, 18042);
     			attr_dev(p, "class", "svelte-160fwfv");
-    			add_location(p, file$1, 604, 8, 17743);
-    			add_location(form, file$1, 590, 6, 17087);
+    			add_location(p, file$1, 611, 8, 18007);
+    			add_location(form, file$1, 597, 6, 17351);
     			attr_dev(main, "class", "svelte-160fwfv");
-    			add_location(main, file$1, 587, 4, 17009);
+    			add_location(main, file$1, 594, 4, 17273);
     			attr_dev(section, "class", "svelte-160fwfv");
-    			add_location(section, file$1, 586, 2, 16995);
+    			add_location(section, file$1, 593, 2, 17259);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, section, anchor);
@@ -2494,16 +2497,16 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(input0, "input", /*input0_input_handler_1*/ ctx[26]),
-    					listen_dev(input1, "input", /*input1_input_handler_1*/ ctx[27]),
-    					listen_dev(input2, "input", /*input2_input_handler*/ ctx[28]),
-    					listen_dev(input3, "input", /*input3_input_handler*/ ctx[29]),
-    					listen_dev(input4, "input", /*input4_input_handler*/ ctx[30]),
+    					listen_dev(input0, "input", /*input0_input_handler_1*/ ctx[29]),
+    					listen_dev(input1, "input", /*input1_input_handler_1*/ ctx[30]),
+    					listen_dev(input2, "input", /*input2_input_handler*/ ctx[31]),
+    					listen_dev(input3, "input", /*input3_input_handler*/ ctx[32]),
+    					listen_dev(input4, "input", /*input4_input_handler*/ ctx[33]),
     					listen_dev(
     						form,
     						"submit",
     						prevent_default(function () {
-    							if (is_function(/*register*/ ctx[19](/*reg_username*/ ctx[10], /*reg_email*/ ctx[7], /*reg_passwrd*/ ctx[8], /*reg_passwrd_confirm*/ ctx[9]))) /*register*/ ctx[19](/*reg_username*/ ctx[10], /*reg_email*/ ctx[7], /*reg_passwrd*/ ctx[8], /*reg_passwrd_confirm*/ ctx[9]).apply(this, arguments);
+    							if (is_function(/*register*/ ctx[21](/*reg_username*/ ctx[10], /*reg_email*/ ctx[7], /*reg_passwrd*/ ctx[8], /*reg_passwrd_confirm*/ ctx[9]))) /*register*/ ctx[21](/*reg_username*/ ctx[10], /*reg_email*/ ctx[7], /*reg_passwrd*/ ctx[8], /*reg_passwrd_confirm*/ ctx[9]).apply(this, arguments);
     						}),
     						false,
     						true,
@@ -2548,14 +2551,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$1.name,
     		type: "if",
-    		source: "(586:18) ",
+    		source: "(593:18) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (562:0) {#if login_visi && !sign_up}
+    // (569:0) {#if login_visi && !sign_up}
     function create_if_block$1(ctx) {
     	let section;
     	let main;
@@ -2612,30 +2615,30 @@ var app = (function () {
     			img1 = element("img");
     			if (img0.src !== (img0_src_value = "/img/MyOPC_200x200.png")) attr_dev(img0, "src", img0_src_value);
     			attr_dev(img0, "alt", "MyOPC");
-    			add_location(img0, file$1, 564, 10, 16319);
-    			add_location(h1, file$1, 564, 6, 16315);
+    			add_location(img0, file$1, 571, 10, 16583);
+    			add_location(h1, file$1, 571, 6, 16579);
     			input0.required = true;
-    			add_location(input0, file$1, 567, 25, 16465);
-    			add_location(label0, file$1, 567, 8, 16448);
+    			add_location(input0, file$1, 574, 25, 16729);
+    			add_location(label0, file$1, 574, 8, 16712);
     			attr_dev(input1, "type", "password");
     			input1.required = true;
-    			add_location(input1, file$1, 570, 10, 16560);
-    			add_location(label1, file$1, 568, 8, 16523);
-    			add_location(button0, file$1, 573, 10, 16674);
+    			add_location(input1, file$1, 577, 10, 16824);
+    			add_location(label1, file$1, 575, 8, 16787);
+    			add_location(button0, file$1, 580, 10, 16938);
     			attr_dev(button1, "type", "button");
-    			add_location(button1, file$1, 574, 10, 16707);
+    			add_location(button1, file$1, 581, 10, 16971);
     			attr_dev(div, "class", "buttons");
-    			add_location(div, file$1, 572, 8, 16642);
+    			add_location(div, file$1, 579, 8, 16906);
     			if (img1.src !== (img1_src_value = "/img/small_BA_logo_75x75_Cropped.png")) attr_dev(img1, "src", img1_src_value);
     			attr_dev(img1, "alt", "BRIDGES AUTOMATION");
-    			add_location(img1, file$1, 578, 10, 16822);
+    			add_location(img1, file$1, 585, 10, 17086);
     			attr_dev(p, "class", "svelte-160fwfv");
-    			add_location(p, file$1, 576, 8, 16787);
-    			add_location(form, file$1, 566, 6, 16380);
+    			add_location(p, file$1, 583, 8, 17051);
+    			add_location(form, file$1, 573, 6, 16644);
     			attr_dev(main, "class", "svelte-160fwfv");
-    			add_location(main, file$1, 563, 4, 16302);
+    			add_location(main, file$1, 570, 4, 16566);
     			attr_dev(section, "class", "svelte-160fwfv");
-    			add_location(section, file$1, 562, 2, 16288);
+    			add_location(section, file$1, 569, 2, 16552);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, section, anchor);
@@ -2665,14 +2668,14 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(input0, "input", /*input0_input_handler*/ ctx[24]),
-    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[25]),
-    					listen_dev(button1, "click", /*signup*/ ctx[18], false, false, false),
+    					listen_dev(input0, "input", /*input0_input_handler*/ ctx[27]),
+    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[28]),
+    					listen_dev(button1, "click", /*signup*/ ctx[20], false, false, false),
     					listen_dev(
     						form,
     						"submit",
     						prevent_default(function () {
-    							if (is_function(/*login*/ ctx[17](/*username*/ ctx[1], /*password*/ ctx[0]))) /*login*/ ctx[17](/*username*/ ctx[1], /*password*/ ctx[0]).apply(this, arguments);
+    							if (is_function(/*login*/ ctx[19](/*username*/ ctx[1], /*password*/ ctx[0]))) /*login*/ ctx[19](/*username*/ ctx[1], /*password*/ ctx[0]).apply(this, arguments);
     						}),
     						false,
     						true,
@@ -2705,15 +2708,15 @@ var app = (function () {
     		block,
     		id: create_if_block$1.name,
     		type: "if",
-    		source: "(562:0) {#if login_visi && !sign_up}",
+    		source: "(569:0) {#if login_visi && !sign_up}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (643:4) {#if settings_page}
-    function create_if_block_6(ctx) {
+    // (650:4) {#if settings_page}
+    function create_if_block_8(ctx) {
     	let settings_page_1;
     	let center;
     	let p10;
@@ -2759,16 +2762,16 @@ var app = (function () {
     			p11.textContent = "Need an API key? Click here ==";
     			button = element("button");
     			button.textContent = "API Key Generator";
-    			add_location(p10, file$1, 645, 10, 18724);
-    			add_location(br0, file$1, 646, 10, 18763);
-    			add_location(p2, file$1, 647, 10, 18780);
-    			add_location(br1, file$1, 648, 10, 18842);
-    			add_location(br2, file$1, 649, 10, 18859);
-    			add_location(p11, file$1, 650, 10, 18876);
+    			add_location(p10, file$1, 652, 10, 18988);
+    			add_location(br0, file$1, 653, 10, 19027);
+    			add_location(p2, file$1, 654, 10, 19044);
+    			add_location(br1, file$1, 655, 10, 19106);
+    			add_location(br2, file$1, 656, 10, 19123);
+    			add_location(p11, file$1, 657, 10, 19140);
     			attr_dev(button, "type", "button");
-    			add_location(button, file$1, 650, 49, 18915);
-    			add_location(center, file$1, 644, 8, 18705);
-    			add_location(settings_page_1, file$1, 643, 6, 18681);
+    			add_location(button, file$1, 657, 49, 19179);
+    			add_location(center, file$1, 651, 8, 18969);
+    			add_location(settings_page_1, file$1, 650, 6, 18945);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, settings_page_1, anchor);
@@ -2795,7 +2798,7 @@ var app = (function () {
     					button,
     					"click",
     					function () {
-    						if (is_function(/*API_Key_Gen*/ ctx[20](/*result*/ ctx[2].token))) /*API_Key_Gen*/ ctx[20](/*result*/ ctx[2].token).apply(this, arguments);
+    						if (is_function(/*API_Key_Gen*/ ctx[22](/*result*/ ctx[2].token))) /*API_Key_Gen*/ ctx[22](/*result*/ ctx[2].token).apply(this, arguments);
     					},
     					false,
     					false,
@@ -2819,23 +2822,23 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_6.name,
+    		id: create_if_block_8.name,
     		type: "if",
-    		source: "(643:4) {#if settings_page}",
+    		source: "(650:4) {#if settings_page}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (657:4) {#if instruments_page}
-    function create_if_block_4(ctx) {
+    // (664:4) {#if instruments_page}
+    function create_if_block_6(ctx) {
     	let instruments_page_1;
     	let center;
     	let h3;
     	let t1;
     	let instrumentsss;
-    	let if_block = /*result*/ ctx[2] && create_if_block_5(ctx);
+    	let if_block = /*result*/ ctx[2] && create_if_block_7(ctx);
 
     	const block = {
     		c: function create() {
@@ -2846,10 +2849,10 @@ var app = (function () {
     			t1 = space();
     			instrumentsss = element("instrumentsss");
     			if (if_block) if_block.c();
-    			add_location(h3, file$1, 659, 8, 19153);
-    			add_location(instrumentsss, file$1, 660, 8, 19182);
-    			add_location(center, file$1, 658, 8, 19136);
-    			add_location(instruments_page_1, file$1, 657, 6, 19109);
+    			add_location(h3, file$1, 666, 10, 19419);
+    			add_location(instrumentsss, file$1, 667, 10, 19450);
+    			add_location(center, file$1, 665, 8, 19400);
+    			add_location(instruments_page_1, file$1, 664, 6, 19373);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, instruments_page_1, anchor);
@@ -2864,7 +2867,7 @@ var app = (function () {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
-    					if_block = create_if_block_5(ctx);
+    					if_block = create_if_block_7(ctx);
     					if_block.c();
     					if_block.m(instrumentsss, null);
     				}
@@ -2881,17 +2884,17 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_4.name,
+    		id: create_if_block_6.name,
     		type: "if",
-    		source: "(657:4) {#if instruments_page}",
+    		source: "(664:4) {#if instruments_page}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (662:10) {#if result}
-    function create_if_block_5(ctx) {
+    // (669:12) {#if result}
+    function create_if_block_7(ctx) {
     	let each_1_anchor;
     	let each_value_3 = /*instrument_display*/ ctx[12];
     	validate_each_argument(each_value_3);
@@ -2949,25 +2952,25 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_5.name,
+    		id: create_if_block_7.name,
     		type: "if",
-    		source: "(662:10) {#if result}",
+    		source: "(669:12) {#if result}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (663:12) {#each instrument_display as obj}
+    // (670:14) {#each instrument_display as obj}
     function create_each_block_3(ctx) {
     	let li;
-    	let t0_value = /*obj*/ ctx[44].time_stamp + "";
+    	let t0_value = /*obj*/ ctx[53].time_stamp + "";
     	let t0;
     	let t1;
-    	let t2_value = /*obj*/ ctx[44].unit_id + "";
+    	let t2_value = /*obj*/ ctx[53].unit_id + "";
     	let t2;
     	let t3;
-    	let t4_value = /*obj*/ ctx[44].sensor_reading + "";
+    	let t4_value = /*obj*/ ctx[53].sensor_reading + "";
     	let t4;
 
     	const block = {
@@ -2979,7 +2982,7 @@ var app = (function () {
     			t3 = text(": ");
     			t4 = text(t4_value);
     			attr_dev(li, "class", "svelte-160fwfv");
-    			add_location(li, file$1, 663, 14, 19281);
+    			add_location(li, file$1, 670, 16, 19555);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -2990,9 +2993,9 @@ var app = (function () {
     			append_dev(li, t4);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty[0] & /*instrument_display*/ 4096 && t0_value !== (t0_value = /*obj*/ ctx[44].time_stamp + "")) set_data_dev(t0, t0_value);
-    			if (dirty[0] & /*instrument_display*/ 4096 && t2_value !== (t2_value = /*obj*/ ctx[44].unit_id + "")) set_data_dev(t2, t2_value);
-    			if (dirty[0] & /*instrument_display*/ 4096 && t4_value !== (t4_value = /*obj*/ ctx[44].sensor_reading + "")) set_data_dev(t4, t4_value);
+    			if (dirty[0] & /*instrument_display*/ 4096 && t0_value !== (t0_value = /*obj*/ ctx[53].time_stamp + "")) set_data_dev(t0, t0_value);
+    			if (dirty[0] & /*instrument_display*/ 4096 && t2_value !== (t2_value = /*obj*/ ctx[53].unit_id + "")) set_data_dev(t2, t2_value);
+    			if (dirty[0] & /*instrument_display*/ 4096 && t4_value !== (t4_value = /*obj*/ ctx[53].sensor_reading + "")) set_data_dev(t4, t4_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(li);
@@ -3003,14 +3006,14 @@ var app = (function () {
     		block,
     		id: create_each_block_3.name,
     		type: "each",
-    		source: "(663:12) {#each instrument_display as obj}",
+    		source: "(670:14) {#each instrument_display as obj}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (671:4) {#if collections_page}
+    // (678:4) {#if collections_page}
     function create_if_block_2(ctx) {
     	let collections_page_1;
     	let center;
@@ -3018,9 +3021,14 @@ var app = (function () {
     	let t0_value = /*user*/ ctx[3].name + "";
     	let t0;
     	let t1;
-    	let t2;
+    	let button;
+    	let t3;
+    	let t4;
     	let collections;
-    	let if_block = /*profile*/ ctx[4].collections && create_if_block_3(ctx);
+    	let mounted;
+    	let dispose;
+    	let if_block0 = /*addNewCollectionForm*/ ctx[17] && create_if_block_5(ctx);
+    	let if_block1 = /*profile*/ ctx[4].collections && create_if_block_3(ctx);
 
     	const block = {
     		c: function create() {
@@ -3028,14 +3036,19 @@ var app = (function () {
     			center = element("center");
     			h3 = element("h3");
     			t0 = text(t0_value);
-    			t1 = text("'s Hosted Collections");
-    			t2 = space();
+    			t1 = text("'s Hosted Collections ");
+    			button = element("button");
+    			button.textContent = "add";
+    			t3 = space();
+    			if (if_block0) if_block0.c();
+    			t4 = space();
     			collections = element("collections");
-    			if (if_block) if_block.c();
-    			add_location(h3, file$1, 673, 8, 19535);
-    			add_location(collections, file$1, 674, 8, 19585);
-    			add_location(center, file$1, 672, 8, 19518);
-    			add_location(collections_page_1, file$1, 671, 6, 19491);
+    			if (if_block1) if_block1.c();
+    			add_location(button, file$1, 681, 45, 19869);
+    			add_location(h3, file$1, 680, 10, 19819);
+    			add_location(collections, file$1, 715, 10, 21099);
+    			add_location(center, file$1, 679, 8, 19800);
+    			add_location(collections_page_1, file$1, 678, 6, 19773);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, collections_page_1, anchor);
@@ -3043,29 +3056,53 @@ var app = (function () {
     			append_dev(center, h3);
     			append_dev(h3, t0);
     			append_dev(h3, t1);
-    			append_dev(center, t2);
+    			append_dev(h3, button);
+    			append_dev(center, t3);
+    			if (if_block0) if_block0.m(center, null);
+    			append_dev(center, t4);
     			append_dev(center, collections);
-    			if (if_block) if_block.m(collections, null);
+    			if (if_block1) if_block1.m(collections, null);
+
+    			if (!mounted) {
+    				dispose = listen_dev(button, "click", /*addNewCollectionButton*/ ctx[26], false, false, false);
+    				mounted = true;
+    			}
     		},
     		p: function update(ctx, dirty) {
     			if (dirty[0] & /*user*/ 8 && t0_value !== (t0_value = /*user*/ ctx[3].name + "")) set_data_dev(t0, t0_value);
 
-    			if (/*profile*/ ctx[4].collections) {
-    				if (if_block) {
-    					if_block.p(ctx, dirty);
+    			if (/*addNewCollectionForm*/ ctx[17]) {
+    				if (if_block0) {
+    					if_block0.p(ctx, dirty);
     				} else {
-    					if_block = create_if_block_3(ctx);
-    					if_block.c();
-    					if_block.m(collections, null);
+    					if_block0 = create_if_block_5(ctx);
+    					if_block0.c();
+    					if_block0.m(center, t4);
     				}
-    			} else if (if_block) {
-    				if_block.d(1);
-    				if_block = null;
+    			} else if (if_block0) {
+    				if_block0.d(1);
+    				if_block0 = null;
+    			}
+
+    			if (/*profile*/ ctx[4].collections) {
+    				if (if_block1) {
+    					if_block1.p(ctx, dirty);
+    				} else {
+    					if_block1 = create_if_block_3(ctx);
+    					if_block1.c();
+    					if_block1.m(collections, null);
+    				}
+    			} else if (if_block1) {
+    				if_block1.d(1);
+    				if_block1 = null;
     			}
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(collections_page_1);
-    			if (if_block) if_block.d();
+    			if (if_block0) if_block0.d();
+    			if (if_block1) if_block1.d();
+    			mounted = false;
+    			dispose();
     		}
     	};
 
@@ -3073,14 +3110,201 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(671:4) {#if collections_page}",
+    		source: "(678:4) {#if collections_page}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (676:10) {#if profile.collections}
+    // (684:10) {#if addNewCollectionForm}
+    function create_if_block_5(ctx) {
+    	let form;
+    	let label0;
+    	let t0;
+    	let input0;
+    	let t1;
+    	let label1;
+    	let t2;
+    	let input1;
+    	let t3;
+    	let label2;
+    	let t4;
+    	let input2;
+    	let t5;
+    	let label3;
+    	let t6;
+    	let input3;
+    	let t7;
+    	let label4;
+    	let t8;
+    	let input4;
+    	let t9;
+    	let div;
+    	let button;
+    	let t11;
+    	let p;
+    	let t12;
+    	let img;
+    	let img_src_value;
+    	let mounted;
+    	let dispose;
+
+    	const block = {
+    		c: function create() {
+    			form = element("form");
+    			label0 = element("label");
+    			t0 = text("Username\n                ");
+    			input0 = element("input");
+    			t1 = space();
+    			label1 = element("label");
+    			t2 = text("Email ");
+    			input1 = element("input");
+    			t3 = space();
+    			label2 = element("label");
+    			t4 = text("Company\n                ");
+    			input2 = element("input");
+    			t5 = space();
+    			label3 = element("label");
+    			t6 = text("Password\n                ");
+    			input3 = element("input");
+    			t7 = space();
+    			label4 = element("label");
+    			t8 = text("Confirm\n                ");
+    			input4 = element("input");
+    			t9 = space();
+    			div = element("div");
+    			button = element("button");
+    			button.textContent = "Login";
+    			t11 = space();
+    			p = element("p");
+    			t12 = text("Powered by\n                ");
+    			img = element("img");
+    			input0.required = true;
+    			add_location(input0, file$1, 688, 16, 20168);
+    			add_location(label0, file$1, 686, 14, 20119);
+    			input1.required = true;
+    			add_location(input1, file$1, 690, 28, 20264);
+    			add_location(label1, file$1, 690, 14, 20250);
+    			input2.required = true;
+    			add_location(input2, file$1, 693, 16, 20377);
+    			add_location(label2, file$1, 691, 14, 20329);
+    			attr_dev(input3, "type", "password");
+    			input3.required = true;
+    			add_location(input3, file$1, 697, 16, 20507);
+    			add_location(label3, file$1, 695, 14, 20458);
+    			attr_dev(input4, "type", "password");
+    			input4.required = true;
+    			add_location(input4, file$1, 701, 16, 20652);
+    			add_location(label4, file$1, 699, 14, 20604);
+    			add_location(button, file$1, 706, 35, 20832);
+    			attr_dev(div, "class", "buttons");
+    			add_location(div, file$1, 706, 14, 20811);
+    			if (img.src !== (img_src_value = "/img/small_BA_logo_75x75_Cropped.png")) attr_dev(img, "src", img_src_value);
+    			attr_dev(img, "alt", "BRIDGES AUTOMATION");
+    			add_location(img, file$1, 709, 16, 20922);
+    			attr_dev(p, "class", "svelte-160fwfv");
+    			add_location(p, file$1, 707, 14, 20875);
+    			add_location(form, file$1, 684, 12, 19989);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, form, anchor);
+    			append_dev(form, label0);
+    			append_dev(label0, t0);
+    			append_dev(label0, input0);
+    			set_input_value(input0, /*reg_username*/ ctx[10]);
+    			append_dev(form, t1);
+    			append_dev(form, label1);
+    			append_dev(label1, t2);
+    			append_dev(label1, input1);
+    			set_input_value(input1, /*reg_email*/ ctx[7]);
+    			append_dev(form, t3);
+    			append_dev(form, label2);
+    			append_dev(label2, t4);
+    			append_dev(label2, input2);
+    			set_input_value(input2, /*reg_company*/ ctx[11]);
+    			append_dev(form, t5);
+    			append_dev(form, label3);
+    			append_dev(label3, t6);
+    			append_dev(label3, input3);
+    			set_input_value(input3, /*reg_passwrd*/ ctx[8]);
+    			append_dev(form, t7);
+    			append_dev(form, label4);
+    			append_dev(label4, t8);
+    			append_dev(label4, input4);
+    			set_input_value(input4, /*reg_passwrd_confirm*/ ctx[9]);
+    			append_dev(form, t9);
+    			append_dev(form, div);
+    			append_dev(div, button);
+    			append_dev(form, t11);
+    			append_dev(form, p);
+    			append_dev(p, t12);
+    			append_dev(p, img);
+
+    			if (!mounted) {
+    				dispose = [
+    					listen_dev(input0, "input", /*input0_input_handler_2*/ ctx[34]),
+    					listen_dev(input1, "input", /*input1_input_handler_2*/ ctx[35]),
+    					listen_dev(input2, "input", /*input2_input_handler_1*/ ctx[36]),
+    					listen_dev(input3, "input", /*input3_input_handler_1*/ ctx[37]),
+    					listen_dev(input4, "input", /*input4_input_handler_1*/ ctx[38]),
+    					listen_dev(
+    						form,
+    						"submit",
+    						prevent_default(function () {
+    							if (is_function(/*register*/ ctx[21](/*reg_username*/ ctx[10], /*reg_email*/ ctx[7], /*reg_passwrd*/ ctx[8], /*reg_passwrd_confirm*/ ctx[9]))) /*register*/ ctx[21](/*reg_username*/ ctx[10], /*reg_email*/ ctx[7], /*reg_passwrd*/ ctx[8], /*reg_passwrd_confirm*/ ctx[9]).apply(this, arguments);
+    						}),
+    						false,
+    						true,
+    						false
+    					)
+    				];
+
+    				mounted = true;
+    			}
+    		},
+    		p: function update(new_ctx, dirty) {
+    			ctx = new_ctx;
+
+    			if (dirty[0] & /*reg_username*/ 1024 && input0.value !== /*reg_username*/ ctx[10]) {
+    				set_input_value(input0, /*reg_username*/ ctx[10]);
+    			}
+
+    			if (dirty[0] & /*reg_email*/ 128 && input1.value !== /*reg_email*/ ctx[7]) {
+    				set_input_value(input1, /*reg_email*/ ctx[7]);
+    			}
+
+    			if (dirty[0] & /*reg_company*/ 2048 && input2.value !== /*reg_company*/ ctx[11]) {
+    				set_input_value(input2, /*reg_company*/ ctx[11]);
+    			}
+
+    			if (dirty[0] & /*reg_passwrd*/ 256 && input3.value !== /*reg_passwrd*/ ctx[8]) {
+    				set_input_value(input3, /*reg_passwrd*/ ctx[8]);
+    			}
+
+    			if (dirty[0] & /*reg_passwrd_confirm*/ 512 && input4.value !== /*reg_passwrd_confirm*/ ctx[9]) {
+    				set_input_value(input4, /*reg_passwrd_confirm*/ ctx[9]);
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(form);
+    			mounted = false;
+    			run_all(dispose);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_5.name,
+    		type: "if",
+    		source: "(684:10) {#if addNewCollectionForm}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (717:12) {#if profile.collections}
     function create_if_block_3(ctx) {
     	let each_1_anchor;
     	let each_value = /*profile*/ ctx[4].collections;
@@ -3107,7 +3331,7 @@ var app = (function () {
     			insert_dev(target, each_1_anchor, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty[0] & /*profile*/ 16) {
+    			if (dirty[0] & /*profile, collection_details*/ 65552) {
     				each_value = /*profile*/ ctx[4].collections;
     				validate_each_argument(each_value);
     				let i;
@@ -3141,111 +3365,22 @@ var app = (function () {
     		block,
     		id: create_if_block_3.name,
     		type: "if",
-    		source: "(676:10) {#if profile.collections}",
+    		source: "(717:12) {#if profile.collections}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (682:18) {#each c.collection_people as ppl}
-    function create_each_block_2(ctx) {
+    // (721:18) {#if collection_details}
+    function create_if_block_4(ctx) {
     	let ul;
-    	let li;
-    	let t_value = /*ppl*/ ctx[41] + "";
-    	let t;
-
-    	const block = {
-    		c: function create() {
-    			ul = element("ul");
-    			li = element("li");
-    			t = text(t_value);
-    			attr_dev(li, "class", "svelte-160fwfv");
-    			add_location(li, file$1, 683, 22, 19914);
-    			add_location(ul, file$1, 682, 20, 19887);
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, ul, anchor);
-    			append_dev(ul, li);
-    			append_dev(li, t);
-    		},
-    		p: function update(ctx, dirty) {
-    			if (dirty[0] & /*profile*/ 16 && t_value !== (t_value = /*ppl*/ ctx[41] + "")) set_data_dev(t, t_value);
-    		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(ul);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_each_block_2.name,
-    		type: "each",
-    		source: "(682:18) {#each c.collection_people as ppl}",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (688:18) {#each c.collection_instruments as instrument}
-    function create_each_block_1(ctx) {
-    	let ul;
-    	let li;
-    	let t0_value = /*instrument*/ ctx[16] + "";
-    	let t0;
-    	let t1;
-
-    	const block = {
-    		c: function create() {
-    			ul = element("ul");
-    			li = element("li");
-    			t0 = text(t0_value);
-    			t1 = space();
-    			attr_dev(li, "class", "svelte-160fwfv");
-    			add_location(li, file$1, 689, 22, 20131);
-    			add_location(ul, file$1, 688, 20, 20104);
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, ul, anchor);
-    			append_dev(ul, li);
-    			append_dev(li, t0);
-    			append_dev(ul, t1);
-    		},
-    		p: function update(ctx, dirty) {
-    			if (dirty[0] & /*profile*/ 16 && t0_value !== (t0_value = /*instrument*/ ctx[16] + "")) set_data_dev(t0, t0_value);
-    		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(ul);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_each_block_1.name,
-    		type: "each",
-    		source: "(688:18) {#each c.collection_instruments as instrument}",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (677:12) {#each profile.collections as c}
-    function create_each_block(ctx) {
-    	let ul1;
     	let li0;
-    	let t0_value = /*c*/ ctx[36].collection_name + "";
-    	let t0;
     	let t1;
-    	let ul0;
+    	let t2;
     	let li1;
-    	let t3;
     	let t4;
-    	let li2;
-    	let t6;
-    	let t7;
-    	let each_value_2 = /*c*/ ctx[36].collection_people;
+    	let each_value_2 = /*c*/ ctx[45].collection_people;
     	validate_each_argument(each_value_2);
     	let each_blocks_1 = [];
 
@@ -3253,7 +3388,7 @@ var app = (function () {
     		each_blocks_1[i] = create_each_block_2(get_each_context_2(ctx, each_value_2, i));
     	}
 
-    	let each_value_1 = /*c*/ ctx[36].collection_instruments;
+    	let each_value_1 = /*c*/ ctx[45].collection_instruments;
     	validate_each_argument(each_value_1);
     	let each_blocks = [];
 
@@ -3263,68 +3398,50 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
-    			ul1 = element("ul");
+    			ul = element("ul");
     			li0 = element("li");
-    			t0 = text(t0_value);
+    			li0.textContent = "Members";
     			t1 = space();
-    			ul0 = element("ul");
-    			li1 = element("li");
-    			li1.textContent = "Members";
-    			t3 = space();
 
     			for (let i = 0; i < each_blocks_1.length; i += 1) {
     				each_blocks_1[i].c();
     			}
 
+    			t2 = space();
+    			li1 = element("li");
+    			li1.textContent = "Instuments";
     			t4 = space();
-    			li2 = element("li");
-    			li2.textContent = "Instuments";
-    			t6 = space();
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
-    			t7 = space();
     			attr_dev(li0, "class", "svelte-160fwfv");
-    			add_location(li0, file$1, 678, 16, 19729);
+    			add_location(li0, file$1, 722, 22, 21373);
     			attr_dev(li1, "class", "svelte-160fwfv");
-    			add_location(li1, file$1, 680, 18, 19797);
-    			attr_dev(li2, "class", "svelte-160fwfv");
-    			add_location(li2, file$1, 686, 18, 19999);
-    			add_location(ul0, file$1, 679, 16, 19774);
-    			attr_dev(ul1, "id", "dropdown");
-    			attr_dev(ul1, "class", "svelte-160fwfv");
-    			add_location(ul1, file$1, 677, 14, 19694);
+    			add_location(li1, file$1, 728, 22, 21602);
+    			add_location(ul, file$1, 721, 20, 21346);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, ul1, anchor);
-    			append_dev(ul1, li0);
-    			append_dev(li0, t0);
-    			append_dev(ul1, t1);
-    			append_dev(ul1, ul0);
-    			append_dev(ul0, li1);
-    			append_dev(ul0, t3);
+    			insert_dev(target, ul, anchor);
+    			append_dev(ul, li0);
+    			append_dev(ul, t1);
 
     			for (let i = 0; i < each_blocks_1.length; i += 1) {
-    				each_blocks_1[i].m(ul0, null);
+    				each_blocks_1[i].m(ul, null);
     			}
 
-    			append_dev(ul0, t4);
-    			append_dev(ul0, li2);
-    			append_dev(ul0, t6);
+    			append_dev(ul, t2);
+    			append_dev(ul, li1);
+    			append_dev(ul, t4);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].m(ul0, null);
+    				each_blocks[i].m(ul, null);
     			}
-
-    			append_dev(ul1, t7);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty[0] & /*profile*/ 16 && t0_value !== (t0_value = /*c*/ ctx[36].collection_name + "")) set_data_dev(t0, t0_value);
-
     			if (dirty[0] & /*profile*/ 16) {
-    				each_value_2 = /*c*/ ctx[36].collection_people;
+    				each_value_2 = /*c*/ ctx[45].collection_people;
     				validate_each_argument(each_value_2);
     				let i;
 
@@ -3336,7 +3453,7 @@ var app = (function () {
     					} else {
     						each_blocks_1[i] = create_each_block_2(child_ctx);
     						each_blocks_1[i].c();
-    						each_blocks_1[i].m(ul0, t4);
+    						each_blocks_1[i].m(ul, t2);
     					}
     				}
 
@@ -3348,7 +3465,7 @@ var app = (function () {
     			}
 
     			if (dirty[0] & /*profile*/ 16) {
-    				each_value_1 = /*c*/ ctx[36].collection_instruments;
+    				each_value_1 = /*c*/ ctx[45].collection_instruments;
     				validate_each_argument(each_value_1);
     				let i;
 
@@ -3360,7 +3477,7 @@ var app = (function () {
     					} else {
     						each_blocks[i] = create_each_block_1(child_ctx);
     						each_blocks[i].c();
-    						each_blocks[i].m(ul0, null);
+    						each_blocks[i].m(ul, null);
     					}
     				}
 
@@ -3372,7 +3489,7 @@ var app = (function () {
     			}
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(ul1);
+    			if (detaching) detach_dev(ul);
     			destroy_each(each_blocks_1, detaching);
     			destroy_each(each_blocks, detaching);
     		}
@@ -3380,9 +3497,157 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
+    		id: create_if_block_4.name,
+    		type: "if",
+    		source: "(721:18) {#if collection_details}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (724:22) {#each c.collection_people as ppl, k}
+    function create_each_block_2(ctx) {
+    	let ul;
+    	let li;
+    	let t_value = /*ppl*/ ctx[50] + "";
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			ul = element("ul");
+    			li = element("li");
+    			t = text(t_value);
+    			attr_dev(li, "class", "svelte-160fwfv");
+    			add_location(li, file$1, 725, 26, 21505);
+    			add_location(ul, file$1, 724, 24, 21474);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, ul, anchor);
+    			append_dev(ul, li);
+    			append_dev(li, t);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty[0] & /*profile*/ 16 && t_value !== (t_value = /*ppl*/ ctx[50] + "")) set_data_dev(t, t_value);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(ul);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block_2.name,
+    		type: "each",
+    		source: "(724:22) {#each c.collection_people as ppl, k}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (730:22) {#each c.collection_instruments as instrument, l}
+    function create_each_block_1(ctx) {
+    	let ul;
+    	let li;
+    	let t0_value = /*instrument*/ ctx[18] + "";
+    	let t0;
+    	let t1;
+
+    	const block = {
+    		c: function create() {
+    			ul = element("ul");
+    			li = element("li");
+    			t0 = text(t0_value);
+    			t1 = space();
+    			attr_dev(li, "class", "svelte-160fwfv");
+    			add_location(li, file$1, 731, 26, 21749);
+    			add_location(ul, file$1, 730, 24, 21718);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, ul, anchor);
+    			append_dev(ul, li);
+    			append_dev(li, t0);
+    			append_dev(ul, t1);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty[0] & /*profile*/ 16 && t0_value !== (t0_value = /*instrument*/ ctx[18] + "")) set_data_dev(t0, t0_value);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(ul);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block_1.name,
+    		type: "each",
+    		source: "(730:22) {#each c.collection_instruments as instrument, l}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (718:14) {#each profile.collections as c, j}
+    function create_each_block(ctx) {
+    	let ul;
+    	let li;
+    	let t0_value = /*c*/ ctx[45].collection_name + "";
+    	let t0;
+    	let t1;
+    	let t2;
+    	let if_block = /*collection_details*/ ctx[16] && create_if_block_4(ctx);
+
+    	const block = {
+    		c: function create() {
+    			ul = element("ul");
+    			li = element("li");
+    			t0 = text(t0_value);
+    			t1 = space();
+    			if (if_block) if_block.c();
+    			t2 = space();
+    			attr_dev(li, "class", "svelte-160fwfv");
+    			add_location(li, file$1, 719, 18, 21254);
+    			attr_dev(ul, "id", "dropdown");
+    			attr_dev(ul, "class", "svelte-160fwfv");
+    			add_location(ul, file$1, 718, 16, 21217);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, ul, anchor);
+    			append_dev(ul, li);
+    			append_dev(li, t0);
+    			append_dev(ul, t1);
+    			if (if_block) if_block.m(ul, null);
+    			append_dev(ul, t2);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty[0] & /*profile*/ 16 && t0_value !== (t0_value = /*c*/ ctx[45].collection_name + "")) set_data_dev(t0, t0_value);
+
+    			if (/*collection_details*/ ctx[16]) {
+    				if (if_block) {
+    					if_block.p(ctx, dirty);
+    				} else {
+    					if_block = create_if_block_4(ctx);
+    					if_block.c();
+    					if_block.m(ul, t2);
+    				}
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(ul);
+    			if (if_block) if_block.d();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(677:12) {#each profile.collections as c}",
+    		source: "(718:14) {#each profile.collections as c, j}",
     		ctx
     	});
 
@@ -3692,6 +3957,8 @@ var app = (function () {
     	let settings_page = false;
     	let instruments_page = false;
     	let collections_page = false;
+    	let collection_details = true;
+    	let addNewCollectionForm = false;
 
     	///end gravatar
     	//@desc:  hits Harbor to validate credintials.  with valid credintials sends token to get user. with user gets profile
@@ -3869,12 +4136,13 @@ var app = (function () {
     						`http://bridgesautomation.duckdns.org:5778/data/latestRecord/${unit_id_d}`,
     						requestOptions
     					).then(response => response.json()).then(result => {
-    						$$invalidate(16, instrument = result);
+    						$$invalidate(18, instrument = result);
 
-    						//console.log(instruments.includes(instrument[1][0].unit_id.trim())) // false
-    						//console.log(instrument[1][0].unit_id); // 1, 2, unit_id
-    						//console.log(instruments.includes("1"))
-    						const fu = instruments.includes(instrument[1][0].unit_id.trim());
+    						//console.log(JSON.stringify(result))
+    						console.log(JSON.stringify(result[2]));
+
+    						const fu = instruments.includes(instrument[2][0].unit_id.trim());
+    						console.log(fu);
 
     						//console.log("instrument: ", instrument[1][0].unit_id.trim())
     						//console.log('fu: ', fu)
@@ -3884,14 +4152,17 @@ var app = (function () {
     							let flag = false;
 
     							for (let i = 0; i < instrument_display.length; i++) {
-    								if (instrument_display[i].unit_id.trim() === instrument[1][0].unit_id.trim()) {
-    									$$invalidate(12, instrument_display[i] = instrument[1][0], instrument_display);
+    								//console.log(instrument_display)
+    								if (instrument_display[i].unit_id.trim() === instrument[2][0].unit_id.trim()) {
+    									$$invalidate(12, instrument_display[i] = instrument[2][0], instrument_display);
     									flag = true;
     								}
     							}
 
+    							console.log("test");
+
     							if (!flag) {
-    								instrument_display.unshift(instrument[1][0]);
+    								instrument_display.unshift(instrument[2][0]);
     								flag = false;
     							}
 
@@ -3910,7 +4181,7 @@ var app = (function () {
     				//hereeeee
     				for (let i = 0; i < profile.instruments.length; i++) {
     					//console.log(profile.instruments);
-    					get_data(profile.instruments[i]);
+    					get_data(" " + profile.instruments[i]);
     				}
     			} catch(err) {
     				console.error(err.message);
@@ -3922,6 +4193,8 @@ var app = (function () {
     	const goToSettings = () => $$invalidate(13, settings_page = !settings_page);
     	const goToInstruments = () => $$invalidate(14, instruments_page = !instruments_page);
     	const goToCollections = () => $$invalidate(15, collections_page = !collections_page);
+    	const showCollectionDetails = () => $$invalidate(16, collection_details = !collection_details);
+    	const addNewCollectionButton = () => $$invalidate(17, addNewCollectionForm = !addNewCollectionForm);
 
     	const get_All_instrumentdata = profile => {
     		return profile.instruments;
@@ -3968,6 +4241,31 @@ var app = (function () {
     		$$invalidate(9, reg_passwrd_confirm);
     	}
 
+    	function input0_input_handler_2() {
+    		reg_username = this.value;
+    		$$invalidate(10, reg_username);
+    	}
+
+    	function input1_input_handler_2() {
+    		reg_email = this.value;
+    		$$invalidate(7, reg_email);
+    	}
+
+    	function input2_input_handler_1() {
+    		reg_company = this.value;
+    		$$invalidate(11, reg_company);
+    	}
+
+    	function input3_input_handler_1() {
+    		reg_passwrd = this.value;
+    		$$invalidate(8, reg_passwrd);
+    	}
+
+    	function input4_input_handler_1() {
+    		reg_passwrd_confirm = this.value;
+    		$$invalidate(9, reg_passwrd_confirm);
+    	}
+
     	$$self.$capture_state = () => ({
     		password,
     		username,
@@ -3989,6 +4287,8 @@ var app = (function () {
     		settings_page,
     		instruments_page,
     		collections_page,
+    		collection_details,
+    		addNewCollectionForm,
     		get_gravatar,
     		login,
     		signup,
@@ -3998,6 +4298,8 @@ var app = (function () {
     		goToSettings,
     		goToInstruments,
     		goToCollections,
+    		showCollectionDetails,
+    		addNewCollectionButton,
     		get_All_instrumentdata
     	});
 
@@ -4014,7 +4316,7 @@ var app = (function () {
     		if ("reg_passwrd_confirm" in $$props) $$invalidate(9, reg_passwrd_confirm = $$props.reg_passwrd_confirm);
     		if ("reg_username" in $$props) $$invalidate(10, reg_username = $$props.reg_username);
     		if ("reg_company" in $$props) $$invalidate(11, reg_company = $$props.reg_company);
-    		if ("instrument" in $$props) $$invalidate(16, instrument = $$props.instrument);
+    		if ("instrument" in $$props) $$invalidate(18, instrument = $$props.instrument);
     		if ("instruments" in $$props) instruments = $$props.instruments;
     		if ("instrument_value" in $$props) instrument_value = $$props.instrument_value;
     		if ("instvals" in $$props) instvals = $$props.instvals;
@@ -4022,6 +4324,8 @@ var app = (function () {
     		if ("settings_page" in $$props) $$invalidate(13, settings_page = $$props.settings_page);
     		if ("instruments_page" in $$props) $$invalidate(14, instruments_page = $$props.instruments_page);
     		if ("collections_page" in $$props) $$invalidate(15, collections_page = $$props.collections_page);
+    		if ("collection_details" in $$props) $$invalidate(16, collection_details = $$props.collection_details);
+    		if ("addNewCollectionForm" in $$props) $$invalidate(17, addNewCollectionForm = $$props.addNewCollectionForm);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -4045,6 +4349,8 @@ var app = (function () {
     		settings_page,
     		instruments_page,
     		collections_page,
+    		collection_details,
+    		addNewCollectionForm,
     		instrument,
     		login,
     		signup,
@@ -4053,13 +4359,19 @@ var app = (function () {
     		goToSettings,
     		goToInstruments,
     		goToCollections,
+    		addNewCollectionButton,
     		input0_input_handler,
     		input1_input_handler,
     		input0_input_handler_1,
     		input1_input_handler_1,
     		input2_input_handler,
     		input3_input_handler,
-    		input4_input_handler
+    		input4_input_handler,
+    		input0_input_handler_2,
+    		input1_input_handler_2,
+    		input2_input_handler_1,
+    		input3_input_handler_1,
+    		input4_input_handler_1
     	];
     }
 
