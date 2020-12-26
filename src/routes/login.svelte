@@ -21,6 +21,22 @@
   let collections_page = false;
   let collection_details = true;
   let addNewCollectionForm = false;
+  let trendData = [];
+  let datas = {};
+
+  //demo chart
+  import Chart from "svelte-frappe-charts";
+  import { object_without_properties } from "svelte/internal";
+
+  let data = {
+    labels: ["a"],
+    datasets: [
+      {
+        values: [1],
+      },
+    ],
+  };
+  // end demo chart
 
   ///gravatar
   function get_gravatar(email, size) {
@@ -345,12 +361,24 @@
     )
       .then((response) => response.json())
       .then((result) => {
-        console.log(JSON.stringify(result));
+        //console.log(JSON.stringify(result));
         sign_up = false;
         login(reg_email, reg_passwrd);
       })
       .catch((error) => console.log("error", error));
   };
+
+  function formatDate(date) {
+    var d = new Date(date),
+      month = "" + (d.getMonth() + 1),
+      day = "" + d.getDate(),
+      year = d.getFullYear();
+
+    if (month.length < 2) month = "0" + month;
+    if (day.length < 2) day = "0" + day;
+
+    return [year, month, day].join("-");
+  }
 
   // register
   const register = (
@@ -386,7 +414,7 @@
     )
       .then((response) => response.json())
       .then((result) => {
-        console.log(JSON.stringify(result));
+        //console.log(JSON.stringify(result));
         profile_create(result.token, reg_company);
       })
       .catch((error) => console.log("error", error));
@@ -415,9 +443,93 @@
       .catch((error) => console.log("error", error));
   };
 
+  //setInterval(() => {}, 5000);
+
   // HERE ... need to get values updated on page
   setInterval(() => {
     try {
+      function get_range_data(unit_id_d, start_time, end_time) {
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+        myHeaders.append("x-auth-token", result.token);
+
+        var requestOptions = {
+          method: "GET",
+          headers: myHeaders,
+          redirect: "follow",
+        };
+
+        //working need to loop an pass unit_id
+        fetch(
+          //"https://cors-anywhere.herokuapp.com/" +
+          //`http://bridgesautomation.duckdns.org:5778/data/rangeRecords/${unit_id_d}/${start_time}/${end_time}`,
+          `http://bridgesautomation.duckdns.org:5778/data/rangeRecords/${unit_id_d}/${start_time}/${end_time}`,
+          requestOptions
+        )
+          .then((response) => response.json())
+          .then((result) => {
+            try {
+              //console.log(result);
+              if (result) {
+                const du = instruments.includes(result[2][0].unit_id.trim());
+                if (du) {
+                  //console.log(result);
+                  let flag = false;
+                  //console.log(result[2].length);
+
+                  //load trend displays
+                  let flaggy = false;
+                  let j = 0;
+                  while (j < trendData.length && flaggy === false) {
+                    console.log(
+                      trendData[j][0].trim() === result[2][0].unit_id.trim()
+                    );
+                    console.log(
+                      trendData[j][0].trim(),
+                      " = ",
+                      result[2][0].unit_id.trim()
+                    );
+                    if (
+                      trendData[j][0].trim() === result[2][0].unit_id.trim()
+                    ) {
+                      flaggy = true;
+                    }
+                    j++;
+                  }
+                  if (!flaggy) {
+                    let trendObj = [
+                      result[2][0].unit_id,
+                      {
+                        labels: [],
+                        datasets: [
+                          {
+                            values: [],
+                          },
+                        ],
+                      },
+                    ];
+                    for (let i = 0; i < result[2].length; i++) {
+                      trendObj[1].datasets[0].values.unshift(
+                        result[2][i].sensor_reading
+                      );
+                      trendObj[1].labels.unshift(result[2][i].time_stamp);
+                    }
+
+                    trendData.unshift(trendObj);
+                  }
+                  flaggy = false;
+                  console.log(trendData);
+                } else {
+                  console.log("else");
+                }
+              }
+            } catch (error) {
+              console.log(error);
+            }
+          })
+          .catch((error) => console.log("error:", error));
+      }
+
       function get_data(unit_id_d) {
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
@@ -438,19 +550,12 @@
           .then((response) => response.json())
           .then((result) => {
             instrument = result;
-            //console.log(JSON.stringify(result))
-            console.log(JSON.stringify(result[2]))
+
             const fu = instruments.includes(instrument[2][0].unit_id.trim());
-            console.log(fu);
-            
-            //console.log("instrument: ", instrument[1][0].unit_id.trim())
-            //console.log('fu: ', fu)
-            //console.log('object: ', instrument[1][0])
-            //debugger;
+
             if (fu) {
               let flag = false;
               for (let i = 0; i < instrument_display.length; i++) {
-                //console.log(instrument_display)
                 if (
                   instrument_display[i].unit_id.trim() ===
                   instrument[2][0].unit_id.trim()
@@ -459,29 +564,27 @@
                   flag = true;
                 }
               }
-              console.log('test')
+
               if (!flag) {
                 instrument_display.unshift(instrument[2][0]);
                 flag = false;
               }
-              console.log(instrument_display);
-              //instrument_display.unshift(instruments[1][0]);
-              //console.log("inhere");
-              //console.log(instrument_display)
             } else {
             }
-            //console.log(instrument[1][0].unit_id);
-            //console.log(instrument_display);
-            //console.log(instruments)
-
-            //if(instrument_display.includes(instrument[1]))
           })
           .catch((error) => console.log("error", error));
       }
       //hereeeee
       for (let i = 0; i < profile.instruments.length; i++) {
-        //console.log(profile.instruments);
         get_data(" " + profile.instruments[i]);
+        let now = new Date();
+        let weekRange = new Date();
+        weekRange.setDate(weekRange.getDate() - 7);
+        get_range_data(
+          profile.instruments[i],
+          formatDate(weekRange),
+          formatDate(now)
+        );
       }
     } catch (err) {
       console.error(err.message);
@@ -589,6 +692,8 @@
         </p>
       </form>
     </main>
+    <Chart {data} type="line" />
+    <p />
   </section>
 {:else if sign_up}
   <section>
@@ -669,6 +774,11 @@
             {#if result}
               {#each instrument_display as obj}
                 <li>{obj.time_stamp}---{obj.unit_id}: {obj.sensor_reading}</li>
+                {#each trendData as trend, index}
+                  {#if obj.unit_id === trend[0]}
+                    <Chart data={trend[1]} type="line" />
+                  {/if}
+                {/each}
               {/each}
             {/if}
           </instrumentsss>
@@ -679,7 +789,8 @@
       <collections_page>
         <center>
           <h3>
-            {user.name}'s Hosted Collections <button on:click={addNewCollectionButton}>add</button>
+            {user.name}'s Hosted Collections
+            <button on:click={addNewCollectionButton}>add</button>
           </h3>
           {#if addNewCollectionForm}
             <form
