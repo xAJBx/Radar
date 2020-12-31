@@ -282,7 +282,6 @@
       .then((response) => response.json())
       .then((res) => {
         result = res;
-
         //send token auth token to get profile
         var myHeaders = new Headers();
         myHeaders.append("x-auth-token", `${result.token}`);
@@ -372,12 +371,15 @@
     var d = new Date(date),
       month = "" + (d.getMonth() + 1),
       day = "" + d.getDate(),
-      year = d.getFullYear();
+      year = d.getFullYear(),
+      hour = d.getHours(),
+      min = d.getMinutes(),
+      sec = d.getSeconds();
 
     if (month.length < 2) month = "0" + month;
     if (day.length < 2) day = "0" + day;
 
-    return [year, month, day].join("-");
+    return [year, month, day].join("-") + " " + [hour, min, sec].join(":");
   }
 
   // register
@@ -509,10 +511,10 @@
                       },
                     ];
                     for (let i = 0; i < result[2].length; i++) {
-                      trendObj[1].datasets[0].values.unshift(
+                      trendObj[1].datasets[0].values.push(
                         result[2][i].sensor_reading
                       );
-                      trendObj[1].labels.unshift(result[2][i].time_stamp);
+                      trendObj[1].labels.push(result[2][i].time_stamp);
                     }
 
                     trendData.unshift(trendObj);
@@ -579,7 +581,7 @@
         get_data(" " + profile.instruments[i]);
         let now = new Date();
         let weekRange = new Date();
-        weekRange.setDate(weekRange.getDate() - 7);
+        weekRange.setDate(weekRange.getDate() - .24);
         get_range_data(
           profile.instruments[i],
           formatDate(weekRange),
@@ -692,7 +694,7 @@
         </p>
       </form>
     </main>
-    <Chart {data} type="line" />
+    
     <p />
   </section>
 {:else if sign_up}
