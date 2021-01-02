@@ -23,6 +23,10 @@
   let addNewCollectionForm = false;
   let trendData = [];
   let datas = {};
+  let collection_name;
+  let collection_owner;
+  let collection_users;
+  let collection_instruments;
 
   //demo chart
   import Chart from "svelte-frappe-charts";
@@ -282,6 +286,7 @@
       .then((response) => response.json())
       .then((res) => {
         result = res;
+
         //send token auth token to get profile
         var myHeaders = new Headers();
         myHeaders.append("x-auth-token", `${result.token}`);
@@ -335,7 +340,7 @@
 
   // navigate to the signup markup
   const signup = () => {
-    sign_up = true;
+    sign_up = !sign_up;
   };
 
   // Profile Create
@@ -378,9 +383,33 @@
 
     if (month.length < 2) month = "0" + month;
     if (day.length < 2) day = "0" + day;
+    if (hour.length < 2) hour = "0" + hour;
+    if (min.length < 2) min = "0" + min;
+    if (sec.length < 2) sec = "0" + sec;
 
     return [year, month, day].join("-") + " " + [hour, min, sec].join(":");
   }
+
+  // create collection
+  // sp requires 
+  // 1. string of instruments delimited with ","
+  // 2. collection name 
+  // 3. collection owner id form mongoDB
+  const collection = async (
+    collection_name,
+    collection_instruments,
+    collection_users
+  ) => {
+    if (!collection_name && !collection_instruments && !collection_users) {
+      return { msg: "Entire form needs filled out" };
+    }
+    collection_owner = username;
+    
+    
+
+    
+    console.log(username);
+  };
 
   // register
   const register = (
@@ -422,6 +451,7 @@
       .catch((error) => console.log("error", error));
   };
 
+  // api key creation
   const API_Key_Gen = (token) => {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
@@ -483,14 +513,14 @@
                   let flaggy = false;
                   let j = 0;
                   while (j < trendData.length && flaggy === false) {
-                    console.log(
-                      trendData[j][0].trim() === result[2][0].unit_id.trim()
-                    );
-                    console.log(
-                      trendData[j][0].trim(),
-                      " = ",
-                      result[2][0].unit_id.trim()
-                    );
+                    //console.log(
+                     // trendData[j][0].trim() === result[2][0].unit_id.trim()
+                    //);
+                    //console.log(
+                    //  trendData[j][0].trim(),
+                    //  " = ",
+                    //  result[2][0].unit_id.trim()
+                    //);
                     if (
                       trendData[j][0].trim() === result[2][0].unit_id.trim()
                     ) {
@@ -520,7 +550,7 @@
                     trendData.unshift(trendObj);
                   }
                   flaggy = false;
-                  console.log(trendData);
+                  //console.log(trendData);
                 } else {
                   console.log("else");
                 }
@@ -580,8 +610,10 @@
       for (let i = 0; i < profile.instruments.length; i++) {
         get_data(" " + profile.instruments[i]);
         let now = new Date();
+
         let weekRange = new Date();
-        weekRange.setDate(weekRange.getDate() - .24);
+        weekRange.setDate(weekRange.getDate() - 0.001);
+        //console.log(formatDate(now));
         get_range_data(
           profile.instruments[i],
           formatDate(weekRange),
@@ -694,7 +726,7 @@
         </p>
       </form>
     </main>
-    
+
     <p />
   </section>
 {:else if sign_up}
@@ -715,7 +747,9 @@
           Confirm
           <input type="password" required bind:value={reg_passwrd_confirm} />
         </label>
-        <div class="buttons"><button>Login</button></div>
+        <div class="buttons"><button>Login</button>
+        <button type="button" on:click={signup}>Cancel</button>
+      </div>
         <p>
           Powered by
           <img
@@ -796,28 +830,24 @@
           </h3>
           {#if addNewCollectionForm}
             <form
-              on:submit|preventDefault={register(reg_username, reg_email, reg_passwrd, reg_passwrd_confirm)}>
+              on:submit|preventDefault={collection(collection_name, collection_instruments, collection_users, collection_owner)}>
               <label>
-                Username
-                <input required bind:value={reg_username} />
-              </label>
-              <label> Email <input required bind:value={reg_email} /> </label>
-              <label>
-                Company
-                <input required bind:value={reg_company} />
+                Collection Name
+                <input required bind:value={collection_name} />
               </label>
               <label>
-                Password
-                <input type="password" required bind:value={reg_passwrd} />
+                Collection Instruments
+                <input required bind:value={collection_instruments} />
               </label>
               <label>
-                Confirm
-                <input
-                  type="password"
-                  required
-                  bind:value={reg_passwrd_confirm} />
+                Collection Users
+                <input required bind:value={collection_users} />
               </label>
-              <div class="buttons"><button>Login</button></div>
+              <label>
+                Collection Owner
+                <input required bind:value={collection_owner} />
+              </label>
+              <div class="buttons"><button>Submit</button></div>
               <p>
                 Powered by
                 <img
