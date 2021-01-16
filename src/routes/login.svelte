@@ -404,8 +404,36 @@
       return { msg: "Entire form needs filled out" };
     }
     collection_owner = username;
-    
-    
+
+
+      var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    myHeaders.append("x-auth-token", result.token);
+
+    var raw = `{ 
+      
+    "collection_owner": "${collection_owner}",
+    "collection_name": "${collection_name}",
+    "collection_users": "${collection_users}",
+    "collection_instruments": "${collection_instruments}"
+
+
+     }`;
+     console.log(raw)
+    var requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow",
+    };
+
+    fetch(
+      //"https://cors-anywhere.herokuapp.com/" +
+      //"http://bridgesautomation.duckdns.org:5778/profile",
+      "http://10.20.30.134:50091/profile/createCollection",
+      requestOptions
+    )
+
 
     
     console.log(username);
@@ -475,12 +503,44 @@
       .catch((error) => console.log("error", error));
   };
 
+
+  // collection
   //setInterval(() => {}, 5000);
+  async function getCollectionInstrumentCurrentValue(owner, unit_id_c, collect_name){
+    
+    try{
+    var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+        myHeaders.append("x-auth-token", result.token);
+
+        var requestOptions = {
+          method: "GET",
+          headers: myHeaders,
+          redirect: "follow",
+        };
+
+        //working need to loop an pass unit_id
+        fetch(
+          //"https://cors-anywhere.herokuapp.com/" +
+          `http://10.20.30.134:50091/data/latestRecord/${owner}/${unit_id_c}/${collect_name}`,
+          requestOptions
+        ).then((response)=>{
+          console.log(response)
+          return response.json()
+        })
+
+      }catch(err){
+        console.log(err)
+      }
+
+}
 
   // HERE ... need to get values updated on page
   setInterval(() => {
     try {
       function get_range_data(unit_id_d, start_time, end_time) {
+        
+        
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
         myHeaders.append("x-auth-token", result.token);
@@ -495,7 +555,7 @@
         fetch(
           //"https://cors-anywhere.herokuapp.com/" +
           //`http://bridgesautomation.duckdns.org:5778/data/rangeRecords/${unit_id_d}/${start_time}/${end_time}`,
-          `http://bridgesautomation.duckdns.org:5778/data/rangeRecords/${unit_id_d}/${start_time}/${end_time}`,
+          `http://bridgesautomation.duckdns.org:5778/data/rangeRecords/Data_${unit_id_d}/${start_time}/${end_time}`,
           requestOptions
         )
           .then((response) => response.json())
@@ -843,10 +903,7 @@
                 Collection Users
                 <input required bind:value={collection_users} />
               </label>
-              <label>
-                Collection Owner
-                <input required bind:value={collection_owner} />
-              </label>
+              
               <div class="buttons"><button>Submit</button></div>
               <p>
                 Powered by
@@ -869,10 +926,20 @@
                           <li>{ppl}</li>
                         </ul>
                       {/each}
-                      <li>Instuments</li>
+                      <li>Instuments</li> 
                       {#each c.collection_instruments as instrument, l}
+                        <!-- svelte-ignore missing-declaration -->
                         <ul>
                           <li>{instrument}</li>
+                          
+                          {#await getCollectionInstrumentCurrentValue("aj@bridgesautomation.com", instrument, c.collection_name)}
+                          <text>..loading</text>
+                          {:then data}
+                          <text>{data}</text>
+                          {:catch error}
+                          <p style="color: red">{error.message}</p>
+                          {/await}
+                          
                         </ul>
                       {/each}
                     </ul>
