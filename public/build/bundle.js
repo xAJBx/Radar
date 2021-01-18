@@ -2696,10 +2696,10 @@ var app = (function () {
     			attr_dev(menu, "class", "svelte-160fwfv");
     			add_location(menu, file$2, 839, 6, 24190);
     			add_location(center2, file$2, 838, 4, 24175);
-    			add_location(br0, file$2, 960, 13, 28279);
-    			add_location(br1, file$2, 960, 20, 28286);
+    			add_location(br0, file$2, 958, 13, 28265);
+    			add_location(br1, file$2, 958, 20, 28272);
     			attr_dev(section, "class", "svelte-160fwfv");
-    			add_location(section, file$2, 960, 4, 28270);
+    			add_location(section, file$2, 958, 4, 28256);
     			attr_dev(mainBody, "class", "svelte-160fwfv");
     			add_location(mainBody, file$2, 827, 2, 23876);
     		},
@@ -4039,7 +4039,7 @@ var app = (function () {
     			insert_dev(target, each_1_anchor, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty[0] & /*profile, getCollectionInstrumentCurrentValue, collection_details*/ 536936464) {
+    			if (dirty[0] & /*profile, getCollectionInstrumentCurrentValue, username, collection_details*/ 536936466) {
     				each_value = /*profile*/ ctx[4].collections;
     				validate_each_argument(each_value);
     				let i;
@@ -4172,7 +4172,7 @@ var app = (function () {
     				each_blocks_1.length = each_value_2.length;
     			}
 
-    			if (dirty[0] & /*getCollectionInstrumentCurrentValue, profile*/ 536870928) {
+    			if (dirty[0] & /*getCollectionInstrumentCurrentValue, username, profile*/ 536870930) {
     				each_value_1 = /*c*/ ctx[53].collection_instruments;
     				validate_each_argument(each_value_1);
     				let i;
@@ -4254,7 +4254,7 @@ var app = (function () {
     	return block;
     }
 
-    // (946:26) {:catch error}
+    // (944:26) {:catch error}
     function create_catch_block(ctx) {
     	let p;
     	let t_value = /*error*/ ctx[58].message + "";
@@ -4266,14 +4266,14 @@ var app = (function () {
     			t = text(t_value);
     			set_style(p, "color", "red");
     			attr_dev(p, "class", "svelte-160fwfv");
-    			add_location(p, file$2, 946, 26, 27908);
+    			add_location(p, file$2, 944, 26, 27894);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
     			append_dev(p, t);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty[0] & /*profile*/ 16 && t_value !== (t_value = /*error*/ ctx[58].message + "")) set_data_dev(t, t_value);
+    			if (dirty[0] & /*username, profile*/ 18 && t_value !== (t_value = /*error*/ ctx[58].message + "")) set_data_dev(t, t_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(p);
@@ -4284,14 +4284,14 @@ var app = (function () {
     		block,
     		id: create_catch_block.name,
     		type: "catch",
-    		source: "(946:26) {:catch error}",
+    		source: "(944:26) {:catch error}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (944:26) {:then data}
+    // (942:26) {:then data}
     function create_then_block(ctx) {
     	let ul;
     	let t_value = JSON.stringify(/*data*/ ctx[34]) + "";
@@ -4301,14 +4301,14 @@ var app = (function () {
     		c: function create() {
     			ul = element("ul");
     			t = text(t_value);
-    			add_location(ul, file$2, 944, 26, 27809);
+    			add_location(ul, file$2, 942, 26, 27795);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, ul, anchor);
     			append_dev(ul, t);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty[0] & /*profile*/ 16 && t_value !== (t_value = JSON.stringify(/*data*/ ctx[34]) + "")) set_data_dev(t, t_value);
+    			if (dirty[0] & /*username, profile*/ 18 && t_value !== (t_value = JSON.stringify(/*data*/ ctx[34]) + "")) set_data_dev(t, t_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(ul);
@@ -4319,14 +4319,14 @@ var app = (function () {
     		block,
     		id: create_then_block.name,
     		type: "then",
-    		source: "(944:26) {:then data}",
+    		source: "(942:26) {:then data}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (942:129)                            <ul>Loading...</ul>                           {:then data}
+    // (940:141)                            <ul>Loading...</ul>                           {:then data}
     function create_pending_block(ctx) {
     	let ul;
 
@@ -4334,7 +4334,7 @@ var app = (function () {
     		c: function create() {
     			ul = element("ul");
     			ul.textContent = "Loading...";
-    			add_location(ul, file$2, 942, 26, 27724);
+    			add_location(ul, file$2, 940, 26, 27710);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, ul, anchor);
@@ -4349,7 +4349,7 @@ var app = (function () {
     		block,
     		id: create_pending_block.name,
     		type: "pending",
-    		source: "(942:129)                            <ul>Loading...</ul>                           {:then data}",
+    		source: "(940:141)                            <ul>Loading...</ul>                           {:then data}",
     		ctx
     	});
 
@@ -4379,7 +4379,7 @@ var app = (function () {
     		error: 58
     	};
 
-    	handle_promise(promise = /*getCollectionInstrumentCurrentValue*/ ctx[29]("aj@bridgesautomation.com", /*instrument*/ ctx[22], /*c*/ ctx[53].collection_name), info);
+    	handle_promise(promise = /*getCollectionInstrumentCurrentValue*/ ctx[29](/*username*/ ctx[1], /*instrument*/ ctx[22], /*c*/ ctx[53].collection_name), info);
 
     	const block = {
     		c: function create() {
@@ -4392,7 +4392,7 @@ var app = (function () {
     			t2 = space();
     			attr_dev(li, "class", "svelte-160fwfv");
     			add_location(li, file$2, 937, 26, 27489);
-    			add_location(ul0, file$2, 940, 26, 27563);
+    			add_location(ul0, file$2, 938, 26, 27537);
     			add_location(ul1, file$2, 936, 24, 27458);
     		},
     		m: function mount(target, anchor) {
@@ -4411,7 +4411,7 @@ var app = (function () {
     			if (dirty[0] & /*profile*/ 16 && t0_value !== (t0_value = /*instrument*/ ctx[22] + "")) set_data_dev(t0, t0_value);
     			info.ctx = ctx;
 
-    			if (dirty[0] & /*profile*/ 16 && promise !== (promise = /*getCollectionInstrumentCurrentValue*/ ctx[29]("aj@bridgesautomation.com", /*instrument*/ ctx[22], /*c*/ ctx[53].collection_name)) && handle_promise(promise, info)) ; else {
+    			if (dirty[0] & /*username, profile*/ 18 && promise !== (promise = /*getCollectionInstrumentCurrentValue*/ ctx[29](/*username*/ ctx[1], /*instrument*/ ctx[22], /*c*/ ctx[53].collection_name)) && handle_promise(promise, info)) ; else {
     				const child_ctx = ctx.slice();
     				child_ctx[34] = child_ctx[58] = info.resolved;
     				info.block.p(child_ctx, dirty);

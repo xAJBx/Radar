@@ -936,10 +936,8 @@
                         <!-- svelte-ignore missing-declaration -->
                         <ul>
                           <li>{instrument}</li>
-
-                        
                           <ul>
-                          {#await getCollectionInstrumentCurrentValue("aj@bridgesautomation.com", instrument, c.collection_name)}
+                          {#await getCollectionInstrumentCurrentValue(username/*"aj@bridgesautomation.com"*/, instrument, c.collection_name)}
                           <ul>Loading...</ul>
                           {:then data}
                           <ul>{JSON.stringify(data)}</ul>
