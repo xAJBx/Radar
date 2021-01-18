@@ -532,8 +532,6 @@
 
         return datadatajson[1][0].sensor_reading
 
-        console.log(JSON.stringify(datadata))
-        return datadata
       }catch(err){
         console.log(err)
       }
