@@ -126,9 +126,6 @@ var app = (function () {
         }
         return target;
     }
-    function svg_element(name) {
-        return document.createElementNS('http://www.w3.org/2000/svg', name);
-    }
     function text(data) {
         return document.createTextNode(data);
     }
@@ -2552,38 +2549,38 @@ var app = (function () {
     function get_each_context_1(ctx, list, i) {
     	const child_ctx = ctx.slice();
     	child_ctx[22] = list[i];
-    	child_ctx[56] = i;
+    	child_ctx[57] = i;
     	return child_ctx;
     }
 
     function get_each_context_2(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[58] = list[i];
-    	child_ctx[60] = i;
+    	child_ctx[59] = list[i];
+    	child_ctx[61] = i;
     	return child_ctx;
     }
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[52] = list[i];
-    	child_ctx[54] = i;
+    	child_ctx[53] = list[i];
+    	child_ctx[55] = i;
     	return child_ctx;
     }
 
     function get_each_context_4(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[64] = list[i];
-    	child_ctx[66] = i;
+    	child_ctx[65] = list[i];
+    	child_ctx[67] = i;
     	return child_ctx;
     }
 
     function get_each_context_3(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[61] = list[i];
+    	child_ctx[62] = list[i];
     	return child_ctx;
     }
 
-    // (822:0) {:else}
+    // (826:0) {:else}
     function create_else_block$1(ctx) {
     	let mainBody;
     	let div;
@@ -2673,38 +2670,38 @@ var app = (function () {
     			t18 = space();
     			br1 = element("br");
     			if (img.src !== (img_src_value = get_gravatar(/*user*/ ctx[3].email, 200))) attr_dev(img, "src", img_src_value);
-    			add_location(img, file$2, 827, 20, 23805);
-    			add_location(center0, file$2, 827, 12, 23797);
+    			add_location(img, file$2, 831, 20, 23896);
+    			add_location(center0, file$2, 831, 12, 23888);
     			attr_dev(h1, "id", "tiptop");
     			attr_dev(h1, "class", "svelte-160fwfv");
-    			add_location(h1, file$2, 826, 10, 23768);
+    			add_location(h1, file$2, 830, 10, 23859);
     			attr_dev(header, "class", "header");
-    			add_location(header, file$2, 825, 8, 23734);
-    			add_location(center1, file$2, 824, 6, 23717);
+    			add_location(header, file$2, 829, 8, 23825);
+    			add_location(center1, file$2, 828, 6, 23808);
     			attr_dev(div, "class", "container");
-    			add_location(div, file$2, 823, 4, 23687);
+    			add_location(div, file$2, 827, 4, 23778);
     			attr_dev(menuButton0, "class", "svelte-160fwfv");
-    			add_location(menuButton0, file$2, 838, 12, 24046);
+    			add_location(menuButton0, file$2, 842, 12, 24137);
     			attr_dev(li0, "class", "svelte-160fwfv");
-    			add_location(li0, file$2, 837, 10, 24029);
+    			add_location(li0, file$2, 841, 10, 24120);
     			attr_dev(menuButton1, "class", "svelte-160fwfv");
-    			add_location(menuButton1, file$2, 841, 12, 24149);
+    			add_location(menuButton1, file$2, 845, 12, 24240);
     			attr_dev(li1, "class", "svelte-160fwfv");
-    			add_location(li1, file$2, 840, 10, 24132);
+    			add_location(li1, file$2, 844, 10, 24223);
     			attr_dev(menuButton2, "class", "svelte-160fwfv");
-    			add_location(menuButton2, file$2, 844, 12, 24258);
+    			add_location(menuButton2, file$2, 848, 12, 24349);
     			attr_dev(li2, "class", "svelte-160fwfv");
-    			add_location(li2, file$2, 843, 10, 24241);
-    			add_location(ul, file$2, 835, 8, 24001);
+    			add_location(li2, file$2, 847, 10, 24332);
+    			add_location(ul, file$2, 839, 8, 24092);
     			attr_dev(menu, "class", "svelte-160fwfv");
-    			add_location(menu, file$2, 834, 6, 23986);
-    			add_location(center2, file$2, 833, 4, 23971);
-    			add_location(br0, file$2, 953, 13, 28033);
-    			add_location(br1, file$2, 953, 20, 28040);
+    			add_location(menu, file$2, 838, 6, 24077);
+    			add_location(center2, file$2, 837, 4, 24062);
+    			add_location(br0, file$2, 959, 13, 28166);
+    			add_location(br1, file$2, 959, 20, 28173);
     			attr_dev(section, "class", "svelte-160fwfv");
-    			add_location(section, file$2, 953, 4, 28024);
+    			add_location(section, file$2, 959, 4, 28157);
     			attr_dev(mainBody, "class", "svelte-160fwfv");
-    			add_location(mainBody, file$2, 822, 2, 23672);
+    			add_location(mainBody, file$2, 826, 2, 23763);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, mainBody, anchor);
@@ -2836,14 +2833,14 @@ var app = (function () {
     		block,
     		id: create_else_block$1.name,
     		type: "else",
-    		source: "(822:0) {:else}",
+    		source: "(826:0) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (792:18) 
+    // (796:18) 
     function create_if_block_1$1(ctx) {
     	let section;
     	let main;
@@ -2924,40 +2921,40 @@ var app = (function () {
     			img1 = element("img");
     			if (img0.src !== (img0_src_value = "/img/MyOPC_200x200.png")) attr_dev(img0, "src", img0_src_value);
     			attr_dev(img0, "alt", "MyOPC");
-    			add_location(img0, file$2, 794, 10, 22687);
-    			add_location(h1, file$2, 794, 6, 22683);
+    			add_location(img0, file$2, 798, 10, 22778);
+    			add_location(h1, file$2, 798, 6, 22774);
     			input0.required = true;
-    			add_location(input0, file$2, 798, 25, 22883);
-    			add_location(label0, file$2, 798, 8, 22866);
+    			add_location(input0, file$2, 802, 25, 22974);
+    			add_location(label0, file$2, 802, 8, 22957);
     			input1.required = true;
-    			add_location(input1, file$2, 799, 22, 22959);
-    			add_location(label1, file$2, 799, 8, 22945);
+    			add_location(input1, file$2, 803, 22, 23050);
+    			add_location(label1, file$2, 803, 8, 23036);
     			input2.required = true;
-    			add_location(input2, file$2, 800, 24, 23034);
-    			add_location(label2, file$2, 800, 8, 23018);
+    			add_location(input2, file$2, 804, 24, 23125);
+    			add_location(label2, file$2, 804, 8, 23109);
     			attr_dev(input3, "type", "password");
     			input3.required = true;
-    			add_location(input3, file$2, 803, 10, 23132);
-    			add_location(label3, file$2, 801, 8, 23095);
+    			add_location(input3, file$2, 807, 10, 23223);
+    			add_location(label3, file$2, 805, 8, 23186);
     			attr_dev(input4, "type", "password");
     			input4.required = true;
-    			add_location(input4, file$2, 807, 10, 23253);
-    			add_location(label4, file$2, 805, 8, 23217);
-    			add_location(button0, file$2, 809, 29, 23367);
+    			add_location(input4, file$2, 811, 10, 23344);
+    			add_location(label4, file$2, 809, 8, 23308);
+    			add_location(button0, file$2, 813, 29, 23458);
     			attr_dev(button1, "type", "button");
-    			add_location(button1, file$2, 810, 8, 23398);
+    			add_location(button1, file$2, 814, 8, 23489);
     			attr_dev(div, "class", "buttons");
-    			add_location(div, file$2, 809, 8, 23346);
+    			add_location(div, file$2, 813, 8, 23437);
     			if (img1.src !== (img1_src_value = "/img/small_BA_logo_75x75_Cropped.png")) attr_dev(img1, "src", img1_src_value);
     			attr_dev(img1, "alt", "BRIDGES AUTOMATION");
-    			add_location(img1, file$2, 814, 10, 23510);
+    			add_location(img1, file$2, 818, 10, 23601);
     			attr_dev(p, "class", "svelte-160fwfv");
-    			add_location(p, file$2, 812, 8, 23475);
-    			add_location(form, file$2, 796, 6, 22748);
+    			add_location(p, file$2, 816, 8, 23566);
+    			add_location(form, file$2, 800, 6, 22839);
     			attr_dev(main, "class", "svelte-160fwfv");
-    			add_location(main, file$2, 793, 4, 22670);
+    			add_location(main, file$2, 797, 4, 22761);
     			attr_dev(section, "class", "svelte-160fwfv");
-    			add_location(section, file$2, 792, 2, 22656);
+    			add_location(section, file$2, 796, 2, 22747);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, section, anchor);
@@ -3059,14 +3056,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$1.name,
     		type: "if",
-    		source: "(792:18) ",
+    		source: "(796:18) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (766:0) {#if login_visi && !sign_up}
+    // (770:0) {#if login_visi && !sign_up}
     function create_if_block$1(ctx) {
     	let section;
     	let main;
@@ -3127,32 +3124,32 @@ var app = (function () {
     			p1 = element("p");
     			if (img0.src !== (img0_src_value = "/img/MyOPC_200x200.png")) attr_dev(img0, "src", img0_src_value);
     			attr_dev(img0, "alt", "MyOPC");
-    			add_location(img0, file$2, 768, 10, 21969);
-    			add_location(h1, file$2, 768, 6, 21965);
+    			add_location(img0, file$2, 772, 10, 22060);
+    			add_location(h1, file$2, 772, 6, 22056);
     			input0.required = true;
-    			add_location(input0, file$2, 771, 25, 22115);
-    			add_location(label0, file$2, 771, 8, 22098);
+    			add_location(input0, file$2, 775, 25, 22206);
+    			add_location(label0, file$2, 775, 8, 22189);
     			attr_dev(input1, "type", "password");
     			input1.required = true;
-    			add_location(input1, file$2, 774, 10, 22210);
-    			add_location(label1, file$2, 772, 8, 22173);
-    			add_location(button0, file$2, 777, 10, 22324);
+    			add_location(input1, file$2, 778, 10, 22301);
+    			add_location(label1, file$2, 776, 8, 22264);
+    			add_location(button0, file$2, 781, 10, 22415);
     			attr_dev(button1, "type", "button");
-    			add_location(button1, file$2, 778, 10, 22357);
+    			add_location(button1, file$2, 782, 10, 22448);
     			attr_dev(div, "class", "buttons");
-    			add_location(div, file$2, 776, 8, 22292);
+    			add_location(div, file$2, 780, 8, 22383);
     			if (img1.src !== (img1_src_value = "/img/small_BA_logo_75x75_Cropped.png")) attr_dev(img1, "src", img1_src_value);
     			attr_dev(img1, "alt", "BRIDGES AUTOMATION");
-    			add_location(img1, file$2, 782, 10, 22472);
+    			add_location(img1, file$2, 786, 10, 22563);
     			attr_dev(p0, "class", "svelte-160fwfv");
-    			add_location(p0, file$2, 780, 8, 22437);
-    			add_location(form, file$2, 770, 6, 22030);
+    			add_location(p0, file$2, 784, 8, 22528);
+    			add_location(form, file$2, 774, 6, 22121);
     			attr_dev(main, "class", "svelte-160fwfv");
-    			add_location(main, file$2, 767, 4, 21952);
+    			add_location(main, file$2, 771, 4, 22043);
     			attr_dev(p1, "class", "svelte-160fwfv");
-    			add_location(p1, file$2, 789, 4, 22616);
+    			add_location(p1, file$2, 793, 4, 22707);
     			attr_dev(section, "class", "svelte-160fwfv");
-    			add_location(section, file$2, 766, 2, 21938);
+    			add_location(section, file$2, 770, 2, 22029);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, section, anchor);
@@ -3226,14 +3223,14 @@ var app = (function () {
     		block,
     		id: create_if_block$1.name,
     		type: "if",
-    		source: "(766:0) {#if login_visi && !sign_up}",
+    		source: "(770:0) {#if login_visi && !sign_up}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (851:4) {#if settings_page}
+    // (855:4) {#if settings_page}
     function create_if_block_9(ctx) {
     	let settings_page_1;
     	let center;
@@ -3280,16 +3277,16 @@ var app = (function () {
     			p11.textContent = "Need an API key? Click here ==";
     			button = element("button");
     			button.textContent = "API Key Generator";
-    			add_location(p10, file$2, 853, 10, 24456);
-    			add_location(br0, file$2, 854, 10, 24495);
-    			add_location(p2, file$2, 855, 10, 24512);
-    			add_location(br1, file$2, 856, 10, 24574);
-    			add_location(br2, file$2, 857, 10, 24591);
-    			add_location(p11, file$2, 858, 10, 24608);
+    			add_location(p10, file$2, 857, 10, 24547);
+    			add_location(br0, file$2, 858, 10, 24586);
+    			add_location(p2, file$2, 859, 10, 24603);
+    			add_location(br1, file$2, 860, 10, 24665);
+    			add_location(br2, file$2, 861, 10, 24682);
+    			add_location(p11, file$2, 862, 10, 24699);
     			attr_dev(button, "type", "button");
-    			add_location(button, file$2, 858, 49, 24647);
-    			add_location(center, file$2, 852, 8, 24437);
-    			add_location(settings_page_1, file$2, 851, 6, 24413);
+    			add_location(button, file$2, 862, 49, 24738);
+    			add_location(center, file$2, 856, 8, 24528);
+    			add_location(settings_page_1, file$2, 855, 6, 24504);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, settings_page_1, anchor);
@@ -3342,14 +3339,14 @@ var app = (function () {
     		block,
     		id: create_if_block_9.name,
     		type: "if",
-    		source: "(851:4) {#if settings_page}",
+    		source: "(855:4) {#if settings_page}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (865:4) {#if instruments_page}
+    // (869:4) {#if instruments_page}
     function create_if_block_6(ctx) {
     	let instruments_page_1;
     	let center;
@@ -3368,10 +3365,10 @@ var app = (function () {
     			t1 = space();
     			instrumentsss = element("instrumentsss");
     			if (if_block) if_block.c();
-    			add_location(h3, file$2, 867, 10, 24887);
-    			add_location(instrumentsss, file$2, 868, 10, 24918);
-    			add_location(center, file$2, 866, 8, 24868);
-    			add_location(instruments_page_1, file$2, 865, 6, 24841);
+    			add_location(h3, file$2, 871, 10, 24978);
+    			add_location(instrumentsss, file$2, 872, 10, 25009);
+    			add_location(center, file$2, 870, 8, 24959);
+    			add_location(instruments_page_1, file$2, 869, 6, 24932);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, instruments_page_1, anchor);
@@ -3425,14 +3422,14 @@ var app = (function () {
     		block,
     		id: create_if_block_6.name,
     		type: "if",
-    		source: "(865:4) {#if instruments_page}",
+    		source: "(869:4) {#if instruments_page}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (870:12) {#if result}
+    // (874:12) {#if result}
     function create_if_block_7(ctx) {
     	let each_1_anchor;
     	let current;
@@ -3521,20 +3518,20 @@ var app = (function () {
     		block,
     		id: create_if_block_7.name,
     		type: "if",
-    		source: "(870:12) {#if result}",
+    		source: "(874:12) {#if result}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (874:18) {#if obj.unit_id === trend[0]}
+    // (878:18) {#if obj.unit_id === trend[0]}
     function create_if_block_8(ctx) {
     	let chart;
     	let current;
 
     	chart = new Base({
-    			props: { data: /*trend*/ ctx[64][1], type: "line" },
+    			props: { data: /*trend*/ ctx[65][1], type: "line" },
     			$$inline: true
     		});
 
@@ -3565,18 +3562,18 @@ var app = (function () {
     		block,
     		id: create_if_block_8.name,
     		type: "if",
-    		source: "(874:18) {#if obj.unit_id === trend[0]}",
+    		source: "(878:18) {#if obj.unit_id === trend[0]}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (873:16) {#each trendData as trend, index}
+    // (877:16) {#each trendData as trend, index}
     function create_each_block_4(ctx) {
     	let if_block_anchor;
     	let current;
-    	let if_block = /*obj*/ ctx[61].unit_id === /*trend*/ ctx[64][0] && create_if_block_8(ctx);
+    	let if_block = /*obj*/ ctx[62].unit_id === /*trend*/ ctx[65][0] && create_if_block_8(ctx);
 
     	const block = {
     		c: function create() {
@@ -3589,7 +3586,7 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (/*obj*/ ctx[61].unit_id === /*trend*/ ctx[64][0]) {
+    			if (/*obj*/ ctx[62].unit_id === /*trend*/ ctx[65][0]) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
 
@@ -3631,23 +3628,23 @@ var app = (function () {
     		block,
     		id: create_each_block_4.name,
     		type: "each",
-    		source: "(873:16) {#each trendData as trend, index}",
+    		source: "(877:16) {#each trendData as trend, index}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (871:14) {#each instrument_display as obj}
+    // (875:14) {#each instrument_display as obj}
     function create_each_block_3(ctx) {
     	let li;
-    	let t0_value = /*obj*/ ctx[61].time_stamp + "";
+    	let t0_value = /*obj*/ ctx[62].time_stamp + "";
     	let t0;
     	let t1;
-    	let t2_value = /*obj*/ ctx[61].unit_id + "";
+    	let t2_value = /*obj*/ ctx[62].unit_id + "";
     	let t2;
     	let t3;
-    	let t4_value = /*obj*/ ctx[61].sensor_reading + "";
+    	let t4_value = /*obj*/ ctx[62].sensor_reading + "";
     	let t4;
     	let t5;
     	let each_1_anchor;
@@ -3680,7 +3677,7 @@ var app = (function () {
 
     			each_1_anchor = empty();
     			attr_dev(li, "class", "svelte-160fwfv");
-    			add_location(li, file$2, 871, 16, 25023);
+    			add_location(li, file$2, 875, 16, 25114);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -3699,9 +3696,9 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if ((!current || dirty[0] & /*instrument_display*/ 4096) && t0_value !== (t0_value = /*obj*/ ctx[61].time_stamp + "")) set_data_dev(t0, t0_value);
-    			if ((!current || dirty[0] & /*instrument_display*/ 4096) && t2_value !== (t2_value = /*obj*/ ctx[61].unit_id + "")) set_data_dev(t2, t2_value);
-    			if ((!current || dirty[0] & /*instrument_display*/ 4096) && t4_value !== (t4_value = /*obj*/ ctx[61].sensor_reading + "")) set_data_dev(t4, t4_value);
+    			if ((!current || dirty[0] & /*instrument_display*/ 4096) && t0_value !== (t0_value = /*obj*/ ctx[62].time_stamp + "")) set_data_dev(t0, t0_value);
+    			if ((!current || dirty[0] & /*instrument_display*/ 4096) && t2_value !== (t2_value = /*obj*/ ctx[62].unit_id + "")) set_data_dev(t2, t2_value);
+    			if ((!current || dirty[0] & /*instrument_display*/ 4096) && t4_value !== (t4_value = /*obj*/ ctx[62].sensor_reading + "")) set_data_dev(t4, t4_value);
 
     			if (dirty[0] & /*trendData, instrument_display*/ 8392704) {
     				each_value_4 = /*trendData*/ ctx[23];
@@ -3761,14 +3758,14 @@ var app = (function () {
     		block,
     		id: create_each_block_3.name,
     		type: "each",
-    		source: "(871:14) {#each instrument_display as obj}",
+    		source: "(875:14) {#each instrument_display as obj}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (884:4) {#if collections_page}
+    // (888:4) {#if collections_page}
     function create_if_block_2(ctx) {
     	let collections_page_1;
     	let center;
@@ -3799,11 +3796,11 @@ var app = (function () {
     			t4 = space();
     			collections = element("collections");
     			if (if_block1) if_block1.c();
-    			add_location(button, file$2, 888, 12, 25554);
-    			add_location(h3, file$2, 886, 10, 25492);
-    			add_location(collections, file$2, 915, 10, 26567);
-    			add_location(center, file$2, 885, 8, 25473);
-    			add_location(collections_page_1, file$2, 884, 6, 25446);
+    			add_location(button, file$2, 892, 12, 25645);
+    			add_location(h3, file$2, 890, 10, 25583);
+    			add_location(collections, file$2, 919, 10, 26658);
+    			add_location(center, file$2, 889, 8, 25564);
+    			add_location(collections_page_1, file$2, 888, 6, 25537);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, collections_page_1, anchor);
@@ -3865,14 +3862,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(884:4) {#if collections_page}",
+    		source: "(888:4) {#if collections_page}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (891:10) {#if addNewCollectionForm}
+    // (895:10) {#if addNewCollectionForm}
     function create_if_block_5(ctx) {
     	let form;
     	let label0;
@@ -3920,23 +3917,23 @@ var app = (function () {
     			t8 = text("Powered by\n                ");
     			img = element("img");
     			input0.required = true;
-    			add_location(input0, file$2, 895, 16, 25880);
-    			add_location(label0, file$2, 893, 14, 25824);
+    			add_location(input0, file$2, 899, 16, 25971);
+    			add_location(label0, file$2, 897, 14, 25915);
     			input1.required = true;
-    			add_location(input1, file$2, 899, 16, 26028);
-    			add_location(label1, file$2, 897, 14, 25965);
+    			add_location(input1, file$2, 903, 16, 26119);
+    			add_location(label1, file$2, 901, 14, 26056);
     			input2.required = true;
-    			add_location(input2, file$2, 903, 16, 26177);
-    			add_location(label2, file$2, 901, 14, 26120);
-    			add_location(button, file$2, 906, 35, 26299);
+    			add_location(input2, file$2, 907, 16, 26268);
+    			add_location(label2, file$2, 905, 14, 26211);
+    			add_location(button, file$2, 910, 35, 26390);
     			attr_dev(div, "class", "buttons");
-    			add_location(div, file$2, 906, 14, 26278);
+    			add_location(div, file$2, 910, 14, 26369);
     			if (img.src !== (img_src_value = "/img/small_BA_logo_75x75_Cropped.png")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "BRIDGES AUTOMATION");
-    			add_location(img, file$2, 909, 16, 26390);
+    			add_location(img, file$2, 913, 16, 26481);
     			attr_dev(p, "class", "svelte-160fwfv");
-    			add_location(p, file$2, 907, 14, 26343);
-    			add_location(form, file$2, 891, 12, 25674);
+    			add_location(p, file$2, 911, 14, 26434);
+    			add_location(form, file$2, 895, 12, 25765);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, form, anchor);
@@ -4008,14 +4005,14 @@ var app = (function () {
     		block,
     		id: create_if_block_5.name,
     		type: "if",
-    		source: "(891:10) {#if addNewCollectionForm}",
+    		source: "(895:10) {#if addNewCollectionForm}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (917:12) {#if profile.collections}
+    // (921:12) {#if profile.collections}
     function create_if_block_3(ctx) {
     	let each_1_anchor;
     	let each_value = /*profile*/ ctx[4].collections;
@@ -4076,14 +4073,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3.name,
     		type: "if",
-    		source: "(917:12) {#if profile.collections}",
+    		source: "(921:12) {#if profile.collections}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (921:18) {#if collection_details}
+    // (925:18) {#if collection_details}
     function create_if_block_4(ctx) {
     	let ul;
     	let li0;
@@ -4091,7 +4088,7 @@ var app = (function () {
     	let t2;
     	let li1;
     	let t4;
-    	let each_value_2 = /*c*/ ctx[52].collection_people;
+    	let each_value_2 = /*c*/ ctx[53].collection_people;
     	validate_each_argument(each_value_2);
     	let each_blocks_1 = [];
 
@@ -4099,7 +4096,7 @@ var app = (function () {
     		each_blocks_1[i] = create_each_block_2(get_each_context_2(ctx, each_value_2, i));
     	}
 
-    	let each_value_1 = /*c*/ ctx[52].collection_instruments;
+    	let each_value_1 = /*c*/ ctx[53].collection_instruments;
     	validate_each_argument(each_value_1);
     	let each_blocks = [];
 
@@ -4128,10 +4125,10 @@ var app = (function () {
     			}
 
     			attr_dev(li0, "class", "svelte-160fwfv");
-    			add_location(li0, file$2, 922, 22, 26841);
+    			add_location(li0, file$2, 926, 22, 26932);
     			attr_dev(li1, "class", "svelte-160fwfv");
-    			add_location(li1, file$2, 928, 22, 27070);
-    			add_location(ul, file$2, 921, 20, 26814);
+    			add_location(li1, file$2, 932, 22, 27161);
+    			add_location(ul, file$2, 925, 20, 26905);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, ul, anchor);
@@ -4152,7 +4149,7 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			if (dirty[0] & /*profile*/ 16) {
-    				each_value_2 = /*c*/ ctx[52].collection_people;
+    				each_value_2 = /*c*/ ctx[53].collection_people;
     				validate_each_argument(each_value_2);
     				let i;
 
@@ -4176,7 +4173,7 @@ var app = (function () {
     			}
 
     			if (dirty[0] & /*getCollectionInstrumentCurrentValue, profile*/ 536870928) {
-    				each_value_1 = /*c*/ ctx[52].collection_instruments;
+    				each_value_1 = /*c*/ ctx[53].collection_instruments;
     				validate_each_argument(each_value_1);
     				let i;
 
@@ -4210,18 +4207,18 @@ var app = (function () {
     		block,
     		id: create_if_block_4.name,
     		type: "if",
-    		source: "(921:18) {#if collection_details}",
+    		source: "(925:18) {#if collection_details}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (924:22) {#each c.collection_people as ppl, k}
+    // (928:22) {#each c.collection_people as ppl, k}
     function create_each_block_2(ctx) {
     	let ul;
     	let li;
-    	let t_value = /*ppl*/ ctx[58] + "";
+    	let t_value = /*ppl*/ ctx[59] + "";
     	let t;
 
     	const block = {
@@ -4230,8 +4227,8 @@ var app = (function () {
     			li = element("li");
     			t = text(t_value);
     			attr_dev(li, "class", "svelte-160fwfv");
-    			add_location(li, file$2, 925, 26, 26973);
-    			add_location(ul, file$2, 924, 24, 26942);
+    			add_location(li, file$2, 929, 26, 27064);
+    			add_location(ul, file$2, 928, 24, 27033);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, ul, anchor);
@@ -4239,7 +4236,7 @@ var app = (function () {
     			append_dev(li, t);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty[0] & /*profile*/ 16 && t_value !== (t_value = /*ppl*/ ctx[58] + "")) set_data_dev(t, t_value);
+    			if (dirty[0] & /*profile*/ 16 && t_value !== (t_value = /*ppl*/ ctx[59] + "")) set_data_dev(t, t_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(ul);
@@ -4250,17 +4247,17 @@ var app = (function () {
     		block,
     		id: create_each_block_2.name,
     		type: "each",
-    		source: "(924:22) {#each c.collection_people as ppl, k}",
+    		source: "(928:22) {#each c.collection_people as ppl, k}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (939:26) {:catch error}
+    // (945:26) {:catch error}
     function create_catch_block(ctx) {
     	let p;
-    	let t_value = /*error*/ ctx[57].message + "";
+    	let t_value = /*error*/ ctx[58].message + "";
     	let t;
 
     	const block = {
@@ -4269,14 +4266,14 @@ var app = (function () {
     			t = text(t_value);
     			set_style(p, "color", "red");
     			attr_dev(p, "class", "svelte-160fwfv");
-    			add_location(p, file$2, 939, 26, 27665);
+    			add_location(p, file$2, 945, 26, 27795);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
     			append_dev(p, t);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty[0] & /*profile*/ 16 && t_value !== (t_value = /*error*/ ctx[57].message + "")) set_data_dev(t, t_value);
+    			if (dirty[0] & /*profile*/ 16 && t_value !== (t_value = /*error*/ ctx[58].message + "")) set_data_dev(t, t_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(p);
@@ -4287,34 +4284,34 @@ var app = (function () {
     		block,
     		id: create_catch_block.name,
     		type: "catch",
-    		source: "(939:26) {:catch error}",
+    		source: "(945:26) {:catch error}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (937:26) {:then data}
+    // (943:26) {:then data}
     function create_then_block(ctx) {
-    	let text_1;
-    	let t_value = /*data*/ ctx[34] + "";
+    	let ul;
+    	let t_value = JSON.stringify(/*data*/ ctx[34]) + "";
     	let t;
 
     	const block = {
     		c: function create() {
-    			text_1 = svg_element("text");
+    			ul = element("ul");
     			t = text(t_value);
-    			add_location(text_1, file$2, 937, 26, 27578);
+    			add_location(ul, file$2, 943, 26, 27696);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, text_1, anchor);
-    			append_dev(text_1, t);
+    			insert_dev(target, ul, anchor);
+    			append_dev(ul, t);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty[0] & /*profile*/ 16 && t_value !== (t_value = /*data*/ ctx[34] + "")) set_data_dev(t, t_value);
+    			if (dirty[0] & /*profile*/ 16 && t_value !== (t_value = JSON.stringify(/*data*/ ctx[34]) + "")) set_data_dev(t, t_value);
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(text_1);
+    			if (detaching) detach_dev(ul);
     		}
     	};
 
@@ -4322,31 +4319,29 @@ var app = (function () {
     		block,
     		id: create_then_block.name,
     		type: "then",
-    		source: "(937:26) {:then data}",
+    		source: "(943:26) {:then data}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (935:129)                            <text>..loading</text>                           {:then data}
+    // (941:129)                            <ul>Loading...</ul>                           {:then data}
     function create_pending_block(ctx) {
-    	let text_1;
-    	let t;
+    	let ul;
 
     	const block = {
     		c: function create() {
-    			text_1 = svg_element("text");
-    			t = text("..loading");
-    			add_location(text_1, file$2, 935, 26, 27490);
+    			ul = element("ul");
+    			ul.textContent = "Loading...";
+    			add_location(ul, file$2, 941, 26, 27611);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, text_1, anchor);
-    			append_dev(text_1, t);
+    			insert_dev(target, ul, anchor);
     		},
     		p: noop,
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(text_1);
+    			if (detaching) detach_dev(ul);
     		}
     	};
 
@@ -4354,20 +4349,21 @@ var app = (function () {
     		block,
     		id: create_pending_block.name,
     		type: "pending",
-    		source: "(935:129)                            <text>..loading</text>                           {:then data}",
+    		source: "(941:129)                            <ul>Loading...</ul>                           {:then data}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (930:22) {#each c.collection_instruments as instrument, l}
+    // (934:22) {#each c.collection_instruments as instrument, l}
     function create_each_block_1(ctx) {
-    	let ul;
+    	let ul1;
     	let li;
     	let t0_value = /*instrument*/ ctx[22] + "";
     	let t0;
     	let t1;
+    	let ul0;
     	let promise;
     	let t2;
 
@@ -4380,46 +4376,49 @@ var app = (function () {
     		then: create_then_block,
     		catch: create_catch_block,
     		value: 34,
-    		error: 57
+    		error: 58
     	};
 
-    	handle_promise(promise = /*getCollectionInstrumentCurrentValue*/ ctx[29]("aj@bridgesautomation.com", /*instrument*/ ctx[22], /*c*/ ctx[52].collection_name), info);
+    	handle_promise(promise = /*getCollectionInstrumentCurrentValue*/ ctx[29]("aj@bridgesautomation.com", /*instrument*/ ctx[22], /*c*/ ctx[53].collection_name), info);
 
     	const block = {
     		c: function create() {
-    			ul = element("ul");
+    			ul1 = element("ul");
     			li = element("li");
     			t0 = text(t0_value);
     			t1 = space();
+    			ul0 = element("ul");
     			info.block.c();
     			t2 = space();
     			attr_dev(li, "class", "svelte-160fwfv");
-    			add_location(li, file$2, 932, 26, 27285);
-    			add_location(ul, file$2, 931, 24, 27254);
+    			add_location(li, file$2, 936, 26, 27376);
+    			add_location(ul0, file$2, 939, 26, 27450);
+    			add_location(ul1, file$2, 935, 24, 27345);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, ul, anchor);
-    			append_dev(ul, li);
+    			insert_dev(target, ul1, anchor);
+    			append_dev(ul1, li);
     			append_dev(li, t0);
-    			append_dev(ul, t1);
-    			info.block.m(ul, info.anchor = null);
-    			info.mount = () => ul;
-    			info.anchor = t2;
-    			append_dev(ul, t2);
+    			append_dev(ul1, t1);
+    			append_dev(ul1, ul0);
+    			info.block.m(ul0, info.anchor = null);
+    			info.mount = () => ul0;
+    			info.anchor = null;
+    			append_dev(ul1, t2);
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
     			if (dirty[0] & /*profile*/ 16 && t0_value !== (t0_value = /*instrument*/ ctx[22] + "")) set_data_dev(t0, t0_value);
     			info.ctx = ctx;
 
-    			if (dirty[0] & /*profile*/ 16 && promise !== (promise = /*getCollectionInstrumentCurrentValue*/ ctx[29]("aj@bridgesautomation.com", /*instrument*/ ctx[22], /*c*/ ctx[52].collection_name)) && handle_promise(promise, info)) ; else {
+    			if (dirty[0] & /*profile*/ 16 && promise !== (promise = /*getCollectionInstrumentCurrentValue*/ ctx[29]("aj@bridgesautomation.com", /*instrument*/ ctx[22], /*c*/ ctx[53].collection_name)) && handle_promise(promise, info)) ; else {
     				const child_ctx = ctx.slice();
-    				child_ctx[34] = child_ctx[57] = info.resolved;
+    				child_ctx[34] = child_ctx[58] = info.resolved;
     				info.block.p(child_ctx, dirty);
     			}
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(ul);
+    			if (detaching) detach_dev(ul1);
     			info.block.d();
     			info.token = null;
     			info = null;
@@ -4430,18 +4429,18 @@ var app = (function () {
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(930:22) {#each c.collection_instruments as instrument, l}",
+    		source: "(934:22) {#each c.collection_instruments as instrument, l}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (918:14) {#each profile.collections as c, j}
+    // (922:14) {#each profile.collections as c, j}
     function create_each_block(ctx) {
     	let ul;
     	let li;
-    	let t0_value = /*c*/ ctx[52].collection_name + "";
+    	let t0_value = /*c*/ ctx[53].collection_name + "";
     	let t0;
     	let t1;
     	let t2;
@@ -4456,10 +4455,10 @@ var app = (function () {
     			if (if_block) if_block.c();
     			t2 = space();
     			attr_dev(li, "class", "svelte-160fwfv");
-    			add_location(li, file$2, 919, 18, 26722);
+    			add_location(li, file$2, 923, 18, 26813);
     			attr_dev(ul, "id", "dropdown");
     			attr_dev(ul, "class", "svelte-160fwfv");
-    			add_location(ul, file$2, 918, 16, 26685);
+    			add_location(ul, file$2, 922, 16, 26776);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, ul, anchor);
@@ -4470,7 +4469,7 @@ var app = (function () {
     			append_dev(ul, t2);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty[0] & /*profile*/ 16 && t0_value !== (t0_value = /*c*/ ctx[52].collection_name + "")) set_data_dev(t0, t0_value);
+    			if (dirty[0] & /*profile*/ 16 && t0_value !== (t0_value = /*c*/ ctx[53].collection_name + "")) set_data_dev(t0, t0_value);
 
     			if (/*collection_details*/ ctx[16]) {
     				if (if_block) {
@@ -4495,7 +4494,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(918:14) {#each profile.collections as c, j}",
+    		source: "(922:14) {#each profile.collections as c, j}",
     		ctx
     	});
 
@@ -4855,6 +4854,7 @@ var app = (function () {
     	let collection_owner;
     	let collection_users;
     	let collection_instruments;
+    	let collection_instrument_data;
 
     	let data = {
     		labels: ["a"],
@@ -5076,15 +5076,16 @@ var app = (function () {
     				redirect: "follow"
     			};
 
-    			//working need to loop an pass unit_id
-    			fetch(
+    			let datadata = await fetch(
     				//"https://cors-anywhere.herokuapp.com/" +
     				`http://10.20.30.134:50091/data/latestRecord/${owner}/${unit_id_c}/${collect_name}`,
     				requestOptions
-    			).then(response => {
-    				console.log(response);
-    				return response.json();
-    			});
+    			);
+
+    			let datadatajson = await datadata.json();
+    			return datadatajson[1][0].sensor_reading;
+    			console.log(JSON.stringify(datadata));
+    			return datadata;
     		} catch(err) {
     			console.log(err);
     		}
@@ -5320,6 +5321,7 @@ var app = (function () {
     		collection_owner,
     		collection_users,
     		collection_instruments,
+    		collection_instrument_data,
     		Chart: Base,
     		object_without_properties,
     		data,
@@ -5369,6 +5371,7 @@ var app = (function () {
     		if ("collection_owner" in $$props) $$invalidate(19, collection_owner = $$props.collection_owner);
     		if ("collection_users" in $$props) $$invalidate(20, collection_users = $$props.collection_users);
     		if ("collection_instruments" in $$props) $$invalidate(21, collection_instruments = $$props.collection_instruments);
+    		if ("collection_instrument_data" in $$props) collection_instrument_data = $$props.collection_instrument_data;
     		if ("data" in $$props) $$invalidate(34, data = $$props.data);
     	};
 

@@ -27,6 +27,7 @@
   let collection_owner;
   let collection_users;
   let collection_instruments;
+  let collection_instrument_data;
 
   //demo chart
   import Chart from "svelte-frappe-charts";
@@ -519,16 +520,19 @@
           redirect: "follow",
         };
 
-        //working need to loop an pass unit_id
+        let datadata = await
         fetch(
           //"https://cors-anywhere.herokuapp.com/" +
           `http://10.20.30.134:50091/data/latestRecord/${owner}/${unit_id_c}/${collect_name}`,
           requestOptions
-        ).then((response)=>{
-          console.log(response)
-          return response.json()
-        })
+        )
 
+        let datadatajson = await datadata.json()
+
+        return datadatajson[1][0].sensor_reading
+
+        console.log(JSON.stringify(datadata))
+        return datadata
       }catch(err){
         console.log(err)
       }
@@ -931,15 +935,17 @@
                         <!-- svelte-ignore missing-declaration -->
                         <ul>
                           <li>{instrument}</li>
-                          
+
+                        
+                          <ul>
                           {#await getCollectionInstrumentCurrentValue("aj@bridgesautomation.com", instrument, c.collection_name)}
-                          <text>..loading</text>
+                          <ul>Loading...</ul>
                           {:then data}
-                          <text>{data}</text>
+                          <ul>{JSON.stringify(data)}</ul>
                           {:catch error}
                           <p style="color: red">{error.message}</p>
                           {/await}
-                          
+                        </ul>
                         </ul>
                       {/each}
                     </ul>
