@@ -430,8 +430,8 @@
 
     fetch(
       //"https://cors-anywhere.herokuapp.com/" +
-      //"http://bridgesautomation.duckdns.org:5778/profile",
-      "http://10.20.30.134:50091/profile/createCollection",
+      "http://bridgesautomation.duckdns.org:5778/profile",
+      //"http://10.20.30.134:50091/profile/createCollection",
       requestOptions
     )
 
@@ -523,7 +523,8 @@
         let datadata = await
         fetch(
           //"https://cors-anywhere.herokuapp.com/" +
-          `http://10.20.30.134:50091/data/latestRecord/${owner}/${unit_id_c}/${collect_name}`,
+          //`http://10.20.30.134:50091/data/latestRecord/${owner}/${unit_id_c}/${collect_name}`,
+          `http://bridgesautomation.duckdns.org:5778/data/latestRecord/${owner}/${unit_id_c}/${collect_name}`,
           requestOptions
         )
 
