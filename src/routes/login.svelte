@@ -430,7 +430,7 @@
 
     fetch(
       //"https://cors-anywhere.herokuapp.com/" +
-      "http://bridgesautomation.duckdns.org:5778/profile",
+      "http://bridgesautomation.duckdns.org:5778/profile/createCollections",
       //"http://10.20.30.134:50091/profile/createCollection",
       requestOptions
     )
