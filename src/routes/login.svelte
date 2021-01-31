@@ -429,8 +429,8 @@
     };
 
     let feting = fetch(
-      "https://cors-anywhere.herokuapp.com/" +
-      "http://bridgesautomation.duckdns.org:5778/profile/createCollections",
+      //"https://cors-anywhere.herokuapp.com/" +
+      "http://bridgesautomation.duckdns.org:5778/profile/createCollection",
       //"http://10.20.30.134:50091/profile/createCollection",
       requestOptions
     )
