@@ -932,7 +932,11 @@
                         <ul>
                           <li>{instrument}</li>
                           <ul>
-                          {#await getCollectionInstrumentCurrentValue(c.collection_owner/*"aj@bridgesautomation.com"*/, instrument, c.collection_name)}
+                              {#await getCollectionInstrumentCurrentValue(()=>{
+				 return  c.collection_owner || username
+			      },
+				  instrument,
+				  c.collection_name)}
                           <ul>Loading...</ul>
                           {:then data}
                           <ul>{JSON.stringify(data)}</ul>
