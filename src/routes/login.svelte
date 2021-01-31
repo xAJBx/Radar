@@ -526,7 +526,7 @@
         )
 
         let datadatajson = await datadata.json()
-        //console.log(datadatajson)
+        console.log(datadatajson)
         return datadatajson[1][0].sensor_reading
 
       }catch(err){
