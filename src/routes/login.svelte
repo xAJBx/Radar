@@ -420,7 +420,7 @@
 
 
      }`;
-     console.log(raw)
+     //console.log(raw)
     var requestOptions = {
       method: "POST",
       headers: myHeaders,
@@ -434,7 +434,7 @@
       //"http://10.20.30.134:50091/profile/createCollection",
       requestOptions
     )
-    console.log(feting);
+    console.log("sent fetch...");
   };
 
   // register
@@ -526,7 +526,7 @@
         )
 
         let datadatajson = await datadata.json()
-        console.log(datadatajson)
+        //console.log(datadatajson)
         return datadatajson[1][0].sensor_reading
 
       }catch(err){
