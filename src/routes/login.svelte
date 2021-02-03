@@ -555,7 +555,7 @@
         fetch(
           //"https://cors-anywhere.herokuapp.com/" +
           //`http://bridgesautomation.duckdns.org:5778/data/rangeRecords/${unit_id_d}/${start_time}/${end_time}`,
-          `http://bridgesautomation.duckdns.org:5778/data/rangeRecords/Data_${unit_id_d}/${start_time}/${end_time}`,
+          `http://bridgesautomation.duckdns.org:5778/data/rangeRecords/${unit_id_d}/${start_time}/${end_time}`,
           requestOptions
         )
           .then((response) => response.json())
