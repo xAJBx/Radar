@@ -380,7 +380,28 @@
       .catch((error) => console.log("error", error));
   };
 
-  function formatDate(date) {
+ function formatUTCDate(date){
+    var d = new Date(date),
+      month = "" + (d.getUTCMonth() + 1),
+      day = "" + d.getUTCDate(),
+      year = d.getUTCFullYear(),
+      hour = d.getUTCHours(),
+      min = d.getUTCMinutes(),
+      sec = d.getUTCSeconds();
+
+    if (month.length < 2) month = "0" + month;
+    if (day.length < 2) day = "0" + day;
+    if (hour.length < 2) hour = "0" + hour;
+    if (min.length < 2) min = "0" + min;
+    if (sec.length < 2) sec = "0" + sec;
+
+    return [year, month, day].join("-") + " " + [hour, min, sec].join(":");
+  }
+
+
+ }
+ 
+ function formatDate(date) {
     var d = new Date(date),
       month = "" + (d.getMonth() + 1),
       day = "" + d.getDate(),
@@ -683,8 +704,8 @@
         //console.log(formatDate(now));
         get_range_data(
           profile.instruments[i],
-          formatDate(weekRange),
-          formatDate(now)
+          formatUTCDate(weekRange),
+          formatUTCDate(now)
         );
       }
     } catch (err) {
