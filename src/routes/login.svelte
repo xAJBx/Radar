@@ -399,7 +399,7 @@
   }
 
 
- }
+ 
  
  function formatDate(date) {
     var d = new Date(date),
@@ -705,7 +705,7 @@
         get_range_data(
           profile.instruments[i],
           formatUTCDate(weekRange),
-          formatUTCDate(now)
+          formatUTCxDate(now)
         );
       }
     } catch (err) {
