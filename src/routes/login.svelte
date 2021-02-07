@@ -684,7 +684,7 @@
         get_range_data(
           profile.instruments[i],
           formatDate(weekRange),
-          formatDate(now + now.getTimezoneOffset)
+          formatDate(now + now.getTimezoneOffset())
         );
       }
     } catch (err) {
