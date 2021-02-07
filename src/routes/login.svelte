@@ -28,7 +28,14 @@
   let collection_users;
   let collection_instruments;
   let collection_instrument_data;
+  let UTC_time_difference;
 
+ //calculat client time - UTC time delta
+ function client_utc_delta(){
+ }
+
+
+ 
   //demo chart
   import Chart from "svelte-frappe-charts";
   import { object_without_properties } from "svelte/internal";
@@ -677,7 +684,7 @@
         get_range_data(
           profile.instruments[i],
           formatDate(weekRange),
-          formatDate(now)
+          formatDate(now + now.getTimezoneOffset)
         );
       }
     } catch (err) {
