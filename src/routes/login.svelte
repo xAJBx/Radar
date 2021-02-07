@@ -704,8 +704,8 @@
         //console.log(formatDate(now));
         get_range_data(
           profile.instruments[i],
-          formatDate(weekRange),
-          formatxDate(now)
+          formatUTCDate(weekRange),
+          formatUTCDate(now)
         );
       }
     } catch (err) {
