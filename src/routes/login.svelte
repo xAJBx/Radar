@@ -382,12 +382,12 @@
 
   function formatDate(date) {
     var d = new Date(date),
-      month = "" + (d.getMonth() + 1),
-      day = "" + d.getDate(),
-      year = d.getFullYear(),
-      hour = d.getHours(),
-      min = d.getMinutes(),
-      sec = d.getSeconds();
+      month = "" + (d.getUTCMonth() + 1),
+      day = "" + d.getUTCDate(),
+      year = d.getUTCFullYear(),
+      hour = d.getUTCHours(),
+      min = d.getUTCMinutes(),
+      sec = d.getUTCSeconds();
 
     if (month.length < 2) month = "0" + month;
     if (day.length < 2) day = "0" + day;
@@ -684,7 +684,7 @@
         get_range_data(
           profile.instruments[i],
           formatDate(weekRange),
-          formatDate(now + now.getTimezoneOffset())
+          formatDate(now)
         );
       }
     } catch (err) {
