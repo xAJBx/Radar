@@ -971,8 +971,6 @@
                         </ul>
                       {/each}
 		      <li>Comments</li>
-
-		      </ul>
                     </ul>
                   {/if}
                 </ul>
