@@ -971,13 +971,11 @@
                         </ul>
                       {/each}
 		      <li>Comments</li>
-		      {#each profile.collections.comments as comments}
-			  <ul>
-			      <li>{comments.post_time}</li>
-			      <li>{comments.author}</li>
-			      <li>{comments.comment}</li>
-			  </ul>
+		      <ul>
+		      {#each c.comments as comments, coms}
+			      <li>{JSON.stringify(comments[coms])}</li>
 		      {/each}
+		      </ul>
                     </ul>
                   {/if}
                 </ul>
