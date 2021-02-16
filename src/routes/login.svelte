@@ -972,7 +972,7 @@
                       {/each}
 		      <li>Comments</li>
 		      <ul>
-			  <li>{c.comments}
+			  <li>{c.comments[0][0]}</li>
 		      </ul>
 		    </ul>
                   {/if}
