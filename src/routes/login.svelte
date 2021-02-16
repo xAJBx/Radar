@@ -973,7 +973,7 @@
 		      <li>Comments</li>
 		      <ul>
 		      {#each c.comments as comments, coms}
-			      <li>{JSON.stringify(comments[coms])}</li>
+			      <li>{comments[coms]}</li>
 		      {/each}
 		      </ul>
                     </ul>
