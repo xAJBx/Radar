@@ -971,10 +971,7 @@
                         </ul>
                       {/each}
 		      <li>Comments</li>
-		      <ul>
-		      {#each c.comments as comments, coms}
-			      <li>{comments[coms]}</li>
-		      {/each}
+
 		      </ul>
                     </ul>
                   {/if}
