@@ -972,7 +972,11 @@
                       {/each}
 		      <li>Comments</li>
 		      <ul>
-			  <li>{c.collection_comments[0].comment}</li>
+			  {#each c.collection_comments as com}
+			      <li> {com.post_time}</li>
+			      <li> {com.author}</li>
+			      <li> {com.comment} </li>
+			  {/each}
 		      </ul>
 		    </ul>
                   {/if}
