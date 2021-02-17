@@ -972,7 +972,7 @@
                       {/each}
 		      <li>Comments</li>
 		      <ul>
-			  <li>{c[0].collection_comments[0].comment}</li>
+			  <li>{c.collection_comments[0].comment}</li>
 		      </ul>
 		    </ul>
                   {/if}
