@@ -973,7 +973,8 @@
 		      <li>Comments</li>
 		      <ul>
 			  {#each c.collection_comments as com}
-			      <li> {com.post_time}: {com.author} - {com.comment}</li>
+			      <p style="border:3px; border-style:solid; border-color:#FF0000; padding: 1em;">
+			       {com.post_time}: {com.author} - {com.comment}</p>
 			  {/each}
 		      </ul>
 		    </ul>
