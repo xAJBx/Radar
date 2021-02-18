@@ -970,16 +970,14 @@
                         </ul>
                         </ul>
                       {/each}
-		      <p style="border:3px; border-style:solid; border-color:#FF0000; padding: 1em;">
 		      <h3>Comments</H3>
-		      
+		      <div style="border:3px; border-style:solid; border-color:#FF0000; padding: 1em;">
 			  {#each c.collection_comments as com}
 			      <p style="border:3px; border-style:solid; border-color:#FF0000; padding: 1em;">
 				  {com.post_time}: {com.author} - {com.comment}
 			      </p>
 			  {/each}
-		      
-		      </p>
+		      </div>
 		    </ul>
                   {/if}
                 </ul>
