@@ -977,6 +977,14 @@
 				 {com.author} at {com.post_time}: {com.comment}
 			      </p>
 			  {/each}
+			  <form on:submit|preventDefault{alert(comment)}>
+			      <label>
+				  New Comment: <input required bind:value={comment} />
+			      </label>
+			      
+			  </form>
+
+
 		      </div>
 		    </ul>
                   {/if}
