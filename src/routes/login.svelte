@@ -982,7 +982,7 @@
 			      <label>
 				  New Comment: <input required bind:value={comment} />
 			      </label>
-			      
+			  <div class="buttons"><button>Submit</button></div>    
 			  </form>
 
 
