@@ -918,8 +918,7 @@
             <button on:click={addNewCollectionButton}>add</button>
           </h3>
           {#if addNewCollectionForm}
-            <form
-              on:submit|preventDefault={collection(collection_name, collection_instruments, collection_users, collection_owner)}>
+            <form on:submit|preventDefault={collection(collection_name, collection_instruments, collection_users, collection_owner)}>
               <label>
                 Collection Name
                 <input required bind:value={collection_name} />
@@ -978,7 +977,7 @@
 				 {com.author} at {com.post_time}: {com.comment}
 			      </p>
 			  {/each}
-			  <form on:submit|preventDefault{alert(comment)}>
+			  <form on:submit|preventDefault={alert(comment)}>
 			      <label>
 				  New Comment: <input required bind:value={comment} />
 			      </label>
