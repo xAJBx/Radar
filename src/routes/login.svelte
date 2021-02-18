@@ -29,7 +29,8 @@
   let collection_instruments;
   let collection_instrument_data;
   let UTC_time_difference;
-
+  let comment;
+ 
  //calculat client time - UTC time delta
  function client_utc_delta(){
  }
