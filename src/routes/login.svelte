@@ -970,7 +970,7 @@
                         </ul>
                         </ul>
                       {/each}
-		      <h3>Comments</H3>
+		      <h3>Comments</h3>
 		      <div style="border:3px; border-style:solid; border-color:#FF0000; padding: 1em;">
 			  {#each c.collection_comments as com}
 			      <p style="border:3px; border-style:solid; border-color:#FF0000; padding: 1em;">
