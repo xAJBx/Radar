@@ -971,10 +971,10 @@
                         </ul>
                       {/each}
 		      <h3>Comments</h3>
-		      <div style="border:3px; border-style:solid; border-color:#FF0000; padding: 1em;">
+		      <div style="border:3px; border-style:solid; border-color:#3D3D3D; padding: 1em;">
 			  {#each c.collection_comments as com}
-			      <p style="border:3px; border-style:solid; border-color:#FF0000; padding: 1em;">
-				  {com.post_time}: {com.author} - {com.comment}
+			      <p style="border:3px; border-style:solid; border-color:#C1C1C1; padding: 1em;">
+				 {com.author} at {com.post_time}: {com.comment}
 			      </p>
 			  {/each}
 		      </div>
