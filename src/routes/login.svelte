@@ -977,9 +977,10 @@
 			      </label>
 			      <div class="buttons"><button>Submit</button></div>    
 			  </form>
-		      </div>
+	
                   {/if}
-              {/each}
+		  {/each}
+	      </div>		  
             {/if}
           </collections>
         </center>
