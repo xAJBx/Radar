@@ -942,33 +942,33 @@
             </form>
           {/if}
           <collections>
-            {#if profile.collections}
+              {#if profile.collections}
+		  <h3>Collections</h3>
+		  <hr>
               {#each profile.collections as c, j}
                 <ul id="dropdown">
-                  <li>{c.collection_name}</li>
+                    <h3>{c.collection_name}</h3>
+		    <hr>
                   {#if collection_details}
-                    <ul>
-                      <li>Members</li>
-                      {#each c.collection_people as ppl, k}
-                        <ul>
-                          <li>{ppl}</li>
-                        </ul>
-                      {/each}
-                      <li>Instuments</li> 
-                      {#each c.collection_instruments as instrument, l}
-                        <!-- svelte-ignore missing-declaration -->
-                        <ul>
-                          <li>{instrument}</li>
-                          <ul>
-                           {#await getCollectionInstrumentCurrentValue(c.collection_owner || username,instrument,c.collection_name)}
-                          <ul>Loading...</ul>
+                    
+                      <h3>Members</h3>
+		      <hr>
+		      {#each c.collection_people as ppl, k}
+                        <p3>{ppl}<p3>
+                        <hr>
+                      {/ach}
+                      <h3>Instuments</h3> 
+		      <hr>
+		      {#each c.collection_instruments as instrument, l}
+                          {#await getCollectionInstrumentCurrentValue(c.collection_owner || username,instrument,c.collection_name)}
+                          <p3>Loading...{insrument}</p3>
                           {:then data}
-                          <ul>{JSON.stringify(data)}</ul>
+                          <p3>{instrument}: {JSON.stringify(data)}</p3>
                           {:catch error}
                           <p style="color: red">{error.message}</p>
                           {/await}
-                        </ul>
-                        </ul>
+                        <hr>
+                        
                       {/each}
 		      <h3>Comments</h3>
 		      <div style="border:3px; border-style:solid; border-color:#3D3D3D; padding: 1em;">
