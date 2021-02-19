@@ -946,11 +946,9 @@
 		  <h3>Collections</h3>
 		  <hr>
               {#each profile.collections as c, j}
-                <ul id="dropdown">
                     <h3>{c.collection_name}</h3>
 		    <hr>
                   {#if collection_details}
-                    
                       <h3>Members</h3>
 		      <hr>
 		      {#each c.collection_people as ppl, k}
@@ -972,23 +970,18 @@
 		      <h3>Comments</h3>
 		      <div style="border:3px; border-style:solid; border-color:#3D3D3D; padding: 1em;">
 			  {#each c.collection_comments as com}
-			      <h4>{com.author} at {com.post_time}</h4>
-			     
-			      <p>{com.comment}</p>
-			     <hr>
+			  <h4>{com.author} at {com.post_time}</h4>
+			  <p>{com.comment}</p>
+			  <hr>
 			  {/each}
 			  <form on:submit|preventDefault={alert(comment)}>
 			      <label>
 				  New Comment: <textarea required bind:value={comment} />
 			      </label>
-			  <div class="buttons"><button>Submit</button></div>    
+			      <div class="buttons"><button>Submit</button></div>    
 			  </form>
-
-
 		      </div>
-		    
                   {/if}
-                
               {/each}
             {/if}
           </collections>
