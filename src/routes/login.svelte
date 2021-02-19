@@ -974,9 +974,9 @@
 		      <div style="border:3px; border-style:solid; border-color:#3D3D3D; padding: 1em;">
 			  {#each c.collection_comments as com}
 			      <h4>{com.author} at {com.post_time}</h4>
-			      <p3 style="border:3px; border-style:solid; border-color:#C1C1C1; padding: 1em;">
-				  {com.comment}
-			      </p3>
+			     
+			      <p>{com.comment}</p>
+			     <hr>
 			  {/each}
 			  <form on:submit|preventDefault={alert(comment)}>
 			      <label>
