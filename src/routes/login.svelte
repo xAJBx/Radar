@@ -956,7 +956,7 @@
 		      {#each c.collection_people as ppl, k}
                         <p3>{ppl}<p3>
                         <hr>
-                      {/ach}
+                      {/each}
                       <h3>Instuments</h3> 
 		      <hr>
 		      {#each c.collection_instruments as instrument, l}
