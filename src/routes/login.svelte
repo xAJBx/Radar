@@ -945,20 +945,16 @@
           {/if}
           <collections>
               {#if profile.collections}
-		  
-		  
-              {#each profile.collections as c, j}
+		      <div style="border:3px; border-style:solid; border-color:#3D3D3D; padding: 1em;">
+		  {#each profile.collections as c, j}
                     <h3>{c.collection_name}</h3>
 		  
                   {#if collection_details}
                       <h3>Members</h3>
-		  
 		      {#each c.collection_people as ppl, k}
                         <li>{ppl}</li>
-                  
                       {/each}
                       <h3>Instuments</h3> 
-		  
 		      {#each c.collection_instruments as instrument, l}
                           {#await getCollectionInstrumentCurrentValue(c.collection_owner || username,instrument,c.collection_name)}
                           <li>Loading...{instrument}</li>
@@ -967,10 +963,9 @@
                           {:catch error}
                           <li style="color: red">{error.message}</li>
                           {/await}
-                  
                       {/each}
 		      <h3>Comments</h3>
-		      <div style="border:3px; border-style:solid; border-color:#3D3D3D; padding: 1em;">
+
 			  {#each c.collection_comments as com}
 			  <h4>{com.author} at {com.post_time}</h4>
 			  <p>{com.comment}</p>
