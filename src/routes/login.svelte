@@ -914,7 +914,8 @@
       <collections_page>
         <center>
           <h3>
-            {user.name}'s Hosted Collections
+              {user.name}'s Collections
+	      <hr>
             <button on:click={addNewCollectionButton}>add</button>
           </h3>
           {#if addNewCollectionForm}
@@ -943,20 +944,20 @@
           {/if}
           <collections>
               {#if profile.collections}
-		  <h3>Collections</h3>
-		  <hr>
+		  
+		  
               {#each profile.collections as c, j}
                     <h3>{c.collection_name}</h3>
-		    <hr>
+		  
                   {#if collection_details}
                       <h3>Members</h3>
-		      <hr>
+		  
 		      {#each c.collection_people as ppl, k}
                         <p3>{ppl}</p3>
                         <hr>
                       {/each}
                       <h3>Instuments</h3> 
-		      <hr>
+		  
 		      {#each c.collection_instruments as instrument, l}
                           {#await getCollectionInstrumentCurrentValue(c.collection_owner || username,instrument,c.collection_name)}
                           <p3>Loading...{instrument}</p3>
@@ -965,7 +966,7 @@
                           {:catch error}
                           <p style="color: red">{error.message}</p>
                           {/await}
-                        <hr>
+                  
                       {/each}
 		      <h3>Comments</h3>
 		      <div style="border:3px; border-style:solid; border-color:#3D3D3D; padding: 1em;">
