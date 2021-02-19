@@ -968,7 +968,6 @@
                           <p style="color: red">{error.message}</p>
                           {/await}
                         <hr>
-                        
                       {/each}
 		      <h3>Comments</h3>
 		      <div style="border:3px; border-style:solid; border-color:#3D3D3D; padding: 1em;">
@@ -987,9 +986,9 @@
 
 
 		      </div>
-		    </ul>
+		    
                   {/if}
-                </ul>
+                
               {/each}
             {/if}
           </collections>
