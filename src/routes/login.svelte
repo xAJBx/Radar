@@ -951,10 +951,12 @@
                   {#if collection_details}
                       <h3>Members</h3>
 		      <hr>
+		      <div>
 		      {#each c.collection_people as ppl, k}
-                        <p3>{ppl}<p3>
+                        <p3>{ppl}</p3>
                         <hr>
                       {/each}
+		      </div>
                       <h3>Instuments</h3> 
 		      <hr>
 		      {#each c.collection_instruments as instrument, l}
