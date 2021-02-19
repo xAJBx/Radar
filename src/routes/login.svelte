@@ -915,10 +915,11 @@
         <center>
           <h3>
               {user.name}'s Collections
-	      <hr>
+	     
             <button on:click={addNewCollectionButton}>add</button>
           </h3>
-          {#if addNewCollectionForm}
+	  <hr>
+	  {#if addNewCollectionForm}
             <form on:submit|preventDefault={collection(collection_name, collection_instruments, collection_users, collection_owner)}>
               <label>
                 Collection Name
@@ -953,18 +954,18 @@
                       <h3>Members</h3>
 		  
 		      {#each c.collection_people as ppl, k}
-                        <p3>{ppl}</p3>
-                        <hr>
+                        <li>{ppl}</li>
+                  
                       {/each}
                       <h3>Instuments</h3> 
 		  
 		      {#each c.collection_instruments as instrument, l}
                           {#await getCollectionInstrumentCurrentValue(c.collection_owner || username,instrument,c.collection_name)}
-                          <p3>Loading...{instrument}</p3>
+                          <li>Loading...{instrument}</li>
                           {:then data}
-                          <p3>{instrument}: {JSON.stringify(data)}</p3>
+                          <li>{instrument}: {JSON.stringify(data)}</li>
                           {:catch error}
-                          <p style="color: red">{error.message}</p>
+                          <li style="color: red">{error.message}</li>
                           {/await}
                   
                       {/each}
