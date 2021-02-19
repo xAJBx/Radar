@@ -963,7 +963,7 @@
                           {#await getCollectionInstrumentCurrentValue(c.collection_owner || username,instrument,c.collection_name)}
                           <li>Loading...{instrument}</li>
                           {:then data}
-                          <li>{instrument}: <a style="border:1px; border-style:solid; border-color:#3D3D3D; padding: 1em;">{JSON.stringify(data)}</a></li>
+                          <li>{instrument}: <a style="border:1px; border-style:solid; border-color:#3D3D3D;">{JSON.stringify(data)}</a></li>
                           {:catch error}
                           <li style="color: red">{error.message}</li>
                           {/await}
