@@ -982,15 +982,15 @@
 		  
                   {#if collection_details}
                       <h3>Members</h3>
-		      {#each c.collection_people as ppl, k}
+pp		      {#each c.collection_people as ppl, k}
                         <li>{ppl}</li>
                       {/each}
                       <h3>Instuments</h3> 
 		      {#each c.collection_instruments as instrument, l}
-                          {#await getCollectionInstrumentCurrentValue(c.collection_owner || username,instrument,c.collection_name)}
-                          <li>Loading...{instrument}</li>
+                          {#await getCollectionInstrumentCurrentValue(c.collection_owner || username,instrument[l].instrument_name,c.collection_name)}
+                          <li>Loading...{instrument[l].instrument_name}</li>
                           {:then data}
-                          <li>{instrument}: <a style="border:1px; border-style:solid; border-color:#3D3D3D;">{JSON.stringify(data)}</a></li>
+                          <li>{instrument[l].instrument_name}: <a style="border:1px; border-style:solid; border-color:#3D3D3D;">{JSON.stringify(data)}</a></li>
                           {:catch error}
                           <li style="color: red">{error.message}</li>
                           {/await}
