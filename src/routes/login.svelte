@@ -38,9 +38,9 @@
     myHeaders.append("Content-Type", "application/json");
     myHeaders.append("x-auth-token", token);
      let raw = JSON.stringify({
-	 collection_comment: `${comment},
-	 collection_users: `${members},
-	 comment_author: `${author}
+	 collection_comment: `${comment}`,
+	 collection_users: `${members}`,
+	 comment_author: `${author}`
      });
      
     var requestOptions = {
