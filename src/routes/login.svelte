@@ -29,7 +29,7 @@
   let collection_instruments;
   let collection_instrument_data;
   let UTC_time_difference;
-  let comment;
+  let comment = [];
   let token; 
 
  //make a comment
@@ -44,14 +44,12 @@
 	 collection_users: `${members}`,
 	 comment_author: `${author}`
      });
-     
     var requestOptions = {
       method: "POST",
       headers: myHeaders,
       redirect: "follow",
       body: raw
     };
-
     fetch(
       //"https://cors-anywhere.herokuapp.com/" +
       `http://bridgesautomation.duckdns.org:5778/profile/comment/${collection}`,
@@ -966,7 +964,6 @@
                 Collection Users
                 <input required bind:value={collection_users} />
               </label>
-              
               <div class="buttons"><button>Submit</button></div>
               <p>
                 Powered by
@@ -999,15 +996,14 @@
                           {/await}
                       {/each}
 		      <h3>Comments</h3>
-
 			  {#each c.collection_comments as com}
 			  <h4>{com.author} at {com.post_time}</h4>
 			  <p>{com.comment}</p>
 			  <hr>
 			  {/each}
-			  <form on:submit|preventDefault={post_comment(c.collection_name,comment, username, c.collection_people.toString() + "," + (c.collection_owner || username))}>
+			  <form on:submit|preventDefault={post_comment(c.collection_name,comment[j], username, c.collection_people.toString() + "," + (c.collection_owner || username))}>
 			      <label>
-				  New Comment: <textarea required bind:value={comment} />
+				  New Comment: <textarea required bind:value={comment[j]} />
 			      </label>
 			      <div class="buttons"><button>Submit</button></div>    
 			  </form>
