@@ -978,9 +978,10 @@
           {/if}
           <collections>
               {#if profile.collections}
-		      <div style="border:3px; border-style:solid; border-color:#3D3D3D; padding: 1em;">
+
 		  {#each profile.collections as c, j}
-                    <h3>{c.collection_name}</h3>
+		      <div style="border:3px; border-style:solid; border-color:#3D3D3D; padding: 1em;">
+                      <h3>{c.collection_name}</h3>
 		  
                   {#if collection_details}
                       <h3>Members</h3>
@@ -1012,8 +1013,9 @@
 			  </form>
 	
                   {/if}
-		  {/each}
 	      </div>		  
+		  {/each}
+
             {/if}
           </collections>
         </center>
