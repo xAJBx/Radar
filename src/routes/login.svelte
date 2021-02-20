@@ -1001,7 +1001,7 @@
 			  <p>{com.comment}</p>
 			  <hr>
 			  {/each}
-			  <form on:submit|preventDefault={post_comment(c.collection_name,comment, username, c.collection_people.toString()}>
+			  <form on:submit|preventDefault={post_comment(c.collection_name,comment, username, c.collection_people.toString())}>
 			      <label>
 				  New Comment: <textarea required bind:value={comment} />
 			      </label>
