@@ -728,7 +728,8 @@
       }
       //hereeeee
       for (let i = 0; i < profile.instruments.length; i++) {
-        get_data(" " + profile.instruments[i]);
+	  console.log(profile.instruments[i]);
+	  get_data(profile.instruments[i]);
         let now = new Date();
 
         let weekRange = new Date();
