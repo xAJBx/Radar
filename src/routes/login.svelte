@@ -331,7 +331,7 @@
         //send token auth token to get profile
         var myHeaders = new Headers();
         myHeaders.append("x-auth-token", `${result.token}`);
-
+	  token = `${result.token}`
         var requestOptions = {
           method: "GET",
           headers: myHeaders,
