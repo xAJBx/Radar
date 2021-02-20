@@ -33,9 +33,31 @@
  
 
  //make a comment
- function post_comment(comment,user){
-     alert(comment);
-     alert(user);
+ function post_comment(collection,comment,author,members){
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    myHeaders.append("x-auth-token", token);
+     let raw = JSON.stringify({
+	 collection_comment: comment,
+	 collection_users: members,
+	 comment_author: author
+     });
+     
+    var requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      redirect: "follow",
+      body: raw
+    };
+
+    fetch(
+      //"https://cors-anywhere.herokuapp.com/" +
+      `http://bridgesautomation.duckdns.org:5778/profile/comment/${collection}`,
+      requestOptions
+    )
+  // refresh comments?
+
+
  }
 
 
@@ -979,7 +1001,7 @@
 			  <p>{com.comment}</p>
 			  <hr>
 			  {/each}
-			  <form on:submit|preventDefault={post_comment(comment, username)}>
+			  <form on:submit|preventDefault={post_comment(c.collection_name,comment, username, c.collection_people.toString()}>
 			      <label>
 				  New Comment: <textarea required bind:value={comment} />
 			      </label>
