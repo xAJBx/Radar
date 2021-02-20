@@ -31,6 +31,14 @@
   let UTC_time_difference;
   let comment;
  
+
+ //make a comment
+ function post_comment(comment,user){
+     alert(comment);
+     alert(user);
+ }
+
+
  //calculat client time - UTC time delta
  function client_utc_delta(){
  }
@@ -971,7 +979,7 @@
 			  <p>{com.comment}</p>
 			  <hr>
 			  {/each}
-			  <form on:submit|preventDefault={alert(comment)}>
+			  <form on:submit|preventDefault={post_comment(comment, username)}>
 			      <label>
 				  New Comment: <textarea required bind:value={comment} />
 			      </label>
