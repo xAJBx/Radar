@@ -30,7 +30,7 @@
   let collection_instrument_data;
   let UTC_time_difference;
   let comment;
- 
+  let token; 
 
  //make a comment
  function post_comment(collection,comment,author,members){
@@ -530,7 +530,8 @@
     )
       .then((response) => response.json())
       .then((result) => {
-        //console.log(JSON.stringify(result));
+          //console.log(JSON.stringify(result));
+	  token = result.token
         profile_create(result.token, reg_company);
       })
       .catch((error) => console.log("error", error));
