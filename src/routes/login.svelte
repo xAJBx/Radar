@@ -702,7 +702,7 @@
           .then((response) => response.json())
           .then((result) => {
             instrument = result;
-
+	    console.log(instrument);
             const fu = instruments.includes(instrument[2][0].unit_id.trim());
 
             if (fu) {
