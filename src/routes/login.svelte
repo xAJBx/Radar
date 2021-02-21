@@ -991,7 +991,7 @@
                           {#await getCollectionInstrumentCurrentValue(c.collection_owner || username,instrument.instrument_name,c.collection_name)}
                           <li>Loading...{instrument.instrument_name}</li>
                           {:then data}
-                          <li>{instrument.instrument_name}: <a style="border:1px; border-style:solid; border-color:#3D3D3D;">{JSON.stringify(data)} {instrument.instrument_unit}</a><form on:submit|preventDefault={alert("dest")}>
+                          <li>{instrument.instrument_name}: <a style="border:1px; border-style:solid; border-color:#3D3D3D;">{JSON.stringify(data)} {instrument.instrument_unit}</a><form on:submit|preventDefault={alert(portion[j])}>
 			      <label> Change Portion: <input required bind:value={portion[j]}/></label>
 			      <div class="buttons"><button>Send</button></div>
 			      </form>
