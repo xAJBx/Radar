@@ -702,8 +702,7 @@
           .then((response) => response.json())
           .then((result) => {
               instrument = result;
-	      console.log("just before instrument log");
-	    console.log(instrument);
+
             const fu = instruments.includes(instrument[2][0].unit_id.trim());
 
             if (fu) {
@@ -729,7 +728,7 @@
       }
       //hereeeee
       for (let i = 0; i < profile.instruments.length; i++) {
-	  console.log(profile.instruments[i]);
+
 	  get_data(profile.instruments[i]);
         let now = new Date();
 
