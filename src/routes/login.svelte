@@ -991,7 +991,7 @@
                           {#await getCollectionInstrumentCurrentValue(c.collection_owner || username,instrument.instrument_name,c.collection_name)}
                           <li>Loading...{instrument.instrument_name}</li>
                           {:then data}
-                          <li>{instrument.instrument_name}: <a style="border:1px; border-style:solid; border-color:#3D3D3D;">{JSON.stringify(data)}</a></li>
+                          <li>{instrument.instrument_name}: <a style="border:1px; border-style:solid; border-color:#3D3D3D;">{JSON.stringify(data)} {instrument.instrument_unit}</a></li>
                           {:catch error}
                           <li style="color: red">{error.message}</li>
                           {/await}
@@ -1008,7 +1008,6 @@
 			      </label>
 			      <div class="buttons"><button>Submit</button></div>    
 			  </form>
-	
                   {/if}
 	      </div>		  
 		  {/each}
