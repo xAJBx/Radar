@@ -32,6 +32,16 @@
   let comment = [];
   let token; 
   let portion = [];
+
+ //
+ function chang_portion(portion,instrument_name,collection_name,collection_people,collection_owner){
+     alert(portion);
+     alert(instrument_name);
+     alert(collection_name);
+     alert(collection_people);
+     alert(collection_owner);
+ }
+
  //make a comment
  function post_comment(collection,comment,author,members){
     var myHeaders = new Headers();
@@ -991,7 +1001,7 @@
                           {#await getCollectionInstrumentCurrentValue(c.collection_owner || username,instrument.instrument_name,c.collection_name)}
                           <li>Loading...{instrument.instrument_name}</li>
                           {:then data}
-                          <li>{instrument.instrument_name}: <a style="border:1px; border-style:solid; border-color:#3D3D3D;">{JSON.stringify(data)} {instrument.instrument_unit}</a><form on:submit|preventDefault={alert(portion[l],instrument.instrument_name,c.collection_name,c.collection_people,c.collection_owner || username)}>
+                          <li>{instrument.instrument_name}: <a style="border:1px; border-style:solid; border-color:#3D3D3D;">{JSON.stringify(data)} {instrument.instrument_unit}</a><form on:submit|preventDefault={change_portion(portion[l],instrument.instrument_name,c.collection_name,c.collection_people,c.collection_owner || username)}>
 			      <label> Change Portion: <input required bind:value={portion[l]}/></label>
 			      <div class="buttons"><button>Send</button></div>
 			      </form>
