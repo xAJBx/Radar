@@ -34,7 +34,7 @@
   let portion = [];
 
  //
- function chang_portion(portion,instrument_name,collection_name,collection_people,collection_owner){
+ function change_portion(portion,instrument_name,collection_name,collection_people,collection_owner){
      alert(portion);
      alert(instrument_name);
      alert(collection_name);
