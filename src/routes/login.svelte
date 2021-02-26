@@ -40,6 +40,36 @@
      alert(collection_name);
      alert(collection_people);
      alert(collection_owner);
+
+     var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+     myHeaders.append("x-auth-token", `${token}`);
+
+     console.log(members);
+     let raw = JSON.stringify({
+	 collection_owner: `${collection_owner}`,
+	 collection_users: `${collection_people}`,
+	 collection_name: `${collection_name}`,
+	 collection_instrument: `${instrument_name}`,
+	 collection_portion: `${portion}`
+     });
+    var requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      redirect: "follow",
+      body: raw
+    };
+    fetch(
+      //"https://cors-anywhere.herokuapp.com/" +
+      `http://bridgesautomation.duckdns.org:5778/profile/collection/portion`,
+      requestOptions
+    )
+  // refresh comments?
+
+
+
+     console.log(raw);
+
  }
 
  //make a comment
@@ -1002,7 +1032,7 @@
                           <li>Loading...{instrument.instrument_name}</li>
                           {:then data}
                           <li>{instrument.instrument_name}: <a style="border:1px; border-style:solid; border-color:#3D3D3D;">{JSON.stringify(data)} {instrument.instrument_unit}</a><form on:submit|preventDefault={change_portion(portion[l],instrument.instrument_name,c.collection_name,c.collection_people,c.collection_owner || username)}>
-			      <label> Change Portion: <input required bind:value={portion[l]}/></label>
+			      <label> Change Portion: <input required type=number bind:value={portion[l]}/></label>
 			      <div class="buttons"><button>Send</button></div>
 			      </form>
 			  </li>
