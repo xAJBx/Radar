@@ -35,17 +35,12 @@
 
  //
  function change_portion(portion,instrument_name,collection_name,collection_people,collection_owner){
-     alert(portion);
-     alert(instrument_name);
-     alert(collection_name);
-     alert(collection_people);
-     alert(collection_owner);
 
      var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
      myHeaders.append("x-auth-token", `${token}`);
 
-     console.log(members);
+
      let raw = JSON.stringify({
 	 collection_owner: `${collection_owner}`,
 	 collection_users: `${collection_people}`,
