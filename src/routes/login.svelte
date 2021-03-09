@@ -34,7 +34,7 @@
   let portion = [];
 
  //
- function change_portion(portion,instrument_name,collection_name,collection_people,collection_owner){
+ async function change_portion(portion,instrument_name,collection_name,collection_people,collection_owner){
 
      var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
