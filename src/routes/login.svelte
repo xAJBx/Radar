@@ -54,7 +54,7 @@
       redirect: "follow",
       body: raw
     };
-    fetch(
+let fetchreturn = await fetch(
       //"https://cors-anywhere.herokuapp.com/" +
       `http://bridgesautomation.duckdns.org:5778/profile/collection/portion`,
       requestOptions
@@ -63,7 +63,7 @@
 
 
 
-     console.log(raw);
+     console.log(fetchreturn);
 
  }
 
