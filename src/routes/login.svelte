@@ -779,7 +779,7 @@ let fetchreturn = await fetch(
     } catch (err) {
       console.error(err.message);
     }
-  }, 5000);
+  }, 30000);
 
   const goToSettings = () => (settings_page = !settings_page);
   const goToInstruments = () => (instruments_page = !instruments_page);
