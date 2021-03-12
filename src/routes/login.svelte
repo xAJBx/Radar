@@ -657,7 +657,7 @@ let fetchreturn = await fetch(
           .then((result) => {
             try {
               //console.log(result);
-              if (result) {
+              if (result && result[2][0].unit_id.trim()) {
                 const du = instruments.includes(result[2][0].unit_id.trim());
                 if (du) {
                   //console.log(result);
